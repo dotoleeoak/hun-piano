@@ -530,11 +530,6 @@ border-radius: 10px;</string>
     <property name="text">
      <string> 임시 등록을 하려 합니다.</string>
     </property>
-    <property name="icon">
-     <iconset theme="checkTemp" resource="Images/checkTemp.qrc">
-      <normaloff>:/newPrefix/unchecked.png</normaloff>
-      <normalon>:/newPrefix/checked.png</normalon>:/newPrefix/unchecked.png</iconset>
-    </property>
     <property name="iconSize">
      <size>
       <width>40</width>
@@ -723,8 +718,6 @@ border-radius: 10px;</string>
    </property>
   </action>
  </widget>
- <resources>
-  <include location="Images/checkTemp.qrc"/>
- </resources>
+ <resources/>
  <connections/>
 </ui>

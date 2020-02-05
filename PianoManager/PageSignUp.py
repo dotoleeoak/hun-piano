@@ -195,8 +195,6 @@ class Ui_MainWindow(object):
         self.checkBox.setSizePolicy(sizePolicy)
         self.checkBox.setAutoFillBackground(False)
         self.checkBox.setStyleSheet("font: 16pt \"배달의민족 주아\";")
-        icon = QtGui.QIcon.fromTheme("checkTemp")
-        self.checkBox.setIcon(icon)
         self.checkBox.setIconSize(QtCore.QSize(40, 40))
         self.checkBox.setShortcut("")
         self.checkBox.setChecked(False)
@@ -300,4 +298,13 @@ class Ui_MainWindow(object):
         self.checkBox.setText(_translate("MainWindow", " 임시 등록을 하려 합니다."))
         self.menu.setTitle(_translate("MainWindow", "SignUp"))
         self.actionSignUp.setText(_translate("MainWindow", "SignUp"))
-import checkTemp_rc
+
+
+if __name__ == "__main__":
+    import sys
+    app = QtWidgets.QApplication(sys.argv)
+    MainWindow = QtWidgets.QMainWindow()
+    ui = Ui_MainWindow()
+    ui.setupUi(MainWindow)
+    MainWindow.show()
+    sys.exit(app.exec_())
