@@ -17,9 +17,40 @@ class Ui_MainWindow(object):
         MainWindow.resize(800, 480)
         MainWindow.setMinimumSize(QtCore.QSize(800, 480))
         MainWindow.setMaximumSize(QtCore.QSize(800, 480))
+        MainWindow.setStyleSheet("QToolButton\n"
+"{\n"
+"    background-color: rgba(255, 255, 255, 0);\n"
+"    border-radius: 15px;\n"
+"    border: 3px solid #ffffff;\n"
+"}\n"
+"\n"
+"QToolButton:hover\n"
+"{\n"
+"    background-color: rgb(241, 219, 194);\n"
+"}\n"
+"\n"
+"QLineEdit\n"
+"{\n"
+"    border: 2px solid black;\n"
+"    border-radius: 10px;\n"
+"}\n"
+"\n"
+"QPushButton\n"
+"{\n"
+"    color: white;\n"
+"    background-color: rgb(72, 112, 242);\n"
+"    border-radius: 15px;\n"
+"    border: 0px;\n"
+"}\n"
+"\n"
+"QPushlButton:hover\n"
+"{\n"
+"    background-color: black;\n"
+"}")
         MainWindow.setToolButtonStyle(QtCore.Qt.ToolButtonFollowStyle)
         MainWindow.setAnimated(True)
         self.centralwidget = QtWidgets.QWidget(MainWindow)
+        self.centralwidget.setStyleSheet("")
         self.centralwidget.setObjectName("centralwidget")
         self.viewMebuBar = QtWidgets.QGraphicsView(self.centralwidget)
         self.viewMebuBar.setEnabled(True)
@@ -45,13 +76,13 @@ class Ui_MainWindow(object):
         self.labelMenuBar.setFont(font)
         self.labelMenuBar.setAlignment(QtCore.Qt.AlignCenter)
         self.labelMenuBar.setObjectName("labelMenuBar")
-        self.buttonHome = QtWidgets.QPushButton(self.centralwidget)
-        self.buttonHome.setGeometry(QtCore.QRect(8, 5, 71, 51))
+        self.buttonHome = QtWidgets.QToolButton(self.centralwidget)
+        self.buttonHome.setGeometry(QtCore.QRect(8, 5, 70, 50))
         palette = QtGui.QPalette()
         brush = QtGui.QBrush(QtGui.QColor(0, 0, 0))
         brush.setStyle(QtCore.Qt.SolidPattern)
         palette.setBrush(QtGui.QPalette.Active, QtGui.QPalette.WindowText, brush)
-        brush = QtGui.QBrush(QtGui.QColor(241, 145, 39))
+        brush = QtGui.QBrush(QtGui.QColor(255, 255, 255, 0))
         brush.setStyle(QtCore.Qt.SolidPattern)
         palette.setBrush(QtGui.QPalette.Active, QtGui.QPalette.Button, brush)
         brush = QtGui.QBrush(QtGui.QColor(255, 255, 255))
@@ -60,10 +91,10 @@ class Ui_MainWindow(object):
         brush = QtGui.QBrush(QtGui.QColor(255, 255, 255))
         brush.setStyle(QtCore.Qt.SolidPattern)
         palette.setBrush(QtGui.QPalette.Active, QtGui.QPalette.ButtonText, brush)
-        brush = QtGui.QBrush(QtGui.QColor(241, 145, 39))
+        brush = QtGui.QBrush(QtGui.QColor(255, 255, 255, 0))
         brush.setStyle(QtCore.Qt.SolidPattern)
         palette.setBrush(QtGui.QPalette.Active, QtGui.QPalette.Base, brush)
-        brush = QtGui.QBrush(QtGui.QColor(241, 145, 39))
+        brush = QtGui.QBrush(QtGui.QColor(255, 255, 255, 0))
         brush.setStyle(QtCore.Qt.SolidPattern)
         palette.setBrush(QtGui.QPalette.Active, QtGui.QPalette.Window, brush)
         brush = QtGui.QBrush(QtGui.QColor(255, 255, 255))
@@ -75,7 +106,7 @@ class Ui_MainWindow(object):
         brush = QtGui.QBrush(QtGui.QColor(0, 0, 0))
         brush.setStyle(QtCore.Qt.SolidPattern)
         palette.setBrush(QtGui.QPalette.Inactive, QtGui.QPalette.WindowText, brush)
-        brush = QtGui.QBrush(QtGui.QColor(241, 145, 39))
+        brush = QtGui.QBrush(QtGui.QColor(255, 255, 255, 0))
         brush.setStyle(QtCore.Qt.SolidPattern)
         palette.setBrush(QtGui.QPalette.Inactive, QtGui.QPalette.Button, brush)
         brush = QtGui.QBrush(QtGui.QColor(255, 255, 255))
@@ -84,10 +115,10 @@ class Ui_MainWindow(object):
         brush = QtGui.QBrush(QtGui.QColor(255, 255, 255))
         brush.setStyle(QtCore.Qt.SolidPattern)
         palette.setBrush(QtGui.QPalette.Inactive, QtGui.QPalette.ButtonText, brush)
-        brush = QtGui.QBrush(QtGui.QColor(241, 145, 39))
+        brush = QtGui.QBrush(QtGui.QColor(255, 255, 255, 0))
         brush.setStyle(QtCore.Qt.SolidPattern)
         palette.setBrush(QtGui.QPalette.Inactive, QtGui.QPalette.Base, brush)
-        brush = QtGui.QBrush(QtGui.QColor(241, 145, 39))
+        brush = QtGui.QBrush(QtGui.QColor(255, 255, 255, 0))
         brush.setStyle(QtCore.Qt.SolidPattern)
         palette.setBrush(QtGui.QPalette.Inactive, QtGui.QPalette.Window, brush)
         brush = QtGui.QBrush(QtGui.QColor(255, 255, 255))
@@ -99,7 +130,7 @@ class Ui_MainWindow(object):
         brush = QtGui.QBrush(QtGui.QColor(120, 120, 120))
         brush.setStyle(QtCore.Qt.SolidPattern)
         palette.setBrush(QtGui.QPalette.Disabled, QtGui.QPalette.WindowText, brush)
-        brush = QtGui.QBrush(QtGui.QColor(241, 145, 39))
+        brush = QtGui.QBrush(QtGui.QColor(255, 255, 255, 0))
         brush.setStyle(QtCore.Qt.SolidPattern)
         palette.setBrush(QtGui.QPalette.Disabled, QtGui.QPalette.Button, brush)
         brush = QtGui.QBrush(QtGui.QColor(120, 120, 120))
@@ -108,10 +139,10 @@ class Ui_MainWindow(object):
         brush = QtGui.QBrush(QtGui.QColor(120, 120, 120))
         brush.setStyle(QtCore.Qt.SolidPattern)
         palette.setBrush(QtGui.QPalette.Disabled, QtGui.QPalette.ButtonText, brush)
-        brush = QtGui.QBrush(QtGui.QColor(241, 145, 39))
+        brush = QtGui.QBrush(QtGui.QColor(255, 255, 255, 0))
         brush.setStyle(QtCore.Qt.SolidPattern)
         palette.setBrush(QtGui.QPalette.Disabled, QtGui.QPalette.Base, brush)
-        brush = QtGui.QBrush(QtGui.QColor(241, 145, 39))
+        brush = QtGui.QBrush(QtGui.QColor(255, 255, 255, 0))
         brush.setStyle(QtCore.Qt.SolidPattern)
         palette.setBrush(QtGui.QPalette.Disabled, QtGui.QPalette.Window, brush)
         brush = QtGui.QBrush(QtGui.QColor(255, 255, 255))
@@ -125,8 +156,13 @@ class Ui_MainWindow(object):
         font.setFamily("배달의민족 주아")
         font.setPointSize(20)
         self.buttonHome.setFont(font)
-        self.buttonHome.setStyleSheet("background-color: rgb(241, 145, 39);")
-        self.buttonHome.setFlat(False)
+        self.buttonHome.setStyleSheet("")
+        self.buttonHome.setText("")
+        icon = QtGui.QIcon()
+        icon.addPixmap(QtGui.QPixmap("Images/home.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        self.buttonHome.setIcon(icon)
+        self.buttonHome.setIconSize(QtCore.QSize(40, 40))
+        self.buttonHome.setCheckable(False)
         self.buttonHome.setObjectName("buttonHome")
         self.labelName = QtWidgets.QLabel(self.centralwidget)
         self.labelName.setGeometry(QtCore.QRect(30, 80, 51, 40))
@@ -179,29 +215,11 @@ class Ui_MainWindow(object):
         font.setFamily("배달의민족 주아")
         font.setPointSize(18)
         self.editContact1.setFont(font)
-        self.editContact1.setStyleSheet("border: 2px solid black;\n"
-"border-radius: 10px;")
+        self.editContact1.setStyleSheet("")
         self.editContact1.setInputMethodHints(QtCore.Qt.ImhDigitsOnly)
         self.editContact1.setMaxLength(10)
         self.editContact1.setClearButtonEnabled(True)
         self.editContact1.setObjectName("editContact1")
-        self.checkBox = QtWidgets.QCheckBox(self.centralwidget)
-        self.checkBox.setEnabled(True)
-        self.checkBox.setGeometry(QtCore.QRect(30, 390, 320, 40))
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Fixed)
-        sizePolicy.setHorizontalStretch(0)
-        sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.checkBox.sizePolicy().hasHeightForWidth())
-        self.checkBox.setSizePolicy(sizePolicy)
-        self.checkBox.setAutoFillBackground(False)
-        self.checkBox.setStyleSheet("font: 16pt \"배달의민족 주아\";")
-        self.checkBox.setIconSize(QtCore.QSize(40, 40))
-        self.checkBox.setShortcut("")
-        self.checkBox.setChecked(False)
-        self.checkBox.setAutoRepeat(False)
-        self.checkBox.setAutoExclusive(False)
-        self.checkBox.setTristate(False)
-        self.checkBox.setObjectName("checkBox")
         self.editID = QtWidgets.QLineEdit(self.centralwidget)
         self.editID.setGeometry(QtCore.QRect(30, 220, 85, 45))
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Fixed)
@@ -213,8 +231,7 @@ class Ui_MainWindow(object):
         font.setFamily("배달의민족 주아")
         font.setPointSize(18)
         self.editID.setFont(font)
-        self.editID.setStyleSheet("border: 2px solid black;\n"
-"border-radius: 10px;")
+        self.editID.setStyleSheet("")
         self.editID.setInputMethodHints(QtCore.Qt.ImhDigitsOnly)
         self.editID.setMaxLength(3)
         self.editID.setClearButtonEnabled(True)
@@ -230,8 +247,7 @@ class Ui_MainWindow(object):
         font.setFamily("배달의민족 주아")
         font.setPointSize(18)
         self.editContact2.setFont(font)
-        self.editContact2.setStyleSheet("border: 2px solid black;\n"
-"border-radius: 10px;")
+        self.editContact2.setStyleSheet("")
         self.editContact2.setInputMethodHints(QtCore.Qt.ImhDigitsOnly)
         self.editContact2.setMaxLength(4)
         self.editContact2.setClearButtonEnabled(True)
@@ -247,8 +263,7 @@ class Ui_MainWindow(object):
         font.setFamily("배달의민족 주아")
         font.setPointSize(18)
         self.editContact3.setFont(font)
-        self.editContact3.setStyleSheet("border: 2px solid black;\n"
-"border-radius: 10px;")
+        self.editContact3.setStyleSheet("")
         self.editContact3.setInputMethodHints(QtCore.Qt.ImhDigitsOnly)
         self.editContact3.setMaxLength(4)
         self.editContact3.setClearButtonEnabled(True)
@@ -264,23 +279,36 @@ class Ui_MainWindow(object):
         font.setFamily("배달의민족 주아")
         font.setPointSize(18)
         self.editContact1_2.setFont(font)
-        self.editContact1_2.setStyleSheet("border: 2px solid black;\n"
-"border-radius: 10px;")
+        self.editContact1_2.setStyleSheet("")
         self.editContact1_2.setInputMethodHints(QtCore.Qt.ImhNone)
         self.editContact1_2.setMaxLength(20)
         self.editContact1_2.setClearButtonEnabled(True)
         self.editContact1_2.setObjectName("editContact1_2")
+        self.label = QtWidgets.QLabel(self.centralwidget)
+        self.label.setGeometry(QtCore.QRect(70, 390, 250, 30))
+        font = QtGui.QFont()
+        font.setFamily("배달의민족 주아")
+        font.setPointSize(16)
+        self.label.setFont(font)
+        self.label.setObjectName("label")
+        self.pushButton = QtWidgets.QPushButton(self.centralwidget)
+        self.pushButton.setGeometry(QtCore.QRect(30, 390, 60, 30))
+        self.pushButton.setStyleSheet("background-color: rgba(255, 255, 255, 0);")
+        icon1 = QtGui.QIcon()
+        icon1.addPixmap(QtGui.QPixmap("Images/checked.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        self.pushButton.setIcon(icon1)
+        self.pushButton.setIconSize(QtCore.QSize(30, 30))
+        self.pushButton.setObjectName("pushButton")
+        self.pushButton1 = QtWidgets.QPushButton(self.centralwidget)
+        self.pushButton1.setGeometry(QtCore.QRect(370, 380, 111, 51))
+        font = QtGui.QFont()
+        font.setFamily("배달의민족 주아")
+        font.setPointSize(16)
+        self.pushButton1.setFont(font)
+        self.pushButton1.setObjectName("pushButton1")
         MainWindow.setCentralWidget(self.centralwidget)
-        self.menubar = QtWidgets.QMenuBar(MainWindow)
-        self.menubar.setGeometry(QtCore.QRect(0, 0, 800, 26))
-        self.menubar.setNativeMenuBar(False)
-        self.menubar.setObjectName("menubar")
-        self.menu = QtWidgets.QMenu(self.menubar)
-        self.menu.setObjectName("menu")
-        MainWindow.setMenuBar(self.menubar)
         self.actionSignUp = QtWidgets.QAction(MainWindow)
         self.actionSignUp.setObjectName("actionSignUp")
-        self.menubar.addAction(self.menu.menuAction())
 
         self.retranslateUi(MainWindow)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
@@ -289,14 +317,14 @@ class Ui_MainWindow(object):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
         self.labelMenuBar.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" color:#ffffff;\">사용자 등록</span></p></body></html>"))
-        self.buttonHome.setText(_translate("MainWindow", "홈"))
         self.labelName.setText(_translate("MainWindow", "이름"))
         self.labelID.setText(_translate("MainWindow", "학번"))
         self.labelContact.setText(_translate("MainWindow", "전화번호"))
         self.labelDash1.setText(_translate("MainWindow", "-"))
         self.labelDash2.setText(_translate("MainWindow", "-"))
-        self.checkBox.setText(_translate("MainWindow", " 임시 등록을 하려 합니다."))
-        self.menu.setTitle(_translate("MainWindow", "SignUp"))
+        self.label.setText(_translate("MainWindow", "임시 등록을 하려 합니다."))
+        self.pushButton.setText(_translate("MainWindow", "..."))
+        self.pushButton1.setText(_translate("MainWindow", "등록"))
         self.actionSignUp.setText(_translate("MainWindow", "SignUp"))
 
 
