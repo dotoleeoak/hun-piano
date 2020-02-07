@@ -1,16 +1,7 @@
-# -*- coding: utf-8 -*-
-
-################################################################################
-## Form generated from reading UI file 'PageLogin.ui'
-##
-## Created by: Qt User Interface Compiler version 5.14.0
-##
-## WARNING! All changes made in this file will be lost when recompiling UI file!
-################################################################################
 import sys
 from functools import partial
 from PySide2.QtWidgets import *
-from ui_Login import Ui_Login
+from ui_Login2 import Ui_Login
 
 class Login(QMainWindow):
     def __init__(self, parent = None):
