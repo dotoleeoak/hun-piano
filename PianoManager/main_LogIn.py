@@ -1,14 +1,19 @@
 import sys
 from functools import partial
 from PySide2.QtWidgets import *
-from ui_Login2 import Ui_Login
+from ui_LogIn import Ui_LogIn
+from reader_for_login_test import TestDatabaseReader
 
 class Login(QMainWindow):
     def __init__(self, parent = None):
         QMainWindow.__init__(self, parent)
+
+        self.dbReader = TestDatabaseReader()
         
-        self.ui = Ui_Login()
+        self.ui = Ui_LogIn()
         self.ui.setupUi(self)
+
+        self.ui.DialogueShadow.hide()
 
         self.keypadButtons = QButtonGroup()
         self.keypadButtons.addButton(self.ui.KeypadButton_0, 0)
@@ -37,6 +42,9 @@ class Login(QMainWindow):
 
         for i in range(0, 10):
             self.keypadButtons.button(i).clicked.connect(partial(self.writeNumber, i))
+
+        self.ui.DButtonYes.clicked.connect(lambda : print("playing piano!"))
+        self.ui.DButtonNo.clicked.connect(lambda: self.hideDialogueCheck())
         
 
     def writeNumber(self, num):
@@ -46,22 +54,41 @@ class Login(QMainWindow):
         self.displayIndex += 1
         if self.displayIndex > 8 :
             self.checkValidPass(self.password)
+            
 
     def checkValidPass(self, password):
         
-        if password == "12345678":
+        (isInDB, data) = self.dbReader.passInDatabase(password)
+        self.password = ""
+        self.displayIndex = 1
+        if isInDB:
             print("valid")
-            self.password = ""
-            self.displayIndex = 1
-            for i in range(1, 9):
-                self.keyDisplays.button(i).setText("")
-            # show InUse Page
+            self.showDialogueCheck(data["name"])
         else:
-            print("invalid")
             self.password = ""
             self.displayIndex = 1
-            for i in range(1, 9):
-                self.keyDisplays.button(i).setText("")
+            print("invalid")
+            self.showErrorAnimation()
+            
+        for i in range(1, 9):
+            self.keyDisplays.button(i).setText("")
+    
+
+    def showDialogueCheck(self, name):
+
+        self.ui.DLabelName.setText(name + " 님")
+        self.ui.DialogueShadow.show()
+        
+
+    def hideDialogueCheck(self):
+
+        self.ui.DialogueShadow.hide()
+        print("hide!")
+        
+
+    def showErrorAnimation(self):
+        pass
+
             
 
 if __name__ == '__main__':
