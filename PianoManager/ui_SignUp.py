@@ -26,16 +26,17 @@ class Ui_SignUp(object):
         font.setFamily(u"\ubc30\ub2ec\uc758\ubbfc\uc871 \uc8fc\uc544")
         font.setPointSize(20)
         SignUp.setFont(font)
-        SignUp.setStyleSheet(u"QLineEdit\n"
-"{\n"
-"	border: 2px solid #000000;\n"
-"	border-radius: 10px;\n"
-"}\n"
-"\n"
-"QLineEdit:hover\n"
-"{\n"
-"	border-color: rgb(0, 85, 255);\n"
-"}")
+        SignUp.setStyleSheet(u'''
+            QLineEdit
+            {
+                border: 2px solid #000000;
+                border-radius: 10px;
+            }
+
+            QLineEdit:hover
+            {
+                border-color: rgb(0, 85, 255);
+            }''')
         self.centralwidget = QWidget(SignUp)
         self.centralwidget.setObjectName(u"centralwidget")
         self.frameMenu = QFrame(self.centralwidget)
@@ -50,18 +51,19 @@ class Ui_SignUp(object):
         font1.setFamily(u"\ubc30\ub2ec\uc758\ubbfc\uc871 \uc8fc\uc544")
         font1.setPointSize(16)
         self.buttonHome.setFont(font1)
-        self.buttonHome.setStyleSheet(u"QPushButton\n"
-"{\n"
-"	color: rgba(255, 255, 255, 0);\n"
-"	background-color: rgba(255, 255, 255, 0);\n"
-"	border-radius: 15px;\n"
-"	border: 3px solid #ffffff;\n"
-"}\n"
-"\n"
-"QPushButton:hover\n"
-"{\n"
-"	background-color: rgb(241, 219, 194);\n"
-"}")
+        self.buttonHome.setStyleSheet(u'''
+            QPushButton
+            {
+            	color: rgba(255, 255, 255, 0);
+            	background-color: rgba(255, 255, 255, 0);
+            	border-radius: 15px;
+            	border: 3px solid #ffffff;
+            }
+
+            QPushButton:hover
+            {
+            	background-color: rgb(241, 219, 194);
+            }''')
         icon = QIcon()
         icon.addFile(u"Images/home.png", QSize(), QIcon.Normal, QIcon.Off)
         self.buttonHome.setIcon(icon)
@@ -69,9 +71,10 @@ class Ui_SignUp(object):
         self.labelMenu = QLabel(self.frameMenu)
         self.labelMenu.setObjectName(u"labelMenu")
         self.labelMenu.setGeometry(QRect(0, 0, 800, 60))
-        self.labelMenu.setStyleSheet(u"color: rgb(255, 255, 255);\n"
-"background-color: rgb(241, 145, 39);\n"
-"font: 22pt \"\ubc30\ub2ec\uc758\ubbfc\uc871 \uc8fc\uc544\";")
+        self.labelMenu.setStyleSheet(u'''
+            color: rgb(255, 255, 255);
+            "background-color: rgb(241, 145, 39);
+            "font: 22pt \"\ubc30\ub2ec\uc758\ubbfc\uc871 \uc8fc\uc544\";''')
         self.labelMenu.setAlignment(Qt.AlignCenter)
         self.labelHome = QLabel(self.frameMenu)
         self.labelHome.setObjectName(u"labelHome")
@@ -101,17 +104,18 @@ class Ui_SignUp(object):
         self.buttonRegister.setObjectName(u"buttonRegister")
         self.buttonRegister.setGeometry(QRect(370, 390, 111, 51))
         self.buttonRegister.setFont(font1)
-        self.buttonRegister.setStyleSheet(u"QPushButton\n"
-"{\n"
-"	color: rgb(255, 255, 255);\n"
-"	background-color: rgb(70, 108, 234);\n"
-"	border-radius: 15px;\n"
-"}\n"
-"\n"
-"QPushButton:hover\n"
-"{\n"
-"	background-color: rgb(38, 61, 129);\n"
-"}")
+        self.buttonRegister.setStyleSheet(u'''
+            QPushButton
+            {
+            	color: rgb(255, 255, 255);
+            	background-color: rgb(70, 108, 234);
+            	border-radius: 15px;
+            }
+
+            QPushButton:hover
+            {
+            	background-color: rgb(38, 61, 129);
+            }''')
         self.editID = QLineEdit(self.centralwidget)
         self.editID.setObjectName(u"editID")
         self.editID.setGeometry(QRect(30, 315, 230, 45))
@@ -152,17 +156,18 @@ class Ui_SignUp(object):
         self.buttonTemp = QPushButton(self.centralwidget)
         self.buttonTemp.setObjectName(u"buttonTemp")
         self.buttonTemp.setGeometry(QRect(30, 395, 40, 40))
-        self.buttonTemp.setStyleSheet(u"QPushButton\n"
-"{\n"
-"	background-color: rgb(255, 255, 255);\n"
-"	border-radius: 10px;\n"
-"	border: 3px solid black;\n"
-"}\n"
-"\n"
-"QPushButton:hover\n"
-"{\n"
-"	background-color: rgb(148, 148, 148);\n"
-"}")
+        self.buttonTemp.setStyleSheet(u'''
+            QPushButton
+            {
+            	background-color: rgb(255, 255, 255);
+            	border-radius: 10px;
+            	border: 3px solid black;
+            }
+            
+            QPushButton:hover
+            {
+            	background-color: rgb(148, 148, 148);
+            }''')
         self.labelDash1 = QLabel(self.centralwidget)
         self.labelDash1.setObjectName(u"labelDash1")
         self.labelDash1.setGeometry(QRect(115, 225, 41, 31))
