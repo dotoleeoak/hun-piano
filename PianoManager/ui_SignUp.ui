@@ -115,6 +115,9 @@ font: 22pt &quot;배달의민족 주아&quot;;</string>
      </property>
     </widget>
     <widget class="QLabel" name="labelHome">
+     <property name="enabled">
+      <bool>true</bool>
+     </property>
      <property name="geometry">
       <rect>
        <x>60</x>
