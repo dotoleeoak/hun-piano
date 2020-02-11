@@ -4,17 +4,21 @@ from PySide2.QtWidgets import *
 from ui_LogIn import Ui_LogIn
 from reader_for_login_test import TestDatabaseReader
 
-class Login(QMainWindow):
+class LogIn(QWidget):
     def __init__(self, parent = None):
-        QMainWindow.__init__(self, parent)
+        QWidget.__init__(self, parent)
 
+        # Database Reader Module
         self.dbReader = TestDatabaseReader()
-        
+
+        # UI for the page
         self.ui = Ui_LogIn()
         self.ui.setupUi(self)
 
+        # hide dialogue
         self.ui.DialogueShadow.hide()
 
+        # Insert buttons into QButtonGroup
         self.keypadButtons = QButtonGroup()
         self.keypadButtons.addButton(self.ui.KeypadButton_0, 0)
         self.keypadButtons.addButton(self.ui.KeypadButton_1, 1)
@@ -47,6 +51,7 @@ class Login(QMainWindow):
         self.ui.DButtonNo.clicked.connect(lambda: self.hideDialogueCheck())
         
 
+    # input a password and display it
     def writeNumber(self, num):
         
         self.keyDisplays.button(self.displayIndex).setText(str(num))
@@ -56,9 +61,11 @@ class Login(QMainWindow):
             self.checkValidPass(self.password)
             
 
+    # check whether the password is valid
     def checkValidPass(self, password):
+
+        (isInDB, data) = self.dbReader.passInDatabase(password) # (bool, data)
         
-        (isInDB, data) = self.dbReader.passInDatabase(password)
         self.password = ""
         self.displayIndex = 1
         if isInDB:
@@ -94,7 +101,7 @@ class Login(QMainWindow):
 if __name__ == '__main__':
     app = QApplication(sys.argv)
 
-    login = Login()
+    login = LogIn()
 
     login.show()
     sys.exit(app.exec_())
