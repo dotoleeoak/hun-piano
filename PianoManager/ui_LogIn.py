@@ -19,21 +19,42 @@ class Ui_LogIn(object):
     def setupUi(self, LogIn):
         if LogIn.objectName():
             LogIn.setObjectName(u"LogIn")
-        LogIn.setEnabled(True)
         LogIn.resize(800, 480)
-        LogIn.setMinimumSize(QSize(800, 480))
-        LogIn.setMaximumSize(QSize(800, 480))
-        font = QFont()
-        font.setFamily(u"\ubc30\ub2ec\uc758\ubbfc\uc871 \ud55c\ub098\uccb4 Air")
-        font.setPointSize(18)
-        LogIn.setFont(font)
-        LogIn.setToolButtonStyle(Qt.ToolButtonFollowStyle)
-        LogIn.setAnimated(True)
-        self.actionSignUp = QAction(LogIn)
-        self.actionSignUp.setObjectName(u"actionSignUp")
-        self.centralwidget = QWidget(LogIn)
-        self.centralwidget.setObjectName(u"centralwidget")
-        self.viewMebuBar = QGraphicsView(self.centralwidget)
+        self.ButtonNFC = QPushButton(LogIn)
+        self.ButtonNFC.setObjectName(u"ButtonNFC")
+        self.ButtonNFC.setGeometry(QRect(700, 5, 80, 51))
+        self.ButtonNFC.setLayoutDirection(Qt.RightToLeft)
+        self.ButtonNFC.setStyleSheet(u"background-color: rgb(241, 145, 039, 0);\n"
+"color: rgb(255, 255, 255);\n"
+"font: 20pt \"\ubc30\ub2ec\uc758\ubbfc\uc871 \ud55c\ub098\uccb4 Air\";")
+        icon = QIcon()
+        icon.addFile(u"Images/Phone.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.ButtonNFC.setIcon(icon)
+        self.ButtonNFC.setIconSize(QSize(32, 32))
+        self.ButtonRegister = QPushButton(LogIn)
+        self.ButtonRegister.setObjectName(u"ButtonRegister")
+        self.ButtonRegister.setGeometry(QRect(9, 5, 91, 51))
+        self.ButtonRegister.setStyleSheet(u"background-color: rgb(241, 145, 039, 0);\n"
+"color: rgb(255, 255, 255);\n"
+"font: 20pt \"\ubc30\ub2ec\uc758\ubbfc\uc871 \ud55c\ub098\uccb4 Air\";")
+        icon1 = QIcon()
+        icon1.addFile(u"Images/Document.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.ButtonRegister.setIcon(icon1)
+        self.ButtonRegister.setIconSize(QSize(32, 32))
+        self.ButtonRegister.setAutoRepeat(False)
+        self.roundDisplay_5 = QPushButton(LogIn)
+        self.roundDisplay_5.setObjectName(u"roundDisplay_5")
+        self.roundDisplay_5.setGeometry(QRect(245, 210, 50, 50))
+        self.roundDisplay_5.setStyleSheet(u"border-radius: 25px;\n"
+"background-color: rgb(219, 117, 015);\n"
+"")
+        self.roundDisplay_4 = QPushButton(LogIn)
+        self.roundDisplay_4.setObjectName(u"roundDisplay_4")
+        self.roundDisplay_4.setGeometry(QRect(185, 210, 50, 50))
+        self.roundDisplay_4.setStyleSheet(u"border-radius: 25px;\n"
+"background-color: rgb(219, 117, 015);\n"
+"")
+        self.viewMebuBar = QGraphicsView(LogIn)
         self.viewMebuBar.setObjectName(u"viewMebuBar")
         self.viewMebuBar.setEnabled(True)
         self.viewMebuBar.setGeometry(QRect(0, 0, 800, 60))
@@ -45,39 +66,101 @@ class Ui_LogIn(object):
         self.viewMebuBar.setForegroundBrush(brush)
         self.viewMebuBar.setInteractive(True)
         self.viewMebuBar.setSceneRect(QRectF(20, 20, 400, 50))
-        self.MenuPageLabel = QLabel(self.centralwidget)
+        self.roundDisplay_8 = QPushButton(LogIn)
+        self.roundDisplay_8.setObjectName(u"roundDisplay_8")
+        self.roundDisplay_8.setGeometry(QRect(425, 210, 50, 50))
+        self.roundDisplay_8.setStyleSheet(u"border-radius: 25px;\n"
+"background-color: rgb(219, 117, 015);\n"
+"")
+        self.DialogueShadow = QWidget(LogIn)
+        self.DialogueShadow.setObjectName(u"DialogueShadow")
+        self.DialogueShadow.setEnabled(True)
+        self.DialogueShadow.setGeometry(QRect(0, 0, 800, 480))
+        palette = QPalette()
+        brush1 = QBrush(QColor(255, 255, 255, 255))
+        brush1.setStyle(Qt.SolidPattern)
+        palette.setBrush(QPalette.Active, QPalette.Base, brush1)
+        brush2 = QBrush(QColor(0, 0, 0, 100))
+        brush2.setStyle(Qt.SolidPattern)
+        palette.setBrush(QPalette.Active, QPalette.Window, brush2)
+        palette.setBrush(QPalette.Inactive, QPalette.Base, brush1)
+        palette.setBrush(QPalette.Inactive, QPalette.Window, brush2)
+        palette.setBrush(QPalette.Disabled, QPalette.Base, brush2)
+        palette.setBrush(QPalette.Disabled, QPalette.Window, brush2)
+        self.DialogueShadow.setPalette(palette)
+        self.DialogueShadow.setAutoFillBackground(True)
+        self.DialogueShadow.setStyleSheet(u"")
+        self.DialogueCheck = QWidget(self.DialogueShadow)
+        self.DialogueCheck.setObjectName(u"DialogueCheck")
+        self.DialogueCheck.setGeometry(QRect(200, 140, 400, 200))
+        self.DialogueCheck.setAutoFillBackground(False)
+        self.DialogueCheck.setStyleSheet(u"background-color: rgb(255, 255, 255, 235);\n"
+"border-radius: 25px;")
+        self.DLabelName = QLabel(self.DialogueCheck)
+        self.DLabelName.setObjectName(u"DLabelName")
+        self.DLabelName.setGeometry(QRect(0, 50, 400, 41))
+        self.DLabelName.setStyleSheet(u"font: 24pt \"\ubc30\ub2ec\uc758\ubbfc\uc871 \uc8fc\uc544\";\n"
+"background-color: rgb(255, 255, 255, 0);\n"
+"color: rgb(71, 71, 71);")
+        self.DLabelName.setAlignment(Qt.AlignCenter)
+        self.DLabelQ = QLabel(self.DialogueCheck)
+        self.DLabelQ.setObjectName(u"DLabelQ")
+        self.DLabelQ.setGeometry(QRect(0, 90, 400, 41))
+        self.DLabelQ.setStyleSheet(u"font: 18pt \"\ubc30\ub2ec\uc758\ubbfc\uc871 \uc8fc\uc544\";\n"
+"background-color: rgb(255, 255, 255, 0);\n"
+"color: rgb(71, 71, 71);")
+        self.DLabelQ.setAlignment(Qt.AlignCenter)
+        self.horizontalLayoutWidget = QWidget(self.DialogueCheck)
+        self.horizontalLayoutWidget.setObjectName(u"horizontalLayoutWidget")
+        self.horizontalLayoutWidget.setGeometry(QRect(0, 139, 401, 61))
+        self.horizontalLayout = QHBoxLayout(self.horizontalLayoutWidget)
+        self.horizontalLayout.setObjectName(u"horizontalLayout")
+        self.horizontalLayout.setContentsMargins(0, 0, 0, 0)
+        self.DButtonYes = QPushButton(self.horizontalLayoutWidget)
+        self.DButtonYes.setObjectName(u"DButtonYes")
+        self.DButtonYes.setStyleSheet(u"font: 18pt \"\ubc30\ub2ec\uc758\ubbfc\uc871 \uc8fc\uc544\";\n"
+"color: rgb(72, 112, 242);\n"
+"background-color: rgb(255, 255, 255, 0);")
+
+        self.horizontalLayout.addWidget(self.DButtonYes)
+
+        self.DButtonNo = QPushButton(self.horizontalLayoutWidget)
+        self.DButtonNo.setObjectName(u"DButtonNo")
+        self.DButtonNo.setStyleSheet(u"font: 18pt \"\ubc30\ub2ec\uc758\ubbfc\uc871 \uc8fc\uc544\";\n"
+"color: rgb(232, 77, 33);\n"
+"background-color: rgb(255, 255, 255, 0);")
+
+        self.horizontalLayout.addWidget(self.DButtonNo)
+
+        self.MenuPageLabel = QLabel(LogIn)
         self.MenuPageLabel.setObjectName(u"MenuPageLabel")
-        self.MenuPageLabel.setGeometry(QRect(300, 0, 200, 60))
-        font1 = QFont()
-        font1.setFamily(u"\ubc30\ub2ec\uc758\ubbfc\uc871 \ud55c\ub098\uccb4 Air")
-        font1.setPointSize(26)
-        font1.setBold(True)
-        font1.setWeight(75);
-        self.MenuPageLabel.setFont(font1)
+        self.MenuPageLabel.setGeometry(QRect(310, 0, 200, 60))
+        font = QFont()
+        font.setFamily(u"\ubc30\ub2ec\uc758\ubbfc\uc871 \ud55c\ub098\uccb4 Air")
+        font.setPointSize(26)
+        font.setBold(True)
+        font.setWeight(75);
+        self.MenuPageLabel.setFont(font)
         self.MenuPageLabel.setAlignment(Qt.AlignCenter)
-        self.ButtonRegister = QPushButton(self.centralwidget)
-        self.ButtonRegister.setObjectName(u"ButtonRegister")
-        self.ButtonRegister.setGeometry(QRect(9, 5, 91, 51))
-        self.ButtonRegister.setStyleSheet(u"background-color: rgb(241, 145, 039, 0);\n"
-"color: rgb(255, 255, 255);\n"
-"font: 20pt \"\ubc30\ub2ec\uc758\ubbfc\uc871 \ud55c\ub098\uccb4 Air\";")
-        icon = QIcon()
-        icon.addFile(u"Images/Document.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.ButtonRegister.setIcon(icon)
-        self.ButtonRegister.setIconSize(QSize(32, 32))
-        self.ButtonRegister.setAutoRepeat(False)
-        self.ButtonNFC = QPushButton(self.centralwidget)
-        self.ButtonNFC.setObjectName(u"ButtonNFC")
-        self.ButtonNFC.setGeometry(QRect(700, 5, 80, 51))
-        self.ButtonNFC.setLayoutDirection(Qt.RightToLeft)
-        self.ButtonNFC.setStyleSheet(u"background-color: rgb(241, 145, 039, 0);\n"
-"color: rgb(255, 255, 255);\n"
-"font: 20pt \"\ubc30\ub2ec\uc758\ubbfc\uc871 \ud55c\ub098\uccb4 Air\";")
-        icon1 = QIcon()
-        icon1.addFile(u"Images/Phone.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.ButtonNFC.setIcon(icon1)
-        self.ButtonNFC.setIconSize(QSize(32, 32))
-        self.KeypadWidget = QWidget(self.centralwidget)
+        self.roundDisplay_6 = QPushButton(LogIn)
+        self.roundDisplay_6.setObjectName(u"roundDisplay_6")
+        self.roundDisplay_6.setGeometry(QRect(305, 210, 50, 50))
+        self.roundDisplay_6.setStyleSheet(u"border-radius: 25px;\n"
+"background-color: rgb(219, 117, 015);\n"
+"")
+        self.roundDisplay_1 = QPushButton(LogIn)
+        self.roundDisplay_1.setObjectName(u"roundDisplay_1")
+        self.roundDisplay_1.setGeometry(QRect(5, 210, 50, 50))
+        self.roundDisplay_1.setStyleSheet(u"border-radius: 25px;\n"
+"background-color: rgb(219, 117, 015);\n"
+"")
+        self.roundDisplay_7 = QPushButton(LogIn)
+        self.roundDisplay_7.setObjectName(u"roundDisplay_7")
+        self.roundDisplay_7.setGeometry(QRect(365, 210, 50, 50))
+        self.roundDisplay_7.setStyleSheet(u"border-radius: 25px;\n"
+"background-color: rgb(219, 117, 015);\n"
+"")
+        self.KeypadWidget = QWidget(LogIn)
         self.KeypadWidget.setObjectName(u"KeypadWidget")
         self.KeypadWidget.setGeometry(QRect(479, 60, 321, 421))
         self.KeypadWidget.setStyleSheet(u"background-color: rgb(251, 233, 197);\n"
@@ -218,115 +301,32 @@ class Ui_LogIn(object):
 
         self.Keypad.addWidget(self.KeypadButton_0, 3, 1, 1, 1)
 
-        self.roundDisplay_1 = QPushButton(self.centralwidget)
-        self.roundDisplay_1.setObjectName(u"roundDisplay_1")
-        self.roundDisplay_1.setGeometry(QRect(5, 210, 50, 50))
-        self.roundDisplay_1.setStyleSheet(u"border-radius: 25px;\n"
-"background-color: rgb(219, 117, 015);\n"
-"")
-        self.roundDisplay_2 = QPushButton(self.centralwidget)
-        self.roundDisplay_2.setObjectName(u"roundDisplay_2")
-        self.roundDisplay_2.setGeometry(QRect(65, 210, 50, 50))
-        self.roundDisplay_2.setStyleSheet(u"border-radius: 25px;\n"
-"background-color: rgb(219, 117, 015);\n"
-"")
-        self.roundDisplay_3 = QPushButton(self.centralwidget)
+        self.roundDisplay_3 = QPushButton(LogIn)
         self.roundDisplay_3.setObjectName(u"roundDisplay_3")
         self.roundDisplay_3.setGeometry(QRect(125, 210, 50, 50))
         self.roundDisplay_3.setStyleSheet(u"border-radius: 25px;\n"
 "background-color: rgb(219, 117, 015);\n"
 "")
-        self.roundDisplay_4 = QPushButton(self.centralwidget)
-        self.roundDisplay_4.setObjectName(u"roundDisplay_4")
-        self.roundDisplay_4.setGeometry(QRect(185, 210, 50, 50))
-        self.roundDisplay_4.setStyleSheet(u"border-radius: 25px;\n"
+        self.roundDisplay_2 = QPushButton(LogIn)
+        self.roundDisplay_2.setObjectName(u"roundDisplay_2")
+        self.roundDisplay_2.setGeometry(QRect(65, 210, 50, 50))
+        self.roundDisplay_2.setStyleSheet(u"border-radius: 25px;\n"
 "background-color: rgb(219, 117, 015);\n"
 "")
-        self.roundDisplay_5 = QPushButton(self.centralwidget)
-        self.roundDisplay_5.setObjectName(u"roundDisplay_5")
-        self.roundDisplay_5.setGeometry(QRect(245, 210, 50, 50))
-        self.roundDisplay_5.setStyleSheet(u"border-radius: 25px;\n"
-"background-color: rgb(219, 117, 015);\n"
-"")
-        self.roundDisplay_6 = QPushButton(self.centralwidget)
-        self.roundDisplay_6.setObjectName(u"roundDisplay_6")
-        self.roundDisplay_6.setGeometry(QRect(305, 210, 50, 50))
-        self.roundDisplay_6.setStyleSheet(u"border-radius: 25px;\n"
-"background-color: rgb(219, 117, 015);\n"
-"")
-        self.roundDisplay_7 = QPushButton(self.centralwidget)
-        self.roundDisplay_7.setObjectName(u"roundDisplay_7")
-        self.roundDisplay_7.setGeometry(QRect(365, 210, 50, 50))
-        self.roundDisplay_7.setStyleSheet(u"border-radius: 25px;\n"
-"background-color: rgb(219, 117, 015);\n"
-"")
-        self.roundDisplay_8 = QPushButton(self.centralwidget)
-        self.roundDisplay_8.setObjectName(u"roundDisplay_8")
-        self.roundDisplay_8.setGeometry(QRect(425, 210, 50, 50))
-        self.roundDisplay_8.setStyleSheet(u"border-radius: 25px;\n"
-"background-color: rgb(219, 117, 015);\n"
-"")
-        self.DialogueShadow = QWidget(self.centralwidget)
-        self.DialogueShadow.setObjectName(u"DialogueShadow")
-        self.DialogueShadow.setEnabled(True)
-        self.DialogueShadow.setGeometry(QRect(0, 0, 800, 480))
-        palette = QPalette()
-        brush1 = QBrush(QColor(255, 255, 255, 255))
-        brush1.setStyle(Qt.SolidPattern)
-        palette.setBrush(QPalette.Active, QPalette.Base, brush1)
-        brush2 = QBrush(QColor(0, 0, 0, 100))
-        brush2.setStyle(Qt.SolidPattern)
-        palette.setBrush(QPalette.Active, QPalette.Window, brush2)
-        palette.setBrush(QPalette.Inactive, QPalette.Base, brush1)
-        palette.setBrush(QPalette.Inactive, QPalette.Window, brush2)
-        palette.setBrush(QPalette.Disabled, QPalette.Base, brush2)
-        palette.setBrush(QPalette.Disabled, QPalette.Window, brush2)
-        self.DialogueShadow.setPalette(palette)
-        self.DialogueShadow.setAutoFillBackground(True)
-        self.DialogueShadow.setStyleSheet(u"")
-        self.DialogueCheck = QWidget(self.DialogueShadow)
-        self.DialogueCheck.setObjectName(u"DialogueCheck")
-        self.DialogueCheck.setGeometry(QRect(200, 140, 400, 200))
-        self.DialogueCheck.setAutoFillBackground(False)
-        self.DialogueCheck.setStyleSheet(u"background-color: rgb(255, 255, 255, 235);\n"
-"border-radius: 25px;")
-        self.DLabelName = QLabel(self.DialogueCheck)
-        self.DLabelName.setObjectName(u"DLabelName")
-        self.DLabelName.setGeometry(QRect(0, 50, 400, 41))
-        self.DLabelName.setStyleSheet(u"font: 24pt \"\ubc30\ub2ec\uc758\ubbfc\uc871 \uc8fc\uc544\";\n"
-"background-color: rgb(255, 255, 255, 0);\n"
-"color: rgb(71, 71, 71);")
-        self.DLabelName.setAlignment(Qt.AlignCenter)
-        self.DLabelQ = QLabel(self.DialogueCheck)
-        self.DLabelQ.setObjectName(u"DLabelQ")
-        self.DLabelQ.setGeometry(QRect(0, 90, 400, 41))
-        self.DLabelQ.setStyleSheet(u"font: 18pt \"\ubc30\ub2ec\uc758\ubbfc\uc871 \uc8fc\uc544\";\n"
-"background-color: rgb(255, 255, 255, 0);\n"
-"color: rgb(71, 71, 71);")
-        self.DLabelQ.setAlignment(Qt.AlignCenter)
-        self.horizontalLayoutWidget = QWidget(self.DialogueCheck)
-        self.horizontalLayoutWidget.setObjectName(u"horizontalLayoutWidget")
-        self.horizontalLayoutWidget.setGeometry(QRect(0, 139, 401, 61))
-        self.horizontalLayout = QHBoxLayout(self.horizontalLayoutWidget)
-        self.horizontalLayout.setObjectName(u"horizontalLayout")
-        self.horizontalLayout.setContentsMargins(0, 0, 0, 0)
-        self.DButtonYes = QPushButton(self.horizontalLayoutWidget)
-        self.DButtonYes.setObjectName(u"DButtonYes")
-        self.DButtonYes.setStyleSheet(u"font: 18pt \"\ubc30\ub2ec\uc758\ubbfc\uc871 \uc8fc\uc544\";\n"
-"color: rgb(72, 112, 242);\n"
-"background-color: rgb(255, 255, 255, 0);")
-
-        self.horizontalLayout.addWidget(self.DButtonYes)
-
-        self.DButtonNo = QPushButton(self.horizontalLayoutWidget)
-        self.DButtonNo.setObjectName(u"DButtonNo")
-        self.DButtonNo.setStyleSheet(u"font: 18pt \"\ubc30\ub2ec\uc758\ubbfc\uc871 \uc8fc\uc544\";\n"
-"color: rgb(232, 77, 33);\n"
-"background-color: rgb(255, 255, 255, 0);")
-
-        self.horizontalLayout.addWidget(self.DButtonNo)
-
-        LogIn.setCentralWidget(self.centralwidget)
+        self.viewMebuBar.raise_()
+        self.ButtonNFC.raise_()
+        self.roundDisplay_5.raise_()
+        self.roundDisplay_4.raise_()
+        self.roundDisplay_8.raise_()
+        self.MenuPageLabel.raise_()
+        self.roundDisplay_6.raise_()
+        self.roundDisplay_1.raise_()
+        self.roundDisplay_7.raise_()
+        self.KeypadWidget.raise_()
+        self.roundDisplay_3.raise_()
+        self.roundDisplay_2.raise_()
+        self.ButtonRegister.raise_()
+        self.DialogueShadow.raise_()
 
         self.retranslateUi(LogIn)
 
@@ -334,11 +334,20 @@ class Ui_LogIn(object):
     # setupUi
 
     def retranslateUi(self, LogIn):
-        LogIn.setWindowTitle(QCoreApplication.translate("LogIn", u"MainWindow", None))
-        self.actionSignUp.setText(QCoreApplication.translate("LogIn", u"SignUp", None))
-        self.MenuPageLabel.setText(QCoreApplication.translate("LogIn", u"<html><head/><body><p align=\"center\"><span style=\" color:#ffffff;\">\ubc88\ud638 \uc785\ub825</span></p></body></html>", None))
-        self.ButtonRegister.setText(QCoreApplication.translate("LogIn", u"\ub4f1\ub85d", None))
+        LogIn.setWindowTitle(QCoreApplication.translate("LogIn", u"Form", None))
         self.ButtonNFC.setText(QCoreApplication.translate("LogIn", u"NFC", None))
+        self.ButtonRegister.setText(QCoreApplication.translate("LogIn", u"\ub4f1\ub85d", None))
+        self.roundDisplay_5.setText("")
+        self.roundDisplay_4.setText("")
+        self.roundDisplay_8.setText("")
+        self.DLabelName.setText(QCoreApplication.translate("LogIn", u"\uc774\uc9c4\uc601 \ub2d8", None))
+        self.DLabelQ.setText(QCoreApplication.translate("LogIn", u"\uc0ac\uc6a9\ud558\uc2dc\uaca0\uc2b5\ub2c8\uae4c?", None))
+        self.DButtonYes.setText(QCoreApplication.translate("LogIn", u"\ud655\uc778", None))
+        self.DButtonNo.setText(QCoreApplication.translate("LogIn", u"\ucde8\uc18c", None))
+        self.MenuPageLabel.setText(QCoreApplication.translate("LogIn", u"<html><head/><body><p align=\"center\"><span style=\" color:#ffffff;\">\ubc88\ud638 \uc785\ub825</span></p></body></html>", None))
+        self.roundDisplay_6.setText("")
+        self.roundDisplay_1.setText("")
+        self.roundDisplay_7.setText("")
         self.KeypadButton_7.setText(QCoreApplication.translate("LogIn", u"7", None))
         self.KeypadButton_8.setText(QCoreApplication.translate("LogIn", u"8", None))
         self.KeypadButton_6.setText(QCoreApplication.translate("LogIn", u"6", None))
@@ -349,17 +358,7 @@ class Ui_LogIn(object):
         self.KeypadButton_5.setText(QCoreApplication.translate("LogIn", u"5", None))
         self.KeypadButton_2.setText(QCoreApplication.translate("LogIn", u"2", None))
         self.KeypadButton_0.setText(QCoreApplication.translate("LogIn", u"0", None))
-        self.roundDisplay_1.setText("")
-        self.roundDisplay_2.setText("")
         self.roundDisplay_3.setText("")
-        self.roundDisplay_4.setText("")
-        self.roundDisplay_5.setText("")
-        self.roundDisplay_6.setText("")
-        self.roundDisplay_7.setText("")
-        self.roundDisplay_8.setText("")
-        self.DLabelName.setText(QCoreApplication.translate("LogIn", u"\uc774\uc9c4\uc601 \ub2d8", None))
-        self.DLabelQ.setText(QCoreApplication.translate("LogIn", u"\uc0ac\uc6a9\ud558\uc2dc\uaca0\uc2b5\ub2c8\uae4c?", None))
-        self.DButtonYes.setText(QCoreApplication.translate("LogIn", u"\ud655\uc778", None))
-        self.DButtonNo.setText(QCoreApplication.translate("LogIn", u"\ucde8\uc18c", None))
+        self.roundDisplay_2.setText("")
     # retranslateUi
 
