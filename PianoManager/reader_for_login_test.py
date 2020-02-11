@@ -11,7 +11,7 @@ class TestDatabaseReader:
         # 세계적인 피아니스트가 꿈인 진영이의 연습량을 표현해보았다.
         self.data = {
             "name": "이진영",
-            "time_used" : "17:12:35"
+            "time_used" : "17:01:25"
             }
 
 
