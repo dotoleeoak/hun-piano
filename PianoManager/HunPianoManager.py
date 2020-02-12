@@ -8,7 +8,7 @@ class MainWindow(QMainWindow):
     
     def __init__(self):
         QMainWindow.__init__(self)
-        self.setWindowTitle("Piano Checker")
+        self.setWindowTitle("Piano Manager")
         self.setFixedSize(800, 480)
         #self.showFullScreen()
 
@@ -21,7 +21,7 @@ class MainWindow(QMainWindow):
         LogInPage.ui.ButtonRegister.clicked.connect(self.showSignUpPage)
         LogInPage.ui.DButtonYes.clicked.connect(self.showInUsePage)
         SignUpPage.ui.buttonHome.clicked.connect(self.showLogInPage)
-        InUsePage.ui.pushButton.clicked.connect(self.showLogInPage)
+        InUsePage.ui.ButtonQuit.clicked.connect(self.showLogInPage)
 
         # Insert pages into QStackedWidget
         self.centralWidgets = QStackedWidget()
@@ -30,14 +30,16 @@ class MainWindow(QMainWindow):
         self.centralWidgets.addWidget(InUsePage)    # index: 2
 
         self.setCentralWidget(self.centralWidgets)
+        
 
     def getCurWidget(self):
         return self.centralWidgets.currentWidget()
+    
 
     def showLogInPage(self):
         print("login")
         self.centralWidgets.setCurrentIndex(0)
-        self.getCurWidget().ui.DialogueShadow.hide()
+        self.getCurWidget().clear()
         
 
     def showSignUpPage(self):
