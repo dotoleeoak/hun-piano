@@ -8,6 +8,13 @@ class SignUp(QMainWindow):
 
         self.ui = Ui_SignUp()
         self.ui.setupUi(self)
+        
+
+    def setPage(self):
+        pass
+
+    def clearPage(self):
+        pass
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)

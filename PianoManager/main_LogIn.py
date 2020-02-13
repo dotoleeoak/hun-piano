@@ -93,7 +93,10 @@ class LogIn(QWidget):
         print("hide!")
         
 
-    def showErrorAnimation(self):
+    def setPage(self):
+        pass
+
+    def clearPage(self):
         pass
 
             
