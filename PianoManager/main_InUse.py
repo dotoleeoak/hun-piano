@@ -22,8 +22,8 @@ class InUse(QWidget):
         self.elapsedTimer = QElapsedTimer()
         self.timer = QTimer(self)
 
-        # Set Page
-        self.setPage()
+        self.ui.UsedTime.setText("00:00:00")
+        self.ui.UserName.setText("")
 
 
     def updateTime(self):
@@ -39,11 +39,14 @@ class InUse(QWidget):
         self.timer.start(500)
         self.userData = self.reader.getCurrentData()
         self.userTime = QTime.fromString(self.userData["time_used"], "hh:mm:ss")
+        self.ui.UsedTime.setText(self.userTime.toString("hh:mm:ss"))
         self.ui.UserName.setText(self.userData["name"])
 
     def clearPage(self):
 
         self.timer.stop()
+        self.ui.UsedTime.setText("00:00:00")
+        self.ui.UserName.setText("")
         
         """TODO: ADD CODES FOR WRITING CURRENT USERTIME TO DB HERE"""
 
