@@ -31,8 +31,8 @@ class TestDatabaseReader:
 
     def passInDatabase(self, password):
 
-        self.currentData = self.data[password]
-        if self.currentData is not None:
+        if password in self.data.keys():
+            self.currentData = self.data[password]
             return (True, self.currentData)
         else:
             return (False, None)
