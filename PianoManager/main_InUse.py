@@ -43,10 +43,9 @@ class InUse(QWidget):
 
     def clearPage(self):
 
-        self.elapsedTimer.stop()
         self.timer.stop()
         
-        """ADD CODES FOR WRITING CURRENT USERTIME TO DB HERE"""
+        """TODO: ADD CODES FOR WRITING CURRENT USERTIME TO DB HERE"""
 
         
         
