@@ -13,68 +13,6 @@
   <property name="windowTitle">
    <string>Form</string>
   </property>
-  <widget class="QPushButton" name="ButtonNFC">
-   <property name="geometry">
-    <rect>
-     <x>700</x>
-     <y>5</y>
-     <width>80</width>
-     <height>51</height>
-    </rect>
-   </property>
-   <property name="layoutDirection">
-    <enum>Qt::RightToLeft</enum>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">background-color: rgb(241, 145, 039, 0);
-color: rgb(255, 255, 255);
-font: 20pt &quot;배달의민족 한나체 Air&quot;;</string>
-   </property>
-   <property name="text">
-    <string>NFC</string>
-   </property>
-   <property name="icon">
-    <iconset>
-     <normaloff>Images/Phone.png</normaloff>Images/Phone.png</iconset>
-   </property>
-   <property name="iconSize">
-    <size>
-     <width>32</width>
-     <height>32</height>
-    </size>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="ButtonRegister">
-   <property name="geometry">
-    <rect>
-     <x>9</x>
-     <y>5</y>
-     <width>91</width>
-     <height>51</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">background-color: rgb(241, 145, 039, 0);
-color: rgb(255, 255, 255);
-font: 20pt &quot;배달의민족 한나체 Air&quot;;</string>
-   </property>
-   <property name="text">
-    <string>등록</string>
-   </property>
-   <property name="icon">
-    <iconset>
-     <normaloff>Images/Document.png</normaloff>Images/Document.png</iconset>
-   </property>
-   <property name="iconSize">
-    <size>
-     <width>32</width>
-     <height>32</height>
-    </size>
-   </property>
-   <property name="autoRepeat">
-    <bool>false</bool>
-   </property>
-  </widget>
   <widget class="QPushButton" name="roundDisplay_5">
    <property name="geometry">
     <rect>
@@ -111,54 +49,6 @@ background-color: rgb(219, 117, 015);
     <string/>
    </property>
   </widget>
-  <widget class="QGraphicsView" name="viewMebuBar">
-   <property name="enabled">
-    <bool>true</bool>
-   </property>
-   <property name="geometry">
-    <rect>
-     <x>0</x>
-     <y>0</y>
-     <width>800</width>
-     <height>60</height>
-    </rect>
-   </property>
-   <property name="autoFillBackground">
-    <bool>false</bool>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">background-color: rgb(241, 145, 39);</string>
-   </property>
-   <property name="backgroundBrush">
-    <brush brushstyle="SolidPattern">
-     <color alpha="255">
-      <red>241</red>
-      <green>145</green>
-      <blue>39</blue>
-     </color>
-    </brush>
-   </property>
-   <property name="foregroundBrush">
-    <brush brushstyle="SolidPattern">
-     <color alpha="255">
-      <red>241</red>
-      <green>145</green>
-      <blue>39</blue>
-     </color>
-    </brush>
-   </property>
-   <property name="interactive">
-    <bool>true</bool>
-   </property>
-   <property name="sceneRect">
-    <rectf>
-     <x>20.000000000000000</x>
-     <y>20.000000000000000</y>
-     <width>400.000000000000000</width>
-     <height>50.000000000000000</height>
-    </rectf>
-   </property>
-  </widget>
   <widget class="QPushButton" name="roundDisplay_8">
    <property name="geometry">
     <rect>
@@ -177,7 +67,7 @@ background-color: rgb(219, 117, 015);
     <string/>
    </property>
   </widget>
-  <widget class="QWidget" name="DialogueShadow" native="true">
+  <widget class="QFrame" name="DialogueShadow">
    <property name="enabled">
     <bool>true</bool>
    </property>
@@ -379,30 +269,6 @@ background-color: rgb(255, 255, 255, 0);</string>
      </layout>
     </widget>
    </widget>
-  </widget>
-  <widget class="QLabel" name="MenuPageLabel">
-   <property name="geometry">
-    <rect>
-     <x>310</x>
-     <y>0</y>
-     <width>200</width>
-     <height>60</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <family>배달의민족 한나체 Air</family>
-     <pointsize>26</pointsize>
-     <weight>75</weight>
-     <bold>true</bold>
-    </font>
-   </property>
-   <property name="text">
-    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; color:#ffffff;&quot;&gt;번호 입력&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-   </property>
-   <property name="alignment">
-    <set>Qt::AlignCenter</set>
-   </property>
   </widget>
   <widget class="QPushButton" name="roundDisplay_6">
    <property name="geometry">
@@ -814,19 +680,123 @@ background-color: rgb(219, 117, 015);
     <string/>
    </property>
   </widget>
-  <zorder>viewMebuBar</zorder>
-  <zorder>ButtonNFC</zorder>
+  <widget class="QFrame" name="MenuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>800</width>
+     <height>60</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(241, 145, 039);</string>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::StyledPanel</enum>
+   </property>
+   <property name="frameShadow">
+    <enum>QFrame::Raised</enum>
+   </property>
+   <widget class="QPushButton" name="ButtonNFC">
+    <property name="geometry">
+     <rect>
+      <x>700</x>
+      <y>5</y>
+      <width>80</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="layoutDirection">
+     <enum>Qt::RightToLeft</enum>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border-radius: 1px;
+background-color: rgba(241, 145, 039, 0);
+color: rgb(255, 255, 255);
+font: 20pt &quot;배달의민족 한나체 Air&quot;;</string>
+    </property>
+    <property name="text">
+     <string>NFC</string>
+    </property>
+    <property name="icon">
+     <iconset>
+      <normaloff>Images/Phone.png</normaloff>Images/Phone.png</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>32</width>
+      <height>32</height>
+     </size>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="ButtonRegister">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>5</y>
+      <width>91</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border-radius: 1px;
+background-color: rgba(241, 145, 039, 0);
+color: rgb(255, 255, 255);
+font: 20pt &quot;배달의민족 한나체 Air&quot;;</string>
+    </property>
+    <property name="text">
+     <string>등록</string>
+    </property>
+    <property name="icon">
+     <iconset>
+      <normaloff>Images/Document.png</normaloff>Images/Document.png</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>32</width>
+      <height>32</height>
+     </size>
+    </property>
+    <property name="autoRepeat">
+     <bool>false</bool>
+    </property>
+   </widget>
+   <widget class="QLabel" name="MenuPageLabel">
+    <property name="geometry">
+     <rect>
+      <x>310</x>
+      <y>0</y>
+      <width>200</width>
+      <height>60</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>배달의민족 한나체 Air</family>
+      <pointsize>26</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; color:#ffffff;&quot;&gt;번호 입력&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+  </widget>
   <zorder>roundDisplay_5</zorder>
   <zorder>roundDisplay_4</zorder>
   <zorder>roundDisplay_8</zorder>
-  <zorder>MenuPageLabel</zorder>
   <zorder>roundDisplay_6</zorder>
   <zorder>roundDisplay_1</zorder>
   <zorder>roundDisplay_7</zorder>
   <zorder>KeypadWidget</zorder>
   <zorder>roundDisplay_3</zorder>
   <zorder>roundDisplay_2</zorder>
-  <zorder>ButtonRegister</zorder>
+  <zorder>MenuBar</zorder>
   <zorder>DialogueShadow</zorder>
  </widget>
  <resources/>

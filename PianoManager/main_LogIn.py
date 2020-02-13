@@ -75,7 +75,7 @@ class LogIn(QWidget):
             self.password = ""
             self.displayIndex = 1
             print("invalid")
-            self.showErrorAnimation()
+            #self.showErrorAnimation()
             
         for i in range(1, 9):
             self.keyDisplays.button(i).setText("")
@@ -93,8 +93,14 @@ class LogIn(QWidget):
         print("hide!")
         
 
-    def showErrorAnimation(self):
+    def setPage(self):
         pass
+
+    def clearPage(self):
+        
+        self.hideDialogueCheck()
+        for i in range(1, 9):
+            self.keyDisplays.button(i).setText("")
 
             
 
