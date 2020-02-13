@@ -16,7 +16,7 @@ class TestDatabaseReader:
         # 평범한 김정원과 비교해보자.
         self.data = {
             "12345678":
-            {,
+            {
                 "name": "이진영",
                 "time_used" : "17:01:25"
             },
@@ -26,12 +26,19 @@ class TestDatabaseReader:
                 "time_used": "00:30:12"
             }}
 
+        self.currentData = {"name": "None", "time_used": "00:00:00"}
+
 
     def passInDatabase(self, password):
 
-        self.
-        if self.data.keys():
-            return (True, self.data)
+        self.currentData = self.data[password]
+        if currentData is not None:
+            return (True, self.currentData)
         else:
             return (False, None)
+        
+
+    def getCurrentData(self):
+
+        return self.currentData
     
