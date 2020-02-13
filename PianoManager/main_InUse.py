@@ -40,7 +40,7 @@ class InUse(QWidget):
         self.userData = self.reader.getCurrentData()
         self.userTime = QTime.fromString(self.userData["time_used"], "hh:mm:ss")
         self.ui.UsedTime.setText(self.userTime.toString("hh:mm:ss"))
-        self.ui.UserName.setText(self.userData["name"])
+        self.ui.UserName.setText(self.userData["name"] + " 님")
 
     def clearPage(self):
 
