@@ -21,7 +21,7 @@ class MainWindow(QMainWindow):
         # Connect pages to switch each others
         LogInPage.ui.ButtonRegister.clicked.connect(partial(self.switchPage, 1))
         LogInPage.ui.DButtonYes.clicked.connect(partial(self.switchPage, 2))
-        SignUpPage.ui.buttonHome.clicked.connect(partial(self.switchPage, 2))
+        SignUpPage.ui.buttonHome.clicked.connect(partial(self.switchPage, 0))
         InUsePage.ui.ButtonQuit.clicked.connect(partial(self.switchPage, 0))
 
         # Insert pages into QStackedWidget
@@ -39,8 +39,8 @@ class MainWindow(QMainWindow):
 
     def switchPage(self, idx):
         self.getCurWidget().clearPage()
+        self.centralWidgets.widget(idx).setPage()
         self.centralWidgets.setCurrentIndex(idx)
-        self.getCurWidget().setPage()
 
         
 
