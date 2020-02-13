@@ -75,7 +75,7 @@ class LogIn(QWidget):
             self.password = ""
             self.displayIndex = 1
             print("invalid")
-            self.showErrorAnimation()
+            #self.showErrorAnimation()
             
         for i in range(1, 9):
             self.keyDisplays.button(i).setText("")
