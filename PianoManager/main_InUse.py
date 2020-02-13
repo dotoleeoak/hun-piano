@@ -14,19 +14,16 @@ class InUse(QWidget):
         self.ui.setupUi(self)
 
         # reader
-        reader = TestDatabaseReader()
-        self.userData = reader.getCurrentData()
-        self.userTime = QTime.fromString(self.userData["time_used"], "hh:mm:ss")
+        self.reader = TestDatabaseReader()
+        self.userData = dict()
+        self.userTime = QTime(0, 0)
 
         # Set timer
         self.elapsedTimer = QElapsedTimer()
         self.timer = QTimer(self)
-        self.elapsedTimer.start()
-        self.timer.timeout.connect(self.updateTime)
-        self.timer.start(500)
 
         # Set Page
-        self.ui.UserName.setText(self.userData["name"])
+        self.setPage()
 
 
     def updateTime(self):
@@ -34,6 +31,25 @@ class InUse(QWidget):
         self.ui.UsedTime.setText(
             (self.userTime.addMSecs(self.elapsedTimer.elapsed())).toString("hh:mm:ss")
             )
+
+    def setPage(self):
+        
+        self.elapsedTimer.start()
+        self.timer.timeout.connect(self.updateTime)
+        self.timer.start(500)
+        self.userData = self.reader.getCurrentData()
+        self.userTime = QTime.fromString(self.userData["time_used"], "hh:mm:ss")
+        self.ui.UserName.setText(self.userData["name"])
+
+    def clearPage(self):
+
+        self.elapsedTimer.stop()
+        self.timer.stop()
+        
+        """ADD CODES FOR WRITING CURRENT USERTIME TO DB HERE"""
+
+        
+        
 
 
 if __name__ == '__main__':
