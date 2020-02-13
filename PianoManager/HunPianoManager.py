@@ -38,9 +38,9 @@ class MainWindow(QMainWindow):
     
 
     def switchPage(self, idx):
-        self.getCurWidget().clear()
+        self.getCurWidget().clearPage()
         self.centralWidgets.setCurrentIndex(idx)
-        self.getCurWidget().set()
+        self.getCurWidget().setPage()
 
         
 
