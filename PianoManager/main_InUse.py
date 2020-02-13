@@ -1,13 +1,6 @@
 import sys
 from functools import partial
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-from PySide2.QtCore import QTime
->>>>>>> LinkingPages
-=======
 from PySide2.QtCore import QElapsedTimer, QTimer, QTime
->>>>>>> LinkingPages
 from PySide2.QtWidgets import *
 from ui_InUse import Ui_InUse
 from reader_for_login_test import TestDatabaseReader
@@ -19,43 +12,29 @@ class InUse(QWidget):
         # UI for the page
         self.ui = Ui_InUse()
         self.ui.setupUi(self)
-<<<<<<< HEAD
-<<<<<<< HEAD
 
-            
-=======
-        
-        # Set start_time to current time
-        self.start_time = QTime()
-        self.start_time.start()
-=======
->>>>>>> LinkingPages
+        # reader
+        reader = TestDatabaseReader()
+        self.userData = reader.getCurrentData()
+        self.userTime = QTime.fromString(self.userData["time_used"], "hh:mm:ss")
 
         # Set timer
         self.elapsedTimer = QElapsedTimer()
         self.timer = QTimer(self)
-
-        # Set Page
-        self.setPage()
-
-
-    def updateTime(self):
-
-        self.ui.UsedTime.setText(
-            (QTime(0, 0).addMSecs(self.elapsedTimer.elapsed())).toString("hh:mm:ss")
-            )
-
-    def setPage(self):
         self.elapsedTimer.start()
         self.timer.timeout.connect(self.updateTime)
         self.timer.start(500)
-        
 
-    def clearPage(self):
-        self.
+        # Set Page
+        self.ui.UserName.setText(self.userData["name"])
 
+
+    def updateTime(self):
         
->>>>>>> LinkingPages
+        self.ui.UsedTime.setText(
+            (self.userTime.addMSecs(self.elapsedTimer.elapsed())).toString("hh:mm:ss")
+            )
+
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)
