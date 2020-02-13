@@ -97,7 +97,10 @@ class LogIn(QWidget):
         pass
 
     def clearPage(self):
-        pass
+        
+        self.hideDialogueCheck()
+        for i in range(1, 9):
+            self.keyDisplays.button(i).setText("")
 
             
 
