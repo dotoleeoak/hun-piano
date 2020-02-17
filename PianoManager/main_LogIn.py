@@ -1,8 +1,11 @@
 import sys
 from functools import partial
+from PySide2.QtCore import Slot
 from PySide2.QtWidgets import *
 from ui_LogIn import Ui_LogIn
 from reader_for_login_test import TestDatabaseReader
+from NFC.NFCReaderForTest import NFCReader
+    
 
 class LogIn(QWidget):
     def __init__(self, parent = None):
@@ -10,6 +13,9 @@ class LogIn(QWidget):
 
         # Database Reader Module
         self.dbReader = TestDatabaseReader()
+        # NFC Reader Thread
+        self.nfcReader = NFCReader()
+        self.nfcReader.start()
 
         # UI for the page
         self.ui = Ui_LogIn()
@@ -49,9 +55,10 @@ class LogIn(QWidget):
 
         self.ui.DButtonYes.clicked.connect(lambda : print("playing piano!"))
         self.ui.DButtonNo.clicked.connect(lambda: self.hideDialogueCheck())
+        self.nfcReader.nfc_connect.connect(self.checkValidUid)
         
 
-    # input a password and display it
+    # Input a password and display it
     def writeNumber(self, num):
         
         self.keyDisplays.button(self.displayIndex).setText(str(num))
@@ -61,24 +68,32 @@ class LogIn(QWidget):
             self.checkValidPass(self.password)
             
 
-    # check whether the password is valid
+    # Check whether the password is valid
     def checkValidPass(self, password):
 
-        (isInDB, data) = self.dbReader.passInDatabase(password) # (bool, data)
+        (isInDB, data) = self.dbReader.isPassInDatabase(password) # (bool, data)
         
-        self.password = ""
-        self.displayIndex = 1
         if isInDB:
             print("valid")
             self.showDialogueCheck(data["name"])
         else:
-            self.password = ""
-            self.displayIndex = 1
             print("invalid")
             #self.showErrorAnimation()
-            
-        for i in range(1, 9):
-            self.keyDisplays.button(i).setText("")
+        self.clearPassword()
+        
+
+    # When NFC signal detected
+    @Slot(str)
+    def checkValidUid(self, uid):
+        
+        (isInDB, data) = self.dbReader.isUidInDatabase(uid) # (bool, data)
+
+        if isInDB:
+            print("valid")
+            self.showDialogueCheck(data["name"])
+        else:
+            print("invalid")
+        self.clearPassword()
     
 
     def showDialogueCheck(self, name):
@@ -92,17 +107,36 @@ class LogIn(QWidget):
         self.ui.DialogueShadow.hide()
         print("hide!")
         
-
-    def setPage(self):
-        pass
-
-    def clearPage(self):
         
-        self.hideDialogueCheck()
+    def clearPassword(self):
+        
+        self.password = ""
+        self.displayIndex = 1
         for i in range(1, 9):
             self.keyDisplays.button(i).setText("")
+        
 
+    def setPage(self):
+        
+        if not self.nfcReader.isRunning():
+            print("thread run")
+            self.nfcReader.start()
             
+
+    def clearPage(self):
+
+        if not self.nfcReader.isFinished():
+            print("thread quit")
+            self.nfcReader.quit()
+        self.hideDialogueCheck()
+        self.clearPassword()
+            
+
+    def __del__(self):
+
+        self.nfcReader.quit()
+        self.nfcReader.terminate()
+        self.nfcReader.wait()
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)
