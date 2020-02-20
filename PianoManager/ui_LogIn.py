@@ -22,22 +22,28 @@ class Ui_LogIn(object):
         LogIn.resize(800, 480)
         self.roundDisplay_5 = QPushButton(LogIn)
         self.roundDisplay_5.setObjectName(u"roundDisplay_5")
-        self.roundDisplay_5.setGeometry(QRect(245, 210, 50, 50))
+        self.roundDisplay_5.setGeometry(QRect(245, 240, 50, 50))
+        font = QFont()
+        font.setFamily(u"\ubc30\ub2ec\uc758\ubbfc\uc871 \uc8fc\uc544")
+        font.setPointSize(15)
+        self.roundDisplay_5.setFont(font)
         self.roundDisplay_5.setStyleSheet(u"border-radius: 25px;\n"
 "background-color: rgb(219, 117, 015);\n"
-"")
+"color: rgb(255, 253, 233);")
         self.roundDisplay_4 = QPushButton(LogIn)
         self.roundDisplay_4.setObjectName(u"roundDisplay_4")
-        self.roundDisplay_4.setGeometry(QRect(185, 210, 50, 50))
+        self.roundDisplay_4.setGeometry(QRect(185, 240, 50, 50))
+        self.roundDisplay_4.setFont(font)
         self.roundDisplay_4.setStyleSheet(u"border-radius: 25px;\n"
 "background-color: rgb(219, 117, 015);\n"
-"")
+"color: rgb(255, 253, 233);")
         self.roundDisplay_8 = QPushButton(LogIn)
         self.roundDisplay_8.setObjectName(u"roundDisplay_8")
-        self.roundDisplay_8.setGeometry(QRect(425, 210, 50, 50))
+        self.roundDisplay_8.setGeometry(QRect(425, 240, 50, 50))
+        self.roundDisplay_8.setFont(font)
         self.roundDisplay_8.setStyleSheet(u"border-radius: 25px;\n"
 "background-color: rgb(219, 117, 015);\n"
-"")
+"color: rgb(255, 253, 233);")
         self.DialogueShadow = QFrame(LogIn)
         self.DialogueShadow.setObjectName(u"DialogueShadow")
         self.DialogueShadow.setEnabled(True)
@@ -114,25 +120,25 @@ class Ui_LogIn(object):
 
         self.roundDisplay_6 = QPushButton(LogIn)
         self.roundDisplay_6.setObjectName(u"roundDisplay_6")
-        self.roundDisplay_6.setGeometry(QRect(305, 210, 50, 50))
+        self.roundDisplay_6.setGeometry(QRect(305, 240, 50, 50))
+        self.roundDisplay_6.setFont(font)
         self.roundDisplay_6.setStyleSheet(u"border-radius: 25px;\n"
 "background-color: rgb(219, 117, 015);\n"
-"")
+"color: rgb(255, 253, 233);")
         self.roundDisplay_1 = QPushButton(LogIn)
         self.roundDisplay_1.setObjectName(u"roundDisplay_1")
-        self.roundDisplay_1.setGeometry(QRect(5, 210, 50, 50))
-        font = QFont()
-        font.setFamily(u"\ubc30\ub2ec\uc758\ubbfc\uc871 \ud55c\ub098\uccb4 Air")
+        self.roundDisplay_1.setGeometry(QRect(5, 240, 50, 50))
         self.roundDisplay_1.setFont(font)
         self.roundDisplay_1.setStyleSheet(u"border-radius: 25px;\n"
 "background-color: rgb(219, 117, 015);\n"
-"")
+"color: rgb(255, 253, 233);")
         self.roundDisplay_7 = QPushButton(LogIn)
         self.roundDisplay_7.setObjectName(u"roundDisplay_7")
-        self.roundDisplay_7.setGeometry(QRect(365, 210, 50, 50))
+        self.roundDisplay_7.setGeometry(QRect(365, 240, 50, 50))
+        self.roundDisplay_7.setFont(font)
         self.roundDisplay_7.setStyleSheet(u"border-radius: 25px;\n"
 "background-color: rgb(219, 117, 015);\n"
-"")
+"color: rgb(255, 253, 233);")
         self.KeypadWidget = QWidget(LogIn)
         self.KeypadWidget.setObjectName(u"KeypadWidget")
         self.KeypadWidget.setGeometry(QRect(479, 60, 321, 421))
@@ -286,16 +292,18 @@ class Ui_LogIn(object):
 
         self.roundDisplay_3 = QPushButton(LogIn)
         self.roundDisplay_3.setObjectName(u"roundDisplay_3")
-        self.roundDisplay_3.setGeometry(QRect(125, 210, 50, 50))
+        self.roundDisplay_3.setGeometry(QRect(125, 240, 50, 50))
+        self.roundDisplay_3.setFont(font)
         self.roundDisplay_3.setStyleSheet(u"border-radius: 25px;\n"
 "background-color: rgb(219, 117, 015);\n"
-"")
+"color: rgb(255, 253, 233);")
         self.roundDisplay_2 = QPushButton(LogIn)
         self.roundDisplay_2.setObjectName(u"roundDisplay_2")
-        self.roundDisplay_2.setGeometry(QRect(65, 210, 50, 50))
+        self.roundDisplay_2.setGeometry(QRect(65, 240, 50, 50))
+        self.roundDisplay_2.setFont(font)
         self.roundDisplay_2.setStyleSheet(u"border-radius: 25px;\n"
 "background-color: rgb(219, 117, 015);\n"
-"")
+"color: rgb(255, 253, 233);")
         self.MenuBar = QFrame(LogIn)
         self.MenuBar.setObjectName(u"MenuBar")
         self.MenuBar.setGeometry(QRect(0, 0, 800, 60))
@@ -355,9 +363,6 @@ class Ui_LogIn(object):
 
     def retranslateUi(self, LogIn):
         LogIn.setWindowTitle(QCoreApplication.translate("LogIn", u"Form", None))
-        self.roundDisplay_5.setText("")
-        self.roundDisplay_4.setText("")
-        self.roundDisplay_8.setText("")
 #if QT_CONFIG(accessibility)
         self.DialogueShadow.setAccessibleName("")
 #endif // QT_CONFIG(accessibility)
@@ -365,9 +370,6 @@ class Ui_LogIn(object):
         self.DLabelQ.setText(QCoreApplication.translate("LogIn", u"\uc0ac\uc6a9\ud558\uc2dc\uaca0\uc2b5\ub2c8\uae4c?", None))
         self.DButtonYes.setText(QCoreApplication.translate("LogIn", u"\ud655\uc778", None))
         self.DButtonNo.setText(QCoreApplication.translate("LogIn", u"\ucde8\uc18c", None))
-        self.roundDisplay_6.setText("")
-        self.roundDisplay_1.setText("")
-        self.roundDisplay_7.setText("")
 #if QT_CONFIG(accessibility)
         self.KeypadWidget.setAccessibleName(QCoreApplication.translate("LogIn", u"KeyboardWidget", None))
 #endif // QT_CONFIG(accessibility)
@@ -381,8 +383,6 @@ class Ui_LogIn(object):
         self.KeypadButton_5.setText(QCoreApplication.translate("LogIn", u"5", None))
         self.KeypadButton_2.setText(QCoreApplication.translate("LogIn", u"2", None))
         self.KeypadButton_0.setText(QCoreApplication.translate("LogIn", u"0", None))
-        self.roundDisplay_3.setText("")
-        self.roundDisplay_2.setText("")
         self.ButtonNFC.setText(QCoreApplication.translate("LogIn", u"NFC", None))
         self.ButtonRegister.setText(QCoreApplication.translate("LogIn", u"\ub4f1\ub85d", None))
         self.MenuPageLabel.setText(QCoreApplication.translate("LogIn", u"<html><head/><body><p align=\"center\"><span style=\" color:#ffffff;\">\ubc88\ud638 \uc785\ub825</span></p></body></html>", None))

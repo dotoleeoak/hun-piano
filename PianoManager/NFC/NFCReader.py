@@ -18,7 +18,7 @@ class NFCReader(QThread):
             (status, TagType) = self.nfc.MFRC522_Request(self.nfc.PICC_REQIDL)
 
             if status == self.nfc.MI_OK:
-                print ("Card detected")
+                print("Card detected")
 
                 # Get the UID of the card
                 if status == self.nfc.MI_OK:

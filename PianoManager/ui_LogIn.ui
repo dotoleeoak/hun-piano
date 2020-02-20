@@ -17,54 +17,63 @@
    <property name="geometry">
     <rect>
      <x>245</x>
-     <y>210</y>
+     <y>240</y>
      <width>50</width>
      <height>50</height>
     </rect>
    </property>
+   <property name="font">
+    <font>
+     <family>배달의민족 주아</family>
+     <pointsize>15</pointsize>
+    </font>
+   </property>
    <property name="styleSheet">
     <string notr="true">border-radius: 25px;
 background-color: rgb(219, 117, 015);
-</string>
-   </property>
-   <property name="text">
-    <string/>
+color: rgb(255, 253, 233);</string>
    </property>
   </widget>
   <widget class="QPushButton" name="roundDisplay_4">
    <property name="geometry">
     <rect>
      <x>185</x>
-     <y>210</y>
+     <y>240</y>
      <width>50</width>
      <height>50</height>
     </rect>
    </property>
+   <property name="font">
+    <font>
+     <family>배달의민족 주아</family>
+     <pointsize>15</pointsize>
+    </font>
+   </property>
    <property name="styleSheet">
     <string notr="true">border-radius: 25px;
 background-color: rgb(219, 117, 015);
-</string>
-   </property>
-   <property name="text">
-    <string/>
+color: rgb(255, 253, 233);</string>
    </property>
   </widget>
   <widget class="QPushButton" name="roundDisplay_8">
    <property name="geometry">
     <rect>
      <x>425</x>
-     <y>210</y>
+     <y>240</y>
      <width>50</width>
      <height>50</height>
     </rect>
    </property>
+   <property name="font">
+    <font>
+     <family>배달의민족 주아</family>
+     <pointsize>15</pointsize>
+    </font>
+   </property>
    <property name="styleSheet">
     <string notr="true">border-radius: 25px;
 background-color: rgb(219, 117, 015);
-</string>
-   </property>
-   <property name="text">
-    <string/>
+color: rgb(255, 253, 233);</string>
    </property>
   </widget>
   <widget class="QFrame" name="DialogueShadow">
@@ -274,59 +283,63 @@ background-color: rgb(255, 255, 255, 0);</string>
    <property name="geometry">
     <rect>
      <x>305</x>
-     <y>210</y>
-     <width>50</width>
-     <height>50</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">border-radius: 25px;
-background-color: rgb(219, 117, 015);
-</string>
-   </property>
-   <property name="text">
-    <string/>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="roundDisplay_1">
-   <property name="geometry">
-    <rect>
-     <x>5</x>
-     <y>210</y>
+     <y>240</y>
      <width>50</width>
      <height>50</height>
     </rect>
    </property>
    <property name="font">
     <font>
-     <family>배달의민족 한나체 Air</family>
+     <family>배달의민족 주아</family>
+     <pointsize>15</pointsize>
     </font>
    </property>
    <property name="styleSheet">
     <string notr="true">border-radius: 25px;
 background-color: rgb(219, 117, 015);
-</string>
+color: rgb(255, 253, 233);</string>
    </property>
-   <property name="text">
-    <string/>
+  </widget>
+  <widget class="QPushButton" name="roundDisplay_1">
+   <property name="geometry">
+    <rect>
+     <x>5</x>
+     <y>240</y>
+     <width>50</width>
+     <height>50</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>배달의민족 주아</family>
+     <pointsize>15</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">border-radius: 25px;
+background-color: rgb(219, 117, 015);
+color: rgb(255, 253, 233);</string>
    </property>
   </widget>
   <widget class="QPushButton" name="roundDisplay_7">
    <property name="geometry">
     <rect>
      <x>365</x>
-     <y>210</y>
+     <y>240</y>
      <width>50</width>
      <height>50</height>
     </rect>
    </property>
+   <property name="font">
+    <font>
+     <family>배달의민족 주아</family>
+     <pointsize>15</pointsize>
+    </font>
+   </property>
    <property name="styleSheet">
     <string notr="true">border-radius: 25px;
 background-color: rgb(219, 117, 015);
-</string>
-   </property>
-   <property name="text">
-    <string/>
+color: rgb(255, 253, 233);</string>
    </property>
   </widget>
   <widget class="QWidget" name="KeypadWidget" native="true">
@@ -648,36 +661,42 @@ border-color: rgb(255, 188, 50);
    <property name="geometry">
     <rect>
      <x>125</x>
-     <y>210</y>
+     <y>240</y>
      <width>50</width>
      <height>50</height>
     </rect>
    </property>
+   <property name="font">
+    <font>
+     <family>배달의민족 주아</family>
+     <pointsize>15</pointsize>
+    </font>
+   </property>
    <property name="styleSheet">
     <string notr="true">border-radius: 25px;
 background-color: rgb(219, 117, 015);
-</string>
-   </property>
-   <property name="text">
-    <string/>
+color: rgb(255, 253, 233);</string>
    </property>
   </widget>
   <widget class="QPushButton" name="roundDisplay_2">
    <property name="geometry">
     <rect>
      <x>65</x>
-     <y>210</y>
+     <y>240</y>
      <width>50</width>
      <height>50</height>
     </rect>
    </property>
+   <property name="font">
+    <font>
+     <family>배달의민족 주아</family>
+     <pointsize>15</pointsize>
+    </font>
+   </property>
    <property name="styleSheet">
     <string notr="true">border-radius: 25px;
 background-color: rgb(219, 117, 015);
-</string>
-   </property>
-   <property name="text">
-    <string/>
+color: rgb(255, 253, 233);</string>
    </property>
   </widget>
   <widget class="QFrame" name="MenuBar">
