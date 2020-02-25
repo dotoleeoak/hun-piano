@@ -3,12 +3,13 @@
 # 로그인 페이지 테스트를 위해 임의로 만들어보았다.
 # 와! 객체지향!
 
+
 class TestDatabaseReader:
     # for Singleton
-    def __new__(self):
-        if not hasattr(self, 'instance'):
-            self.instance = super(TestDatabaseReader, self).__new__(self)
-        return self.instance
+    def __new__(cls):
+        if not hasattr(cls, 'instance'):
+            cls.instance = super(TestDatabaseReader, cls).__new__(cls)
+        return cls.instance
     
     def __init__(self):
         # 데이터 방식이 어떨지 모르지만 임의로 만든 예시 데이터.

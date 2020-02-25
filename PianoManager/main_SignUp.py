@@ -1,6 +1,7 @@
 import sys
 from PySide2.QtWidgets import *
-from ui_SignUp import Ui_SignUp
+from UI.ui_SignUp import Ui_SignUp
+
 
 class SignUp(QMainWindow):
     def __init__(self, parent = None):
@@ -8,13 +9,13 @@ class SignUp(QMainWindow):
 
         self.ui = Ui_SignUp()
         self.ui.setupUi(self)
-        
 
     def setPage(self):
         pass
 
     def clearPage(self):
         pass
+
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)

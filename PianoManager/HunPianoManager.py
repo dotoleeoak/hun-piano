@@ -45,6 +45,7 @@ class MainWindow(QMainWindow):
 class PianoManager(QApplication):
 
     def __init__(self, argv):
+        
         QApplication.__init__(self, argv)
 
         self.window = MainWindow()
@@ -52,6 +53,9 @@ class PianoManager(QApplication):
 
 
 if __name__ == '__main__':
+
+    # import os
+    # os.environ["QT_IM_MODULE"] = "qtvirtualkeyboard"
 
     app = PianoManager(sys.argv)
     sys.exit(app.exec_())
