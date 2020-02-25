@@ -3,17 +3,18 @@
 ################################################################################
 ## Form generated from reading UI file 'ui_LogIn.ui'
 ##
-## Created by: Qt User Interface Compiler version 5.14.0
+## Created by: Qt User Interface Compiler version 5.14.1
 ##
 ## WARNING! All changes made in this file will be lost when recompiling UI file!
 ################################################################################
 
 from PySide2.QtCore import (QCoreApplication, QMetaObject, QObject, QPoint,
     QRect, QSize, QUrl, Qt)
-from PySide2.QtGui import (QBrush, QColor, QConicalGradient, QFont,
+from PySide2.QtGui import (QBrush, QColor, QConicalGradient, QCursor, QFont,
     QFontDatabase, QIcon, QLinearGradient, QPalette, QPainter, QPixmap,
     QRadialGradient)
 from PySide2.QtWidgets import *
+
 
 class Ui_LogIn(object):
     def setupUi(self, LogIn):
@@ -78,14 +79,14 @@ class Ui_LogIn(object):
         self.DLabelName.setObjectName(u"DLabelName")
         self.DLabelName.setGeometry(QRect(0, 50, 400, 41))
         self.DLabelName.setStyleSheet(u"font: 24pt \"\ubc30\ub2ec\uc758\ubbfc\uc871 \uc8fc\uc544\";\n"
-"background-color: rgb(255, 255, 255, 0);\n"
+"background-color: rgba(255, 255, 255, 0);\n"
 "color: rgb(71, 71, 71);")
         self.DLabelName.setAlignment(Qt.AlignCenter)
         self.DLabelQ = QLabel(self.DialogueCheck)
         self.DLabelQ.setObjectName(u"DLabelQ")
         self.DLabelQ.setGeometry(QRect(0, 90, 400, 41))
         self.DLabelQ.setStyleSheet(u"font: 18pt \"\ubc30\ub2ec\uc758\ubbfc\uc871 \uc8fc\uc544\";\n"
-"background-color: rgb(255, 255, 255, 0);\n"
+"background-color: rgba(255, 255, 255, 0);\n"
 "color: rgb(71, 71, 71);")
         self.DLabelQ.setAlignment(Qt.AlignCenter)
         self.horizontalLayoutWidget = QWidget(self.DialogueCheck)
@@ -104,7 +105,7 @@ class Ui_LogIn(object):
         self.DButtonYes.setSizePolicy(sizePolicy1)
         self.DButtonYes.setStyleSheet(u"font: 18pt \"\ubc30\ub2ec\uc758\ubbfc\uc871 \uc8fc\uc544\";\n"
 "color: rgb(72, 112, 242);\n"
-"background-color: rgb(255, 255, 255, 0);")
+"background-color: rgba(255, 255, 255, 0);")
 
         self.horizontalLayout.addWidget(self.DButtonYes)
 
@@ -114,7 +115,7 @@ class Ui_LogIn(object):
         self.DButtonNo.setSizePolicy(sizePolicy1)
         self.DButtonNo.setStyleSheet(u"font: 18pt \"\ubc30\ub2ec\uc758\ubbfc\uc871 \uc8fc\uc544\";\n"
 "color: rgb(232, 77, 33);\n"
-"background-color: rgb(255, 255, 255, 0);")
+"background-color: rgba(255, 255, 255, 0);")
 
         self.horizontalLayout.addWidget(self.DButtonNo)
 
@@ -341,7 +342,7 @@ class Ui_LogIn(object):
         font1.setFamily(u"\ubc30\ub2ec\uc758\ubbfc\uc871 \ud55c\ub098\uccb4 Air")
         font1.setPointSize(26)
         font1.setBold(True)
-        font1.setWeight(75);
+        font1.setWeight(75)
         self.MenuPageLabel.setFont(font1)
         self.MenuPageLabel.setAlignment(Qt.AlignCenter)
         self.roundDisplay_5.raise_()
