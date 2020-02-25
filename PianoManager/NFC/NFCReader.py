@@ -9,7 +9,6 @@ class NFCReader(QThread):
     def __init__(self):
         super().__init__()
         self.nfc = MFRC522()
-        
 
     def run(self):
         
@@ -30,7 +29,6 @@ class NFCReader(QThread):
                     self.nfc_connect.emit(None)
 
             self.msleep(100)
-            
 
     def start(self):
         self.reading = True
@@ -45,4 +43,3 @@ class NFCReader(QThread):
         for i in uid:
             uid_str = format(i, '02X') + uid_str
         return uid_str
-            
