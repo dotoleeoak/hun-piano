@@ -1,9 +1,9 @@
 import sys
-from functools import partial
 from PySide2.QtCore import QElapsedTimer, QTimer, QTime
 from PySide2.QtWidgets import *
 from UI.ui_InUse import Ui_InUse
 from reader_for_login_test import TestDatabaseReader
+
 
 class InUse(QWidget):
     def __init__(self, parent = None):
@@ -24,7 +24,6 @@ class InUse(QWidget):
 
         self.ui.UsedTime.setText("00:00:00")
         self.ui.UserName.setText("")
-
 
     def updateTime(self):
         
@@ -49,9 +48,6 @@ class InUse(QWidget):
         self.ui.UserName.setText("")
         
         """TODO: ADD CODES FOR WRITING CURRENT USERTIME TO DB HERE"""
-
-        
-        
 
 
 if __name__ == '__main__':
