@@ -14,6 +14,11 @@ class SignUp(QMainWindow):
         pass
 
     def clearPage(self):
+        self.ui.editName.clear()
+        self.ui.editID.clear()
+        self.ui.editContact1.clear()
+        self.ui.editContact2.clear()
+        self.ui.editContact3.clear()
         pass
 
 
