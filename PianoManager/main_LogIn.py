@@ -41,14 +41,14 @@ class LogIn(QWidget):
         self.keypadButtons.addButton(self.ui.KeypadButton_9, 9)
 
         self.keyDisplays = QButtonGroup()
-        self.keyDisplays.addButton(self.ui.roundDisplay_1, 1)
-        self.keyDisplays.addButton(self.ui.roundDisplay_2, 2)
-        self.keyDisplays.addButton(self.ui.roundDisplay_3, 3)
-        self.keyDisplays.addButton(self.ui.roundDisplay_4, 4)
-        self.keyDisplays.addButton(self.ui.roundDisplay_5, 5)
-        self.keyDisplays.addButton(self.ui.roundDisplay_6, 6)
-        self.keyDisplays.addButton(self.ui.roundDisplay_7, 7)
-        self.keyDisplays.addButton(self.ui.roundDisplay_8, 8)
+        self.keyDisplays.addButton(self.ui.NumberDisplay_1, 1)
+        self.keyDisplays.addButton(self.ui.NumberDisplay_2, 2)
+        self.keyDisplays.addButton(self.ui.NumberDisplay_3, 3)
+        self.keyDisplays.addButton(self.ui.NumberDisplay_4, 4)
+        self.keyDisplays.addButton(self.ui.NumberDisplay_5, 5)
+        self.keyDisplays.addButton(self.ui.NumberDisplay_6, 6)
+        self.keyDisplays.addButton(self.ui.NumberDisplay_7, 7)
+        self.keyDisplays.addButton(self.ui.NumberDisplay_8, 8)
 
         self.displayIndex = 1
         self.password = ""

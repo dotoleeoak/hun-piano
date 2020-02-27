@@ -13,68 +13,1137 @@
   <property name="windowTitle">
    <string>Form</string>
   </property>
-  <widget class="QPushButton" name="roundDisplay_5">
+  <widget class="QFrame" name="KeypadFrame">
    <property name="geometry">
     <rect>
-     <x>245</x>
-     <y>240</y>
-     <width>50</width>
-     <height>50</height>
+     <x>0</x>
+     <y>250</y>
+     <width>800</width>
+     <height>230</height>
     </rect>
    </property>
-   <property name="font">
-    <font>
-     <family>배달의민족 주아</family>
-     <pointsize>15</pointsize>
-    </font>
+   <property name="palette">
+    <palette>
+     <active>
+      <colorrole role="Button">
+       <brush brushstyle="SolidPattern">
+        <color alpha="255">
+         <red>255</red>
+         <green>255</green>
+         <blue>255</blue>
+        </color>
+       </brush>
+      </colorrole>
+      <colorrole role="Base">
+       <brush brushstyle="SolidPattern">
+        <color alpha="255">
+         <red>255</red>
+         <green>255</green>
+         <blue>255</blue>
+        </color>
+       </brush>
+      </colorrole>
+      <colorrole role="Window">
+       <brush brushstyle="SolidPattern">
+        <color alpha="255">
+         <red>255</red>
+         <green>255</green>
+         <blue>255</blue>
+        </color>
+       </brush>
+      </colorrole>
+     </active>
+     <inactive>
+      <colorrole role="Button">
+       <brush brushstyle="SolidPattern">
+        <color alpha="255">
+         <red>255</red>
+         <green>255</green>
+         <blue>255</blue>
+        </color>
+       </brush>
+      </colorrole>
+      <colorrole role="Base">
+       <brush brushstyle="SolidPattern">
+        <color alpha="255">
+         <red>255</red>
+         <green>255</green>
+         <blue>255</blue>
+        </color>
+       </brush>
+      </colorrole>
+      <colorrole role="Window">
+       <brush brushstyle="SolidPattern">
+        <color alpha="255">
+         <red>255</red>
+         <green>255</green>
+         <blue>255</blue>
+        </color>
+       </brush>
+      </colorrole>
+     </inactive>
+     <disabled>
+      <colorrole role="Button">
+       <brush brushstyle="SolidPattern">
+        <color alpha="255">
+         <red>255</red>
+         <green>255</green>
+         <blue>255</blue>
+        </color>
+       </brush>
+      </colorrole>
+      <colorrole role="Base">
+       <brush brushstyle="SolidPattern">
+        <color alpha="255">
+         <red>255</red>
+         <green>255</green>
+         <blue>255</blue>
+        </color>
+       </brush>
+      </colorrole>
+      <colorrole role="Window">
+       <brush brushstyle="SolidPattern">
+        <color alpha="255">
+         <red>255</red>
+         <green>255</green>
+         <blue>255</blue>
+        </color>
+       </brush>
+      </colorrole>
+     </disabled>
+    </palette>
    </property>
    <property name="styleSheet">
-    <string notr="true">border-radius: 25px;
-background-color: rgb(219, 117, 015);
-color: rgb(255, 253, 233);</string>
+    <string notr="true">background-color: rgb(255, 255, 255);
+</string>
    </property>
+   <widget class="QFrame" name="Keypad">
+    <property name="geometry">
+     <rect>
+      <x>116</x>
+      <y>25</y>
+      <width>568</width>
+      <height>180</height>
+     </rect>
+    </property>
+    <widget class="QPushButton" name="KeypadButton_9">
+     <property name="geometry">
+      <rect>
+       <x>352</x>
+       <y>93</y>
+       <width>80</width>
+       <height>80</height>
+      </rect>
+     </property>
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>80</width>
+       <height>80</height>
+      </size>
+     </property>
+     <property name="font">
+      <font>
+       <family>배달의민족 도현</family>
+       <pointsize>36</pointsize>
+       <weight>50</weight>
+       <italic>false</italic>
+       <bold>false</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton
+{
+	border-radius: 3px;
+	font: 36pt &quot;배달의민족 도현&quot;;
+	color: rgb(255, 188, 50);
+	background-color: rgb(255, 255, 255);
+	border-color: rgb(255, 188, 50);
+}
+
+QPushButton:hover
+{
+	background-color: rgb(223, 163, 43);
+	color: rgb(255, 255, 255);
+}</string>
+     </property>
+     <property name="text">
+      <string>9</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="KeypadButton_1">
+     <property name="geometry">
+      <rect>
+       <x>28</x>
+       <y>8</y>
+       <width>80</width>
+       <height>80</height>
+      </rect>
+     </property>
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>80</width>
+       <height>80</height>
+      </size>
+     </property>
+     <property name="font">
+      <font>
+       <family>배달의민족 도현</family>
+       <pointsize>36</pointsize>
+       <weight>50</weight>
+       <italic>false</italic>
+       <bold>false</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton
+{
+	border-radius: 3px;
+	font: 36pt &quot;배달의민족 도현&quot;;
+	color: rgb(255, 188, 50);
+	background-color: rgb(255, 255, 255);
+	border-color: rgb(255, 188, 50);
+}
+
+QPushButton:hover
+{
+	background-color: rgb(223, 163, 43);
+	color: rgb(255, 255, 255);
+}</string>
+     </property>
+     <property name="text">
+      <string>1</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="KeypadButton_4">
+     <property name="geometry">
+      <rect>
+       <x>352</x>
+       <y>8</y>
+       <width>80</width>
+       <height>80</height>
+      </rect>
+     </property>
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>80</width>
+       <height>80</height>
+      </size>
+     </property>
+     <property name="font">
+      <font>
+       <family>배달의민족 도현</family>
+       <pointsize>36</pointsize>
+       <weight>50</weight>
+       <italic>false</italic>
+       <bold>false</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton
+{
+	border-radius: 3px;
+	font: 36pt &quot;배달의민족 도현&quot;;
+	color: rgb(255, 188, 50);
+	background-color: rgb(255, 255, 255);
+	border-color: rgb(255, 188, 50);
+}
+
+QPushButton:hover
+{
+	background-color: rgb(223, 163, 43);
+	color: rgb(255, 255, 255);
+}</string>
+     </property>
+     <property name="text">
+      <string>4</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="KeypadButton_0">
+     <property name="geometry">
+      <rect>
+       <x>460</x>
+       <y>93</y>
+       <width>80</width>
+       <height>80</height>
+      </rect>
+     </property>
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>80</width>
+       <height>80</height>
+      </size>
+     </property>
+     <property name="font">
+      <font>
+       <family>배달의민족 도현</family>
+       <pointsize>36</pointsize>
+       <weight>50</weight>
+       <italic>false</italic>
+       <bold>false</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton
+{
+	border-radius: 3px;
+	font: 36pt &quot;배달의민족 도현&quot;;
+	color: rgb(255, 188, 50);
+	background-color: rgb(255, 255, 255);
+	border-color: rgb(255, 188, 50);
+}
+
+QPushButton:hover
+{
+	background-color: rgb(223, 163, 43);
+	color: rgb(255, 255, 255);
+}</string>
+     </property>
+     <property name="text">
+      <string>0</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="KeypadButton_5">
+     <property name="geometry">
+      <rect>
+       <x>460</x>
+       <y>8</y>
+       <width>80</width>
+       <height>80</height>
+      </rect>
+     </property>
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>80</width>
+       <height>80</height>
+      </size>
+     </property>
+     <property name="font">
+      <font>
+       <family>배달의민족 도현</family>
+       <pointsize>36</pointsize>
+       <weight>50</weight>
+       <italic>false</italic>
+       <bold>false</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string>QPushButton
+{
+	border-radius: 3px;
+	font: 36pt &quot;배달의민족 도현&quot;;
+	color: rgb(255, 188, 50);
+	background-color: rgb(255, 255, 255);
+	border-color: rgb(255, 188, 50);
+}
+
+QPushButton:hover
+{
+	background-color: rgb(223, 163, 43);
+	color: rgb(255, 255, 255);
+}</string>
+     </property>
+     <property name="text">
+      <string>5</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="KeypadButton_2">
+     <property name="geometry">
+      <rect>
+       <x>136</x>
+       <y>8</y>
+       <width>80</width>
+       <height>80</height>
+      </rect>
+     </property>
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>80</width>
+       <height>80</height>
+      </size>
+     </property>
+     <property name="font">
+      <font>
+       <family>배달의민족 도현</family>
+       <pointsize>36</pointsize>
+       <weight>50</weight>
+       <italic>false</italic>
+       <bold>false</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton
+{
+	border-radius: 3px;
+	font: 36pt &quot;배달의민족 도현&quot;;
+	color: rgb(255, 188, 50);
+	background-color: rgb(255, 255, 255);
+	border-color: rgb(255, 188, 50);
+}
+
+QPushButton:hover
+{
+	background-color: rgb(223, 163, 43);
+	color: rgb(255, 255, 255);
+}</string>
+     </property>
+     <property name="text">
+      <string>2</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="KeypadButton_7">
+     <property name="geometry">
+      <rect>
+       <x>136</x>
+       <y>93</y>
+       <width>80</width>
+       <height>80</height>
+      </rect>
+     </property>
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>80</width>
+       <height>80</height>
+      </size>
+     </property>
+     <property name="font">
+      <font>
+       <family>배달의민족 도현</family>
+       <pointsize>36</pointsize>
+       <weight>50</weight>
+       <italic>false</italic>
+       <bold>false</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton
+{
+	border-radius: 3px;
+	font: 36pt &quot;배달의민족 도현&quot;;
+	color: rgb(255, 188, 50);
+	background-color: rgb(255, 255, 255);
+	border-color: rgb(255, 188, 50);
+}
+
+QPushButton:hover
+{
+	background-color: rgb(223, 163, 43);
+	color: rgb(255, 255, 255);
+}</string>
+     </property>
+     <property name="text">
+      <string>7</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="KeypadButton_3">
+     <property name="geometry">
+      <rect>
+       <x>244</x>
+       <y>8</y>
+       <width>80</width>
+       <height>80</height>
+      </rect>
+     </property>
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>80</width>
+       <height>80</height>
+      </size>
+     </property>
+     <property name="font">
+      <font>
+       <family>배달의민족 도현</family>
+       <pointsize>36</pointsize>
+       <weight>50</weight>
+       <italic>false</italic>
+       <bold>false</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton
+{
+	border-radius: 3px;
+	font: 36pt &quot;배달의민족 도현&quot;;
+	color: rgb(255, 188, 50);
+	background-color: rgb(255, 255, 255);
+	border-color: rgb(255, 188, 50);
+}
+
+QPushButton:hover
+{
+	background-color: rgb(223, 163, 43);
+	color: rgb(255, 255, 255);
+}</string>
+     </property>
+     <property name="text">
+      <string>3</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="KeypadButton_8">
+     <property name="geometry">
+      <rect>
+       <x>244</x>
+       <y>93</y>
+       <width>80</width>
+       <height>80</height>
+      </rect>
+     </property>
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>80</width>
+       <height>80</height>
+      </size>
+     </property>
+     <property name="font">
+      <font>
+       <family>배달의민족 도현</family>
+       <pointsize>36</pointsize>
+       <weight>50</weight>
+       <italic>false</italic>
+       <bold>false</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton
+{
+	border-radius: 3px;
+	font: 36pt &quot;배달의민족 도현&quot;;
+	color: rgb(255, 188, 50);
+	background-color: rgb(255, 255, 255);
+	border-color: rgb(255, 188, 50);
+}
+
+QPushButton:hover
+{
+	background-color: rgb(223, 163, 43);
+	color: rgb(255, 255, 255);
+}</string>
+     </property>
+     <property name="text">
+      <string>8</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="KeypadButton_6">
+     <property name="geometry">
+      <rect>
+       <x>28</x>
+       <y>93</y>
+       <width>80</width>
+       <height>80</height>
+      </rect>
+     </property>
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>80</width>
+       <height>80</height>
+      </size>
+     </property>
+     <property name="font">
+      <font>
+       <family>배달의민족 도현</family>
+       <pointsize>36</pointsize>
+       <weight>50</weight>
+       <italic>false</italic>
+       <bold>false</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton
+{
+	border-radius: 3px;
+	font: 36pt &quot;배달의민족 도현&quot;;
+	color: rgb(255, 188, 50);
+	background-color: rgb(255, 255, 255);
+	border-color: rgb(255, 188, 50);
+}
+
+QPushButton:hover
+{
+	background-color: rgb(223, 163, 43);
+	color: rgb(255, 255, 255);
+}</string>
+     </property>
+     <property name="text">
+      <string>6</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="LongStick_1">
+     <property name="geometry">
+      <rect>
+       <x>6</x>
+       <y>10</y>
+       <width>16</width>
+       <height>160</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="pixmap">
+      <pixmap>Images/boldStick.png</pixmap>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+    <widget class="QLabel" name="LongStick_2">
+     <property name="geometry">
+      <rect>
+       <x>546</x>
+       <y>10</y>
+       <width>16</width>
+       <height>160</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="pixmap">
+      <pixmap>Images/boldStick.png</pixmap>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+    <widget class="QLabel" name="ShortStick_1">
+     <property name="geometry">
+      <rect>
+       <x>117</x>
+       <y>10</y>
+       <width>10</width>
+       <height>74</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="pixmap">
+      <pixmap>Images/SharpStick.png</pixmap>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+    <widget class="QLabel" name="ShortStick_8">
+     <property name="geometry">
+      <rect>
+       <x>441</x>
+       <y>96</y>
+       <width>10</width>
+       <height>74</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="pixmap">
+      <pixmap>Images/SharpStick.png</pixmap>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+    <widget class="QLabel" name="ShortStick_4">
+     <property name="geometry">
+      <rect>
+       <x>441</x>
+       <y>10</y>
+       <width>10</width>
+       <height>74</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="pixmap">
+      <pixmap>Images/SharpStick.png</pixmap>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+    <widget class="QLabel" name="ShortStick_3">
+     <property name="geometry">
+      <rect>
+       <x>333</x>
+       <y>10</y>
+       <width>10</width>
+       <height>74</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="pixmap">
+      <pixmap>Images/SharpStick.png</pixmap>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+    <widget class="QLabel" name="ShortStick_2">
+     <property name="geometry">
+      <rect>
+       <x>225</x>
+       <y>10</y>
+       <width>10</width>
+       <height>74</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="pixmap">
+      <pixmap>Images/SharpStick.png</pixmap>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+    <widget class="QLabel" name="ShortStick_7">
+     <property name="geometry">
+      <rect>
+       <x>333</x>
+       <y>96</y>
+       <width>10</width>
+       <height>74</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="pixmap">
+      <pixmap>Images/SharpStick.png</pixmap>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+    <widget class="QLabel" name="ShortStick_6">
+     <property name="geometry">
+      <rect>
+       <x>225</x>
+       <y>96</y>
+       <width>10</width>
+       <height>74</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="pixmap">
+      <pixmap>Images/SharpStick.png</pixmap>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+    <widget class="QLabel" name="ShortStick_5">
+     <property name="geometry">
+      <rect>
+       <x>117</x>
+       <y>96</y>
+       <width>10</width>
+       <height>74</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="pixmap">
+      <pixmap>Images/SharpStick.png</pixmap>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+   </widget>
   </widget>
-  <widget class="QPushButton" name="roundDisplay_4">
+  <widget class="QFrame" name="MenuBar">
    <property name="geometry">
     <rect>
-     <x>185</x>
-     <y>240</y>
-     <width>50</width>
-     <height>50</height>
+     <x>0</x>
+     <y>0</y>
+     <width>800</width>
+     <height>250</height>
     </rect>
    </property>
-   <property name="font">
-    <font>
-     <family>배달의민족 주아</family>
-     <pointsize>15</pointsize>
-    </font>
-   </property>
    <property name="styleSheet">
-    <string notr="true">border-radius: 25px;
-background-color: rgb(219, 117, 015);
-color: rgb(255, 253, 233);</string>
+    <string notr="true">background-color: rgb(249, 138, 015);</string>
    </property>
-  </widget>
-  <widget class="QPushButton" name="roundDisplay_8">
-   <property name="geometry">
-    <rect>
-     <x>425</x>
-     <y>240</y>
-     <width>50</width>
-     <height>50</height>
-    </rect>
+   <property name="frameShape">
+    <enum>QFrame::StyledPanel</enum>
    </property>
-   <property name="font">
-    <font>
-     <family>배달의민족 주아</family>
-     <pointsize>15</pointsize>
-    </font>
+   <property name="frameShadow">
+    <enum>QFrame::Raised</enum>
    </property>
-   <property name="styleSheet">
-    <string notr="true">border-radius: 25px;
-background-color: rgb(219, 117, 015);
-color: rgb(255, 253, 233);</string>
-   </property>
+   <widget class="QPushButton" name="ButtonNFC">
+    <property name="geometry">
+     <rect>
+      <x>700</x>
+      <y>5</y>
+      <width>80</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="layoutDirection">
+     <enum>Qt::RightToLeft</enum>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border-radius: 1px;
+background-color: rgba(241, 145, 039, 0);
+color: rgb(255, 255, 255);
+font: 20pt &quot;배달의민족 주아&quot;;</string>
+    </property>
+    <property name="text">
+     <string>NFC</string>
+    </property>
+    <property name="icon">
+     <iconset>
+      <normaloff>Images/Phone.png</normaloff>Images/Phone.png</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>32</width>
+      <height>32</height>
+     </size>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="ButtonRegister">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>5</y>
+      <width>91</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border-radius: 1px;
+background-color: rgba(241, 145, 039, 0);
+color: rgb(255, 255, 255);
+font: 20pt &quot;배달의민족 주아&quot;;</string>
+    </property>
+    <property name="text">
+     <string>등록</string>
+    </property>
+    <property name="icon">
+     <iconset>
+      <normaloff>Images/Document.png</normaloff>Images/Document.png</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>32</width>
+      <height>32</height>
+     </size>
+    </property>
+    <property name="autoRepeat">
+     <bool>false</bool>
+    </property>
+   </widget>
+   <widget class="QLabel" name="MenuPageLabel">
+    <property name="geometry">
+     <rect>
+      <x>340</x>
+      <y>5</y>
+      <width>121</width>
+      <height>60</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>배달의민족 주아</family>
+      <pointsize>24</pointsize>
+      <weight>50</weight>
+      <italic>false</italic>
+      <bold>false</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 24pt &quot;배달의민족 주아&quot;;</string>
+    </property>
+    <property name="text">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; color:#ffffff;&quot;&gt;번호 입력&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="NumberDisplay_7">
+    <property name="geometry">
+     <rect>
+      <x>580</x>
+      <y>120</y>
+      <width>70</width>
+      <height>70</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>배달의민족 주아</family>
+      <pointsize>24</pointsize>
+      <weight>50</weight>
+      <italic>false</italic>
+      <bold>false</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border-radius: 16px;
+background-color: rgb(199, 107, 5);
+color: rgb(255, 255, 255);
+font: 24pt &quot;배달의민족 주아&quot;;</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="NumberDisplay_5">
+    <property name="geometry">
+     <rect>
+      <x>420</x>
+      <y>120</y>
+      <width>70</width>
+      <height>70</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>배달의민족 주아</family>
+      <pointsize>24</pointsize>
+      <weight>50</weight>
+      <italic>false</italic>
+      <bold>false</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border-radius: 16px;
+background-color: rgb(199, 107, 5);
+color: rgb(255, 255, 255);
+font: 24pt &quot;배달의민족 주아&quot;;</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="NumberDisplay_8">
+    <property name="geometry">
+     <rect>
+      <x>660</x>
+      <y>120</y>
+      <width>70</width>
+      <height>70</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>배달의민족 주아</family>
+      <pointsize>24</pointsize>
+      <weight>50</weight>
+      <italic>false</italic>
+      <bold>false</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border-radius: 16px;
+background-color: rgb(199, 107, 5);
+color: rgb(255, 255, 255);
+font: 24pt &quot;배달의민족 주아&quot;;</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="NumberDisplay_1">
+    <property name="geometry">
+     <rect>
+      <x>70</x>
+      <y>120</y>
+      <width>70</width>
+      <height>70</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>배달의민족 주아</family>
+      <pointsize>24</pointsize>
+      <weight>50</weight>
+      <italic>false</italic>
+      <bold>false</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border-radius: 16px;
+background-color: rgb(199, 107, 5);
+color: rgb(255, 255, 255);
+font: 24pt &quot;배달의민족 주아&quot;;</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="NumberDisplay_3">
+    <property name="geometry">
+     <rect>
+      <x>230</x>
+      <y>120</y>
+      <width>70</width>
+      <height>70</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>배달의민족 주아</family>
+      <pointsize>24</pointsize>
+      <weight>50</weight>
+      <italic>false</italic>
+      <bold>false</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border-radius: 16px;
+background-color: rgb(199, 107, 5);
+color: rgb(255, 255, 255);
+font: 24pt &quot;배달의민족 주아&quot;;</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="NumberDisplay_4">
+    <property name="geometry">
+     <rect>
+      <x>310</x>
+      <y>120</y>
+      <width>70</width>
+      <height>70</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>배달의민족 주아</family>
+      <pointsize>24</pointsize>
+      <weight>50</weight>
+      <italic>false</italic>
+      <bold>false</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border-radius: 16px;
+background-color: rgb(199, 107, 5);
+color: rgb(255, 255, 255);
+font: 24pt &quot;배달의민족 주아&quot;;</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="NumberDisplay_2">
+    <property name="geometry">
+     <rect>
+      <x>150</x>
+      <y>120</y>
+      <width>70</width>
+      <height>70</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>배달의민족 주아</family>
+      <pointsize>24</pointsize>
+      <weight>50</weight>
+      <italic>false</italic>
+      <bold>false</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border-radius: 16px;
+background-color: rgb(199, 107, 5);
+color: rgb(255, 255, 255);
+font: 24pt &quot;배달의민족 주아&quot;;</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="NumberDisplay_6">
+    <property name="geometry">
+     <rect>
+      <x>500</x>
+      <y>120</y>
+      <width>70</width>
+      <height>70</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>배달의민족 주아</family>
+      <pointsize>24</pointsize>
+      <weight>50</weight>
+      <italic>false</italic>
+      <bold>false</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border-radius: 16px;
+background-color: rgb(199, 107, 5);
+color: rgb(255, 255, 255);
+font: 24pt &quot;배달의민족 주아&quot;;</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="DashStick">
+    <property name="geometry">
+     <rect>
+      <x>390</x>
+      <y>147</y>
+      <width>20</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap>Images/Stick2.png</pixmap>
+    </property>
+   </widget>
   </widget>
   <widget class="QFrame" name="DialogueShadow">
    <property name="enabled">
@@ -195,7 +1264,7 @@ border-radius: 25px
      </property>
      <property name="styleSheet">
       <string notr="true">font: 24pt &quot;배달의민족 주아&quot;;
-background-color: rgba(255, 255, 255, 0);
+background-color: rgb(255, 255, 255, 0);
 color: rgb(71, 71, 71);</string>
      </property>
      <property name="text">
@@ -216,7 +1285,7 @@ color: rgb(71, 71, 71);</string>
      </property>
      <property name="styleSheet">
       <string notr="true">font: 18pt &quot;배달의민족 주아&quot;;
-background-color: rgba(255, 255, 255, 0);
+background-color: rgb(255, 255, 255, 0);
 color: rgb(71, 71, 71);</string>
      </property>
      <property name="text">
@@ -226,7 +1295,7 @@ color: rgb(71, 71, 71);</string>
       <set>Qt::AlignCenter</set>
      </property>
     </widget>
-    <widget class="QWidget" name="horizontalLayoutWidget">
+    <widget class="QWidget" name="horizontalLayoutWidget_3">
      <property name="geometry">
       <rect>
        <x>0</x>
@@ -250,7 +1319,7 @@ color: rgb(71, 71, 71);</string>
         <property name="styleSheet">
          <string notr="true">font: 18pt &quot;배달의민족 주아&quot;;
 color: rgb(72, 112, 242);
-background-color: rgba(255, 255, 255, 0);</string>
+background-color: rgb(255, 255, 255, 0);</string>
         </property>
         <property name="text">
          <string>확인</string>
@@ -268,7 +1337,7 @@ background-color: rgba(255, 255, 255, 0);</string>
         <property name="styleSheet">
          <string notr="true">font: 18pt &quot;배달의민족 주아&quot;;
 color: rgb(232, 77, 33);
-background-color: rgba(255, 255, 255, 0);</string>
+background-color: rgb(255, 255, 255, 0);</string>
         </property>
         <property name="text">
          <string>취소</string>
@@ -279,544 +1348,6 @@ background-color: rgba(255, 255, 255, 0);</string>
     </widget>
    </widget>
   </widget>
-  <widget class="QPushButton" name="roundDisplay_6">
-   <property name="geometry">
-    <rect>
-     <x>305</x>
-     <y>240</y>
-     <width>50</width>
-     <height>50</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <family>배달의민족 주아</family>
-     <pointsize>15</pointsize>
-    </font>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">border-radius: 25px;
-background-color: rgb(219, 117, 015);
-color: rgb(255, 253, 233);</string>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="roundDisplay_1">
-   <property name="geometry">
-    <rect>
-     <x>5</x>
-     <y>240</y>
-     <width>50</width>
-     <height>50</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <family>배달의민족 주아</family>
-     <pointsize>15</pointsize>
-    </font>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">border-radius: 25px;
-background-color: rgb(219, 117, 015);
-color: rgb(255, 253, 233);</string>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="roundDisplay_7">
-   <property name="geometry">
-    <rect>
-     <x>365</x>
-     <y>240</y>
-     <width>50</width>
-     <height>50</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <family>배달의민족 주아</family>
-     <pointsize>15</pointsize>
-    </font>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">border-radius: 25px;
-background-color: rgb(219, 117, 015);
-color: rgb(255, 253, 233);</string>
-   </property>
-  </widget>
-  <widget class="QWidget" name="KeypadWidget" native="true">
-   <property name="geometry">
-    <rect>
-     <x>479</x>
-     <y>60</y>
-     <width>321</width>
-     <height>421</height>
-    </rect>
-   </property>
-   <property name="palette">
-    <palette>
-     <active>
-      <colorrole role="Base">
-       <brush brushstyle="SolidPattern">
-        <color alpha="255">
-         <red>255</red>
-         <green>255</green>
-         <blue>255</blue>
-        </color>
-       </brush>
-      </colorrole>
-      <colorrole role="Window">
-       <brush brushstyle="SolidPattern">
-        <color alpha="255">
-         <red>251</red>
-         <green>233</green>
-         <blue>197</blue>
-        </color>
-       </brush>
-      </colorrole>
-     </active>
-     <inactive>
-      <colorrole role="Base">
-       <brush brushstyle="SolidPattern">
-        <color alpha="255">
-         <red>255</red>
-         <green>255</green>
-         <blue>255</blue>
-        </color>
-       </brush>
-      </colorrole>
-      <colorrole role="Window">
-       <brush brushstyle="SolidPattern">
-        <color alpha="255">
-         <red>251</red>
-         <green>233</green>
-         <blue>197</blue>
-        </color>
-       </brush>
-      </colorrole>
-     </inactive>
-     <disabled>
-      <colorrole role="Base">
-       <brush brushstyle="SolidPattern">
-        <color alpha="255">
-         <red>251</red>
-         <green>233</green>
-         <blue>197</blue>
-        </color>
-       </brush>
-      </colorrole>
-      <colorrole role="Window">
-       <brush brushstyle="SolidPattern">
-        <color alpha="255">
-         <red>251</red>
-         <green>233</green>
-         <blue>197</blue>
-        </color>
-       </brush>
-      </colorrole>
-     </disabled>
-    </palette>
-   </property>
-   <property name="accessibleName">
-    <string>KeyboardWidget</string>
-   </property>
-   <property name="autoFillBackground">
-    <bool>true</bool>
-   </property>
-   <property name="styleSheet">
-    <string notr="true"/>
-   </property>
-   <widget class="QWidget" name="gridLayoutWidget">
-    <property name="geometry">
-     <rect>
-      <x>10</x>
-      <y>10</y>
-      <width>301</width>
-      <height>401</height>
-     </rect>
-    </property>
-    <layout class="QGridLayout" name="Keypad">
-     <item row="2" column="0">
-      <widget class="QPushButton" name="KeypadButton_7">
-       <property name="maximumSize">
-        <size>
-         <width>80</width>
-         <height>80</height>
-        </size>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">border-radius: 40px;
-font: 48pt &quot;배달의민족 주아&quot;;
-color: rgb(255, 188, 50);
-background-color: rgb(255, 255, 255);
-border: 2px solid white;
-border-color: rgb(255, 188, 50);
-</string>
-       </property>
-       <property name="text">
-        <string>7</string>
-       </property>
-      </widget>
-     </item>
-     <item row="2" column="1">
-      <widget class="QPushButton" name="KeypadButton_8">
-       <property name="maximumSize">
-        <size>
-         <width>80</width>
-         <height>80</height>
-        </size>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">border-radius: 40px;
-font: 48pt &quot;배달의민족 주아&quot;;
-color: rgb(255, 188, 50);
-background-color: rgb(255, 255, 255);
-border: 2px solid white;
-border-color: rgb(255, 188, 50);
-</string>
-       </property>
-       <property name="text">
-        <string>8</string>
-       </property>
-      </widget>
-     </item>
-     <item row="1" column="2">
-      <widget class="QPushButton" name="KeypadButton_6">
-       <property name="maximumSize">
-        <size>
-         <width>80</width>
-         <height>80</height>
-        </size>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">border-radius: 40px;
-font: 48pt &quot;배달의민족 주아&quot;;
-color: rgb(255, 188, 50);
-background-color: rgb(255, 255, 255);
-border: 2px solid white;
-border-color: rgb(255, 188, 50);
-</string>
-       </property>
-       <property name="text">
-        <string>6</string>
-       </property>
-      </widget>
-     </item>
-     <item row="1" column="0">
-      <widget class="QPushButton" name="KeypadButton_4">
-       <property name="maximumSize">
-        <size>
-         <width>80</width>
-         <height>80</height>
-        </size>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">border-radius: 40px;
-font: 48pt &quot;배달의민족 주아&quot;;
-color: rgb(255, 188, 50);
-background-color: rgb(255, 255, 255);
-border: 2px solid white;
-border-color: rgb(255, 188, 50);
-</string>
-       </property>
-       <property name="text">
-        <string>4</string>
-       </property>
-      </widget>
-     </item>
-     <item row="2" column="2">
-      <widget class="QPushButton" name="KeypadButton_9">
-       <property name="maximumSize">
-        <size>
-         <width>80</width>
-         <height>80</height>
-        </size>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">border-radius: 40px;
-font: 48pt &quot;배달의민족 주아&quot;;
-color: rgb(255, 188, 50);
-background-color: rgb(255, 255, 255);
-border: 2px solid white;
-border-color: rgb(255, 188, 50);
-</string>
-       </property>
-       <property name="text">
-        <string>9</string>
-       </property>
-      </widget>
-     </item>
-     <item row="0" column="0">
-      <widget class="QPushButton" name="KeypadButton_1">
-       <property name="maximumSize">
-        <size>
-         <width>80</width>
-         <height>80</height>
-        </size>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">border-radius: 40px;
-font: 48pt &quot;배달의민족 주아&quot;;
-color: rgb(255, 188, 50);
-background-color: rgb(255, 255, 255);
-border: 2px solid white;
-border-color: rgb(255, 188, 50);
-</string>
-       </property>
-       <property name="text">
-        <string>1</string>
-       </property>
-      </widget>
-     </item>
-     <item row="0" column="2">
-      <widget class="QPushButton" name="KeypadButton_3">
-       <property name="maximumSize">
-        <size>
-         <width>80</width>
-         <height>80</height>
-        </size>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">border-radius: 40px;
-font: 48pt &quot;배달의민족 주아&quot;;
-color: rgb(255, 188, 50);
-background-color: rgb(255, 255, 255);
-border: 2px solid white;
-border-color: rgb(255, 188, 50);
-</string>
-       </property>
-       <property name="text">
-        <string>3</string>
-       </property>
-      </widget>
-     </item>
-     <item row="1" column="1">
-      <widget class="QPushButton" name="KeypadButton_5">
-       <property name="maximumSize">
-        <size>
-         <width>80</width>
-         <height>80</height>
-        </size>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">border-radius: 40px;
-font: 48pt &quot;배달의민족 주아&quot;;
-color: rgb(255, 188, 50);
-background-color: rgb(255, 255, 255);
-border: 2px solid white;
-border-color: rgb(255, 188, 50);
-</string>
-       </property>
-       <property name="text">
-        <string>5</string>
-       </property>
-      </widget>
-     </item>
-     <item row="0" column="1">
-      <widget class="QPushButton" name="KeypadButton_2">
-       <property name="maximumSize">
-        <size>
-         <width>80</width>
-         <height>80</height>
-        </size>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">border-radius: 40px;
-font: 48pt &quot;배달의민족 주아&quot;;
-color: rgb(255, 188, 50);
-background-color: rgb(255, 255, 255);
-border: 2px solid white;
-border-color: rgb(255, 188, 50);
-</string>
-       </property>
-       <property name="text">
-        <string>2</string>
-       </property>
-      </widget>
-     </item>
-     <item row="3" column="1">
-      <widget class="QPushButton" name="KeypadButton_0">
-       <property name="maximumSize">
-        <size>
-         <width>80</width>
-         <height>80</height>
-        </size>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">border-radius: 40px;
-font: 48pt &quot;배달의민족 주아&quot;;
-color: rgb(255, 188, 50);
-background-color: rgb(255, 255, 255);
-border: 2px solid white;
-border-color: rgb(255, 188, 50);
-</string>
-       </property>
-       <property name="text">
-        <string>0</string>
-       </property>
-      </widget>
-     </item>
-    </layout>
-   </widget>
-  </widget>
-  <widget class="QPushButton" name="roundDisplay_3">
-   <property name="geometry">
-    <rect>
-     <x>125</x>
-     <y>240</y>
-     <width>50</width>
-     <height>50</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <family>배달의민족 주아</family>
-     <pointsize>15</pointsize>
-    </font>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">border-radius: 25px;
-background-color: rgb(219, 117, 015);
-color: rgb(255, 253, 233);</string>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="roundDisplay_2">
-   <property name="geometry">
-    <rect>
-     <x>65</x>
-     <y>240</y>
-     <width>50</width>
-     <height>50</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <family>배달의민족 주아</family>
-     <pointsize>15</pointsize>
-    </font>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">border-radius: 25px;
-background-color: rgb(219, 117, 015);
-color: rgb(255, 253, 233);</string>
-   </property>
-  </widget>
-  <widget class="QFrame" name="MenuBar">
-   <property name="geometry">
-    <rect>
-     <x>0</x>
-     <y>0</y>
-     <width>800</width>
-     <height>60</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">background-color: rgb(241, 145, 039);</string>
-   </property>
-   <property name="frameShape">
-    <enum>QFrame::StyledPanel</enum>
-   </property>
-   <property name="frameShadow">
-    <enum>QFrame::Raised</enum>
-   </property>
-   <widget class="QPushButton" name="ButtonNFC">
-    <property name="geometry">
-     <rect>
-      <x>700</x>
-      <y>5</y>
-      <width>80</width>
-      <height>51</height>
-     </rect>
-    </property>
-    <property name="layoutDirection">
-     <enum>Qt::RightToLeft</enum>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">border-radius: 1px;
-background-color: rgba(241, 145, 039, 0);
-color: rgb(255, 255, 255);
-font: 20pt &quot;배달의민족 한나체 Air&quot;;</string>
-    </property>
-    <property name="text">
-     <string>NFC</string>
-    </property>
-    <property name="icon">
-     <iconset>
-      <normaloff>Images/Phone.png</normaloff>Images/Phone.png</iconset>
-    </property>
-    <property name="iconSize">
-     <size>
-      <width>32</width>
-      <height>32</height>
-     </size>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="ButtonRegister">
-    <property name="geometry">
-     <rect>
-      <x>10</x>
-      <y>5</y>
-      <width>91</width>
-      <height>51</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">border-radius: 1px;
-background-color: rgba(241, 145, 039, 0);
-color: rgb(255, 255, 255);
-font: 20pt &quot;배달의민족 한나체 Air&quot;;</string>
-    </property>
-    <property name="text">
-     <string>등록</string>
-    </property>
-    <property name="icon">
-     <iconset>
-      <normaloff>Images/Document.png</normaloff>Images/Document.png</iconset>
-    </property>
-    <property name="iconSize">
-     <size>
-      <width>32</width>
-      <height>32</height>
-     </size>
-    </property>
-    <property name="autoRepeat">
-     <bool>false</bool>
-    </property>
-   </widget>
-   <widget class="QLabel" name="MenuPageLabel">
-    <property name="geometry">
-     <rect>
-      <x>310</x>
-      <y>0</y>
-      <width>200</width>
-      <height>60</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <family>배달의민족 한나체 Air</family>
-      <pointsize>26</pointsize>
-      <weight>75</weight>
-      <bold>true</bold>
-     </font>
-    </property>
-    <property name="text">
-     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; color:#ffffff;&quot;&gt;번호 입력&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-    </property>
-    <property name="alignment">
-     <set>Qt::AlignCenter</set>
-    </property>
-   </widget>
-  </widget>
-  <zorder>roundDisplay_5</zorder>
-  <zorder>roundDisplay_4</zorder>
-  <zorder>roundDisplay_8</zorder>
-  <zorder>roundDisplay_6</zorder>
-  <zorder>roundDisplay_1</zorder>
-  <zorder>roundDisplay_7</zorder>
-  <zorder>KeypadWidget</zorder>
-  <zorder>roundDisplay_3</zorder>
-  <zorder>roundDisplay_2</zorder>
-  <zorder>MenuBar</zorder>
-  <zorder>DialogueShadow</zorder>
  </widget>
  <resources/>
  <connections/>
