@@ -278,7 +278,7 @@ QPushButton:hover
      <number>10</number>
     </property>
     <property name="clearButtonEnabled">
-     <bool>true</bool>
+     <bool>false</bool>
     </property>
    </widget>
    <widget class="QLineEdit" name="editContact2">
@@ -312,7 +312,7 @@ QPushButton:hover
      <number>4</number>
     </property>
     <property name="clearButtonEnabled">
-     <bool>true</bool>
+     <bool>false</bool>
     </property>
    </widget>
    <widget class="QLineEdit" name="editContact3">
@@ -349,7 +349,7 @@ QPushButton:hover
      <number>4</number>
     </property>
     <property name="clearButtonEnabled">
-     <bool>true</bool>
+     <bool>false</bool>
     </property>
    </widget>
    <widget class="QPushButton" name="buttonTemp">
@@ -431,7 +431,7 @@ QPushButton:hover
      <number>3</number>
     </property>
     <property name="clearButtonEnabled">
-     <bool>true</bool>
+     <bool>false</bool>
     </property>
    </widget>
    <widget class="QLabel" name="labelDash2">
@@ -506,7 +506,7 @@ QPushButton:hover
      <number>20</number>
     </property>
     <property name="clearButtonEnabled">
-     <bool>true</bool>
+     <bool>false</bool>
     </property>
    </widget>
   </widget>
