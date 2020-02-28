@@ -1264,7 +1264,7 @@ border-radius: 25px
      </property>
      <property name="styleSheet">
       <string notr="true">font: 24pt &quot;배달의민족 주아&quot;;
-background-color: rgb(255, 255, 255, 0);
+background-color: rgb(255, 255, 255);
 color: rgb(71, 71, 71);</string>
      </property>
      <property name="text">
@@ -1285,7 +1285,7 @@ color: rgb(71, 71, 71);</string>
      </property>
      <property name="styleSheet">
       <string notr="true">font: 18pt &quot;배달의민족 주아&quot;;
-background-color: rgb(255, 255, 255, 0);
+background-color: rgb(255, 255, 255);
 color: rgb(71, 71, 71);</string>
      </property>
      <property name="text">
@@ -1319,7 +1319,7 @@ color: rgb(71, 71, 71);</string>
         <property name="styleSheet">
          <string notr="true">font: 18pt &quot;배달의민족 주아&quot;;
 color: rgb(72, 112, 242);
-background-color: rgb(255, 255, 255, 0);</string>
+background-color: rgb(255, 255, 255);</string>
         </property>
         <property name="text">
          <string>확인</string>
@@ -1337,7 +1337,7 @@ background-color: rgb(255, 255, 255, 0);</string>
         <property name="styleSheet">
          <string notr="true">font: 18pt &quot;배달의민족 주아&quot;;
 color: rgb(232, 77, 33);
-background-color: rgb(255, 255, 255, 0);</string>
+background-color: rgb(255, 255, 255);</string>
         </property>
         <property name="text">
          <string>취소</string>
