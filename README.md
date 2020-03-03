@@ -12,10 +12,13 @@
 ### NFC 관련 주의 사항
 - 라즈베리파이에서 NFC를 사용할 경우: 
     main_LogIn.py 에서 NFCReader를 임포트할 때,
-        "from NFC.NFCReader import NFCReader"
+    
+        from NFC.NFCReader import NFCReader
+    
 - 이외의 경우(windows에서 실행 테스트, 디버깅 등): 
     main_LogIn.py 에서 NFCReader를 임포트할 때
-        "from NFC.NFCReaderForTest import NFCReader"
+    
+        from NFC.NFCReaderForTest import NFCReader
 
 
 ##### ~~내용 추가 예정~~
