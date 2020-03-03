@@ -1,6 +1,6 @@
 import sys
 from functools import partial
-from PySide2.QtCore import Slot
+from PySide2.QtCore import Slot, QPropertyAnimation, QParallelAnimationGroup
 from PySide2.QtWidgets import *
 from UI.ui_LogIn import Ui_LogIn
 from reader_for_login_test import TestDatabaseReader
@@ -77,10 +77,10 @@ class LogIn(QWidget):
         if isInDB:
             print("valid")
             self.showDialogueCheck(data["name"])
+            self.clearPassword()
         else:
             print("invalid")
-            # self.showErrorAnimation()
-        self.clearPassword()
+            self.showErrorAnimation()
 
     # When NFC signal detected
     @Slot(str)
@@ -101,13 +101,13 @@ class LogIn(QWidget):
         self.ui.DialogueShadow.show()
 
         # # example: how to use Animation (fade in)
-        # self.animation.set_fade_in(self.ui.DialogueShadow)
+        # self.animation.set_to_fade_in(self.ui.DialogueShadow)
         # self.animation.current_anim.start(QPropertyAnimation.DeleteWhenStopped)
 
     def hideDialogueCheck(self):
 
         # # example: how to use Animation (fade out)
-        # self.animation.set_fade_out(self.ui.DialogueShadow)
+        # self.animation.set_to_fade_out(self.ui.DialogueShadow)
         # self.animation.current_anim.start(QPropertyAnimation.DeleteWhenStopped)
         # # make sure to hide a widget after the animation is finished
         # self.animation.current_anim.finished.connect(self.ui.DialogueShadow.hide)
@@ -120,6 +120,15 @@ class LogIn(QWidget):
         self.displayIndex = 1
         for i in range(1, 9):
             self.keyDisplays.button(i).setText("")
+
+    def showErrorAnimation(self):
+        error_group = QParallelAnimationGroup()
+        for i in range(1, 9):
+            self.animation.set_to_vibrate(self.keyDisplays.button(i), direction=90 + 180 * (i % 2))
+            error_group.addAnimation(self.animation.current_anim)
+        self.animation.current_anim = error_group
+        self.animation.current_anim.start(QPropertyAnimation.DeleteWhenStopped)
+        self.animation.current_anim.finished.connect(self.clearPassword)
 
     def setPage(self):
 
