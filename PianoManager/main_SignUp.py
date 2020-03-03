@@ -4,7 +4,7 @@ from UI.ui_SignUp import Ui_SignUp
 
 
 class SignUp(QMainWindow):
-    def __init__(self, parent = None):
+    def __init__(self, parent=None):
         QMainWindow.__init__(self, parent)
 
         self.ui = Ui_SignUp()
@@ -19,7 +19,6 @@ class SignUp(QMainWindow):
         self.ui.editContact1.clear()
         self.ui.editContact2.clear()
         self.ui.editContact3.clear()
-        pass
 
 
 if __name__ == '__main__':

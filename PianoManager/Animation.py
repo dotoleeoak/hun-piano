@@ -39,7 +39,7 @@ class Animation:
         fade_out_anim.setEasingCurve(QEasingCurve.InBack)
         self.current_anim = fade_out_anim
 
-    def set_to_vibrate(self, widget, amp=10, frequency=20, direction=90):
+    def set_to_vibrate(self, widget, amp=10, frequency=25, direction=90):
         vibrate_group = QSequentialAnimationGroup()
         origin = widget.pos()
         direction = radians(direction)

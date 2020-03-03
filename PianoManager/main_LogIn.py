@@ -63,6 +63,8 @@ class LogIn(QWidget):
     # Input a password and display it
     def writeNumber(self, num):
 
+        if self.displayIndex > 8:
+            return
         self.keyDisplays.button(self.displayIndex).setText(str(num))
         self.password += str(num)
         self.displayIndex += 1
@@ -124,7 +126,7 @@ class LogIn(QWidget):
     def showErrorAnimation(self):
         error_group = QParallelAnimationGroup()
         for i in range(1, 9):
-            self.animation.set_to_vibrate(self.keyDisplays.button(i), direction=90 + 180 * (i % 2))
+            self.animation.set_to_vibrate(self.keyDisplays.button(i), amp=10, direction=90 + 180 * (i % 2))
             error_group.addAnimation(self.animation.current_anim)
         self.animation.current_anim = error_group
         self.animation.current_anim.start(QPropertyAnimation.DeleteWhenStopped)
