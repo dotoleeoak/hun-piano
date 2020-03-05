@@ -102,10 +102,19 @@ QPushButton:hover
        <height>60</height>
       </rect>
      </property>
+     <property name="font">
+      <font>
+       <family>배달의민족 주아</family>
+       <pointsize>24</pointsize>
+       <weight>50</weight>
+       <italic>false</italic>
+       <bold>false</bold>
+      </font>
+     </property>
      <property name="styleSheet">
       <string notr="true">color: rgb(255, 255, 255);
 background-color: rgb(241, 145, 39);
-font: 22pt &quot;배달의민족 주아&quot;;</string>
+font: 24pt &quot;배달의민족 주아&quot;;</string>
      </property>
      <property name="text">
       <string>사용자 등록</string>
