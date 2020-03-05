@@ -36,28 +36,25 @@ class TestDatabaseReader:
             "NFC_UID": "-1"
             }
 
-
     def isPassInDatabase(self, password):
 
         data_found = next((item for item in self.data if item["ID"] == password), False)
         print(data_found)
         if not data_found:
-            return (False, None)
+            return False, None
         else:
             self.currentData = data_found
-            return (True, self.currentData)
+            return True, self.currentData
 
     def isUidInDatabase(self, uid):
 
         data_found = next((item for item in self.data if item["NFC_UID"] == uid), False)
         if not data_found:
-            return (False, None)
+            return False, None
         else:
             self.currentData = data_found
-            return (True, self.currentData)
-        
+            return True, self.currentData
 
     def getCurrentData(self):
 
         return self.currentData
-    
