@@ -116,11 +116,25 @@ color: rgb(255, 255, 255);</string>
       <height>60</height>
      </rect>
     </property>
+    <property name="font">
+     <font>
+      <family>배달의민족 도현</family>
+      <pointsize>16</pointsize>
+     </font>
+    </property>
     <property name="styleSheet">
-     <string notr="true">font: 16pt &quot;배달의민족 도현&quot;;
-color: rgb(255, 255, 255);
-border-radius: 1px;
-background-color: red</string>
+     <string notr="true">QPushButton
+{
+	color: rgb(255, 255, 255);
+	background-color: rgb(255, 0, 0);
+	border-radius: 10px;
+}
+
+QPushButton:hover
+{
+	color: rgb(120, 120, 120);
+	background-color: rgb(120, 0, 0);
+};</string>
     </property>
     <property name="text">
      <string>종료</string>

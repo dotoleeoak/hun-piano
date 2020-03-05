@@ -3,17 +3,18 @@
 ################################################################################
 ## Form generated from reading UI file 'ui_InUse.ui'
 ##
-## Created by: Qt User Interface Compiler version 5.14.0
+## Created by: Qt User Interface Compiler version 5.14.1
 ##
 ## WARNING! All changes made in this file will be lost when recompiling UI file!
 ################################################################################
 
 from PySide2.QtCore import (QCoreApplication, QMetaObject, QObject, QPoint,
     QRect, QSize, QUrl, Qt)
-from PySide2.QtGui import (QBrush, QColor, QConicalGradient, QFont,
+from PySide2.QtGui import (QBrush, QColor, QConicalGradient, QCursor, QFont,
     QFontDatabase, QIcon, QLinearGradient, QPalette, QPainter, QPixmap,
     QRadialGradient)
 from PySide2.QtWidgets import *
+
 
 class Ui_InUse(object):
     def setupUi(self, InUse):
@@ -51,10 +52,22 @@ class Ui_InUse(object):
         self.ButtonQuit = QPushButton(self.BackgroundFrame)
         self.ButtonQuit.setObjectName(u"ButtonQuit")
         self.ButtonQuit.setGeometry(QRect(340, 360, 120, 60))
-        self.ButtonQuit.setStyleSheet(u"font: 16pt \"\ubc30\ub2ec\uc758\ubbfc\uc871 \ub3c4\ud604\";\n"
-"color: rgb(255, 255, 255);\n"
-"border-radius: 1px;\n"
-"background-color: red")
+        font = QFont()
+        font.setFamily(u"\ubc30\ub2ec\uc758\ubbfc\uc871 \ub3c4\ud604")
+        font.setPointSize(16)
+        self.ButtonQuit.setFont(font)
+        self.ButtonQuit.setStyleSheet(u"QPushButton\n"
+"{\n"
+"	color: rgb(255, 255, 255);\n"
+"	background-color: rgb(255, 0, 0);\n"
+"	border-radius: 10px;\n"
+"}\n"
+"\n"
+"QPushButton:hover\n"
+"{\n"
+"	color: rgb(120, 120, 120);\n"
+"	background-color: rgb(120, 0, 0);\n"
+"};")
         self.UsedTime.raise_()
         self.UserName.raise_()
         self.InUseLabel.raise_()
