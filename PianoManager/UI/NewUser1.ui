@@ -163,6 +163,7 @@ background-color: rgb(249, 138, 15);</string>
 QLineEdit:hover
 {
 	border-color: rgb(0, 85, 255);
+	background-color: rgb(200, 200, 200);
 }</string>
    </property>
    <property name="inputMethodHints">
@@ -201,9 +202,9 @@ QLineEdit:hover
    <property name="geometry">
     <rect>
      <x>30</x>
-     <y>120</y>
-     <width>60</width>
-     <height>60</height>
+     <y>110</y>
+     <width>80</width>
+     <height>80</height>
     </rect>
    </property>
    <property name="styleSheet">
@@ -216,7 +217,6 @@ QLineEdit:hover
 QPushButton:hover
 {
 	image: url(../Images/arrow_left_hover.png);
-	border: 0px;
 }</string>
    </property>
    <property name="text">
@@ -226,10 +226,10 @@ QPushButton:hover
   <widget class="QPushButton" name="buttonRight">
    <property name="geometry">
     <rect>
-     <x>710</x>
-     <y>120</y>
-     <width>60</width>
-     <height>60</height>
+     <x>690</x>
+     <y>110</y>
+     <width>80</width>
+     <height>80</height>
     </rect>
    </property>
    <property name="styleSheet">
@@ -242,7 +242,6 @@ QPushButton:hover
 QPushButton:hover
 {
 	image: url(../Images/arrow_right_hover.png);
-	border: 0px;
 }</string>
    </property>
    <property name="text">
@@ -252,7 +251,7 @@ QPushButton:hover
   <widget class="Line" name="lineLeft">
    <property name="geometry">
     <rect>
-     <x>120</x>
+     <x>130</x>
      <y>110</y>
      <width>2</width>
      <height>80</height>
@@ -269,7 +268,7 @@ border: 0px;</string>
   <widget class="Line" name="lineRight">
    <property name="geometry">
     <rect>
-     <x>680</x>
+     <x>670</x>
      <y>110</y>
      <width>2</width>
      <height>80</height>
