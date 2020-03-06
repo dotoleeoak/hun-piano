@@ -13,7 +13,7 @@
   <property name="windowTitle">
    <string>Form</string>
   </property>
-  <widget class="QLabel" name="labelName">
+  <widget class="QLabel" name="labelID">
    <property name="geometry">
     <rect>
      <x>220</x>
@@ -50,7 +50,7 @@
    <property name="frameShadow">
     <enum>QFrame::Raised</enum>
    </property>
-   <widget class="QPushButton" name="buttonHome_2">
+   <widget class="QPushButton" name="buttonHome">
     <property name="geometry">
      <rect>
       <x>10</x>
@@ -93,7 +93,7 @@ QPushButton:hover
      </size>
     </property>
    </widget>
-   <widget class="QLabel" name="labelMenu_2">
+   <widget class="QLabel" name="labelMenu">
     <property name="geometry">
      <rect>
       <x>0</x>
@@ -122,7 +122,7 @@ background-color: rgb(249, 138, 15);</string>
      <set>Qt::AlignCenter</set>
     </property>
    </widget>
-   <widget class="QLabel" name="labelHome_2">
+   <widget class="QLabel" name="labelHom">
     <property name="enabled">
      <bool>true</bool>
     </property>
@@ -150,11 +150,11 @@ background-color: rgb(249, 138, 15);</string>
      <set>Qt::AlignCenter</set>
     </property>
    </widget>
-   <zorder>labelMenu_2</zorder>
-   <zorder>labelHome_2</zorder>
-   <zorder>buttonHome_2</zorder>
+   <zorder>labelMenu</zorder>
+   <zorder>labelHom</zorder>
+   <zorder>buttonHome</zorder>
   </widget>
-  <widget class="QLineEdit" name="editName">
+  <widget class="QLineEdit" name="editID">
    <property name="geometry">
     <rect>
      <x>310</x>
@@ -267,7 +267,7 @@ border: 0px;</string>
     <enum>Qt::Vertical</enum>
    </property>
   </widget>
-  <widget class="Line" name="lineLeft_2">
+  <widget class="Line" name="lineRight">
    <property name="geometry">
     <rect>
      <x>670</x>
@@ -284,7 +284,7 @@ border: 0px;</string>
     <enum>Qt::Vertical</enum>
    </property>
   </widget>
-  <widget class="QLabel" name="label">
+  <widget class="QLabel" name="labelWarning">
    <property name="geometry">
     <rect>
      <x>190</x>
@@ -304,6 +304,31 @@ border: 0px;</string>
    </property>
    <property name="text">
     <string>학번이 없는 교내 구성원은 운영진에게 문의해주세요.</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="labelError">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="geometry">
+    <rect>
+     <x>190</x>
+     <y>200</y>
+     <width>191</width>
+     <height>30</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>배달의민족 주아</family>
+     <pointsize>14</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: rgb(255, 0, 0);</string>
+   </property>
+   <property name="text">
+    <string>학번을 입력해주세요.</string>
    </property>
   </widget>
  </widget>

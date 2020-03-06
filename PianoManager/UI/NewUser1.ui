@@ -282,6 +282,31 @@ border: 0px;</string>
     <enum>Qt::Vertical</enum>
    </property>
   </widget>
+  <widget class="QLabel" name="labelError">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="geometry">
+    <rect>
+     <x>320</x>
+     <y>190</y>
+     <width>200</width>
+     <height>30</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>배달의민족 주아</family>
+     <pointsize>14</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: rgb(255, 0, 0);</string>
+   </property>
+   <property name="text">
+    <string>이름을 입력해주세요.</string>
+   </property>
+  </widget>
  </widget>
  <resources/>
  <connections/>

@@ -13,7 +13,7 @@
   <property name="windowTitle">
    <string>Form</string>
   </property>
-  <widget class="QLabel" name="labelName">
+  <widget class="QLabel" name="labelContact">
    <property name="geometry">
     <rect>
      <x>230</x>
@@ -154,7 +154,7 @@ background-color: rgb(249, 138, 15);</string>
    <zorder>labelHome</zorder>
    <zorder>buttonHome</zorder>
   </widget>
-  <widget class="QLineEdit" name="editName">
+  <widget class="QLineEdit" name="editContact1">
    <property name="geometry">
     <rect>
      <x>230</x>
@@ -198,7 +198,7 @@ QLineEdit:hover
     <bool>false</bool>
    </property>
   </widget>
-  <widget class="QLineEdit" name="editName_2">
+  <widget class="QLineEdit" name="editContact2">
    <property name="geometry">
     <rect>
      <x>350</x>
@@ -242,7 +242,7 @@ QLineEdit:hover
     <bool>false</bool>
    </property>
   </widget>
-  <widget class="QLineEdit" name="editName_3">
+  <widget class="QLineEdit" name="editContact3">
    <property name="geometry">
     <rect>
      <x>490</x>
@@ -308,7 +308,7 @@ QLineEdit:hover
     <set>Qt::AlignCenter</set>
    </property>
   </widget>
-  <widget class="QLabel" name="labelDash1_2">
+  <widget class="QLabel" name="labelDash2">
    <property name="geometry">
     <rect>
      <x>450</x>
@@ -399,7 +399,7 @@ border: 0px;</string>
     <enum>Qt::Vertical</enum>
    </property>
   </widget>
-  <widget class="Line" name="lineLeft_2">
+  <widget class="Line" name="lineRight">
    <property name="geometry">
     <rect>
      <x>670</x>
@@ -414,6 +414,31 @@ border: 0px;</string>
    </property>
    <property name="orientation">
     <enum>Qt::Vertical</enum>
+   </property>
+  </widget>
+  <widget class="QLabel" name="labelError">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="geometry">
+    <rect>
+     <x>230</x>
+     <y>210</y>
+     <width>220</width>
+     <height>30</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>배달의민족 주아</family>
+     <pointsize>14</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: rgb(255, 0, 0);</string>
+   </property>
+   <property name="text">
+    <string>전화번호를 입력해주세요.</string>
    </property>
   </widget>
  </widget>
