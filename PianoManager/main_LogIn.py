@@ -2,10 +2,10 @@ import sys
 from functools import partial
 from PySide2.QtCore import Slot, QPropertyAnimation, QParallelAnimationGroup
 from PySide2.QtWidgets import *
-from UI.ui_LogIn import Ui_LogIn
-from reader_for_login_test import TestDatabaseReader
-from NFC.NFCReaderForTest import NFCReader
-from Animation import Animation
+from PianoManager.UI.ui_LogIn import Ui_LogIn
+from PianoManager.reader_for_test import TestDatabaseReader
+from PianoManager.NFC.NFCReaderForTest import NFCReader
+from PianoManager.Animation import Animation
 
 
 class LogIn(QWidget):
@@ -54,14 +54,13 @@ class LogIn(QWidget):
         self.password = ""
 
         for i in range(0, 10):
-            self.keypadButtons.button(i).clicked.connect(partial(self.writeNumber, i))
+            self.keypadButtons.button(i).clicked.connect(partial(self.write_number, i))
 
         self.ui.DButtonYes.clicked.connect(lambda: print("playing piano!"))
-        self.ui.DButtonNo.clicked.connect(lambda: self.hideDialogueCheck())
-        self.nfcReader.nfc_connect.connect(self.checkValidUid)
+        self.ui.DButtonNo.clicked.connect(lambda: self.hide_dialogue_check())
 
     # Input a password and display it
-    def writeNumber(self, num):
+    def write_number(self, num):
 
         if self.displayIndex > 8:
             return
@@ -69,35 +68,35 @@ class LogIn(QWidget):
         self.password += str(num)
         self.displayIndex += 1
         if self.displayIndex > 8:
-            self.checkValidPass(self.password)
+            self.check_valid_pass(self.password)
 
     # Check whether the password is valid
-    def checkValidPass(self, password):
+    def check_valid_pass(self, password):
 
-        (isInDB, data) = self.dbReader.isPassInDatabase(password)  # (bool, data)
+        (isInDB, data) = self.dbReader.is_pass_in_database(password)  # (bool, data)
 
         if isInDB:
             print("valid")
-            self.showDialogueCheck(data["name"])
-            self.clearPassword()
+            self.show_dialogue_check(data["name"])
+            self.clear_password()
         else:
             print("invalid")
-            self.showErrorAnimation()
+            self.show_error_animation()
 
     # When NFC signal detected
     @Slot(str)
-    def checkValidUid(self, uid):
+    def check_valid_uid(self, uid):
 
-        (isInDB, data) = self.dbReader.isUidInDatabase(uid)  # (bool, data)
+        (isInDB, data) = self.dbReader.is_uid_in_database(uid)  # (bool, data)
 
         if isInDB:
             print("valid")
-            self.showDialogueCheck(data["name"])
+            self.show_dialogue_check(data["name"])
         else:
             print("invalid")
-        self.clearPassword()
+        self.clear_password()
 
-    def showDialogueCheck(self, name):
+    def show_dialogue_check(self, name):
 
         self.ui.DLabelName.setText(name + " 님")
         self.ui.DialogueShadow.show()
@@ -106,7 +105,7 @@ class LogIn(QWidget):
         # self.animation.set_to_fade_in(self.ui.DialogueShadow)
         # self.animation.current_anim.start(QPropertyAnimation.DeleteWhenStopped)
 
-    def hideDialogueCheck(self):
+    def hide_dialogue_check(self):
 
         # # example: how to use Animation (fade out)
         # self.animation.set_to_fade_out(self.ui.DialogueShadow)
@@ -116,35 +115,36 @@ class LogIn(QWidget):
         self.ui.DialogueShadow.hide()
         print("hide!")
 
-    def clearPassword(self):
+    def clear_password(self):
 
         self.password = ""
         self.displayIndex = 1
         for i in range(1, 9):
             self.keyDisplays.button(i).setText("")
 
-    def showErrorAnimation(self):
+    def show_error_animation(self):
         error_group = QParallelAnimationGroup()
         for i in range(1, 9):
             self.animation.set_to_vibrate(self.keyDisplays.button(i), amp=10, direction=90 + 180 * (i % 2))
             error_group.addAnimation(self.animation.current_anim)
         self.animation.current_anim = error_group
         self.animation.current_anim.start(QPropertyAnimation.DeleteWhenStopped)
-        self.animation.current_anim.finished.connect(self.clearPassword)
+        self.animation.current_anim.finished.connect(self.clear_password)
 
-    def setPage(self):
+    def set_page(self):
 
         if not self.nfcReader.isRunning():
             print("thread run")
             self.nfcReader.start()
+        self.nfcReader.nfc_connect.connect(self.check_valid_uid)
 
-    def clearPage(self):
+    def clear_page(self):
 
         if not self.nfcReader.isFinished():
             print("thread quit")
             self.nfcReader.quit()
-        self.hideDialogueCheck()
-        self.clearPassword()
+        self.hide_dialogue_check()
+        self.clear_password()
 
     def __del__(self):
 
