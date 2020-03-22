@@ -67,6 +67,3 @@ class Animation:
         vibrate_anim.setEndValue(origin)
         vibrate_group.addAnimation(vibrate_anim)
         self.current_anim = vibrate_group
-
-
-
