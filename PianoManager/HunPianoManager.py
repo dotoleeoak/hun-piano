@@ -1,9 +1,13 @@
 import sys
+import os
+
+sys.path.append(os.path.dirname(os.path.abspath(os.path.dirname(__file__))))
+
 from functools import partial
 from PySide2.QtWidgets import QApplication, QMainWindow, QStackedWidget
-from main_LogIn import LogIn
-from main_SignUp import SignUp
-from main_InUse import InUse
+from PianoManager.main_LogIn import LogIn
+from PianoManager.main_InUse import InUse
+from PianoManager.main_NewUser import NewUser
 
 
 class MainWindow(QMainWindow):
@@ -14,38 +18,47 @@ class MainWindow(QMainWindow):
         self.setFixedSize(800, 480)
         # self.showFullScreen()
 
-        # Create Page Objects Here
-        LogInPage = LogIn()
-        SignUpPage = SignUp()
-        InUsePage = InUse()
+        # # Create Page Objects Here
+        log_in_page = LogIn()
+        in_use_page = InUse()
+        new_user_page = NewUser()
 
-        # Connect pages to switch each others
-        LogInPage.ui.ButtonRegister.clicked.connect(partial(self.switchPage, 1))
-        LogInPage.ui.DButtonYes.clicked.connect(partial(self.switchPage, 2))
-        SignUpPage.ui.buttonHome.clicked.connect(partial(self.switchPage, 0))
-        InUsePage.ui.ButtonQuit.clicked.connect(partial(self.switchPage, 0))
+        # # Connect pages to switch each others
+        # Log In
+        log_in_page.ui.ButtonRegister.clicked.connect(partial(self.switch_page, 2))
+        log_in_page.ui.DButtonYes.clicked.connect(partial(self.switch_page, 1))
+        # In Use
+        in_use_page.ui.ButtonQuit.clicked.connect(partial(self.switch_page, 0))
+        # New User 1
+        new_user_page.widget(0).ui.buttonHome.clicked.connect(partial(self.switch_page, 0))
+        # New User 2
+        new_user_page.widget(1).ui.buttonHome.clicked.connect(partial(self.switch_page, 0))
+        # New User 3
+        new_user_page.widget(2).ui.buttonHome.clicked.connect(partial(self.switch_page, 0))
+        # New User Check
+        new_user_page.widget(3).ui.buttonHome.clicked.connect(partial(self.switch_page, 0))
+        new_user_page.widget(3).ui.DButtonSkip.clicked.connect(partial(self.switch_page, 1))
 
-        # Insert pages into QStackedWidget
+        # # Insert pages into QStackedWidget
         self.centralWidgets = QStackedWidget()
-        self.centralWidgets.addWidget(LogInPage)  # index: 0
-        self.centralWidgets.addWidget(SignUpPage)  # index: 1
-        self.centralWidgets.addWidget(InUsePage)  # index: 2
+        self.centralWidgets.addWidget(log_in_page)  # index: 0
+        self.centralWidgets.addWidget(in_use_page)  # index: 1
+        self.centralWidgets.addWidget(new_user_page)  # index: 2
 
         self.setCentralWidget(self.centralWidgets)
 
-    def getCurWidget(self):
+    def current_widget(self):
         return self.centralWidgets.currentWidget()
 
-    def switchPage(self, idx):
-        self.getCurWidget().clearPage()
+    def switch_page(self, idx):
+        self.current_widget().clear_page()
         self.centralWidgets.setCurrentIndex(idx)
-        self.getCurWidget().setPage()
+        self.current_widget().set_page()
 
 
 class PianoManager(QApplication):
 
     def __init__(self, argv):
-        
         QApplication.__init__(self, argv)
 
         self.window = MainWindow()
@@ -53,7 +66,6 @@ class PianoManager(QApplication):
 
 
 if __name__ == '__main__':
-
     # import os
     # os.environ["QT_IM_MODULE"] = "qtvirtualkeyboard"
 

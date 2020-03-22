@@ -1,6 +1,6 @@
 import sys
 from PySide2.QtWidgets import *
-from UI.ui_SignUp import Ui_SignUp
+from PianoManager.UI.ui_SignUp import Ui_SignUp
 
 
 class SignUp(QMainWindow):
@@ -10,10 +10,10 @@ class SignUp(QMainWindow):
         self.ui = Ui_SignUp()
         self.ui.setupUi(self)
 
-    def setPage(self):
+    def set_page(self):
         pass
 
-    def clearPage(self):
+    def clear_page(self):
         self.ui.editName.clear()
         self.ui.editID.clear()
         self.ui.editContact1.clear()

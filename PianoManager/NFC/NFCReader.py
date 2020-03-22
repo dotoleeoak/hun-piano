@@ -1,5 +1,5 @@
 from PySide2.QtCore import QThread, Signal
-from NFC.MFRC522 import MFRC522
+from PianoManager.NFC.MFRC522 import MFRC522
 
 
 class NFCReader(QThread):
@@ -22,7 +22,7 @@ class NFCReader(QThread):
                 # Get the UID of the card
                 if status == self.nfc.MI_OK:
                     (status, uid) = self.nfc.MFRC522_SelectTagSN()
-                    uid_str = self.uidToString(uid)
+                    uid_str = self.uid_to_string(uid)
                     print(uid_str)
                     self.nfc_connect.emit(uid_str)
                 else:
@@ -37,8 +37,9 @@ class NFCReader(QThread):
     def quit(self):
         self.reading = False
         super().quit()
-            
-    def uidToString(self, uid):
+
+    @staticmethod
+    def uid_to_string(self, uid):
         uid_str = ""
         for i in uid:
             uid_str = format(i, '02X') + uid_str

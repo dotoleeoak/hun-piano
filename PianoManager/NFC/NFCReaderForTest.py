@@ -7,7 +7,6 @@ class NFCReader(QThread):
     
     def __init__(self):
         super().__init__()
-        
 
     def run(self):
         
@@ -22,11 +21,10 @@ class NFCReader(QThread):
                     
     def quit(self):
         self.reading = False
-        super().quit()
             
-    def uidToString(uid):
+    @staticmethod
+    def uid_to_string(uid):
         uid_str = ""
         for i in uid:
             uid_str = format(i, '02X') + uid_str
         return uid_str
-            
