@@ -1,4 +1,5 @@
 import sys
+from functools import partial
 from PySide2.QtCore import QPropertyAnimation, QParallelAnimationGroup
 from PySide2.QtWidgets import *
 from PianoManager.Animation import Animation
@@ -25,6 +26,8 @@ class NewUser2(QWidget):
         self.set_page()
 
     def error_animation(self):
+        self.ui.buttonLeft.setDisabled(True)
+        self.ui.buttonRight.setDisabled(True)
         error_animation_group = QParallelAnimationGroup()
         self.animation.set_to_vibrate(self.ui.editContact1, amp=5, direction=90)
         error_animation_group.addAnimation(self.animation.current_anim)
@@ -34,8 +37,12 @@ class NewUser2(QWidget):
         error_animation_group.addAnimation(self.animation.current_anim)
         self.animation.current_anim = error_animation_group
         self.animation.current_anim.start(QPropertyAnimation.DeleteWhenStopped)
+        self.animation.current_anim.finished.connect(partial(self.ui.buttonLeft.setEnabled, True))
+        self.animation.current_anim.finished.connect(partial(self.ui.buttonRight.setEnabled, True))
 
     def set_page(self):
+        self.ui.buttonLeft.setEnabled(True)
+        self.ui.buttonRight.setEnabled(True)
         contact = self.dbReader.get_current_data("contact").split('-')
         self.ui.editContact1.setText(contact[0])
         self.ui.editContact2.setText(contact[1])

@@ -66,7 +66,6 @@ class PianoManager(QApplication):
 
 
 if __name__ == '__main__':
-    # import os
     # os.environ["QT_IM_MODULE"] = "qtvirtualkeyboard"
 
     app = PianoManager(sys.argv)
