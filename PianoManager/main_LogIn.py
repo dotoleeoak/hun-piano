@@ -16,7 +16,6 @@ class LogIn(QWidget):
         self.dbReader = TestDatabaseReader()
         # NFC Reader Thread
         self.nfcReader = NFCReader()
-        self.nfcReader.start()
         # Animation
         self.animation = Animation()
 
@@ -58,6 +57,8 @@ class LogIn(QWidget):
 
         self.ui.DButtonYes.clicked.connect(lambda: print("playing piano!"))
         self.ui.DButtonNo.clicked.connect(lambda: self.hide_dialogue_check())
+
+        self.set_page()
 
     # Input a password and display it
     def write_number(self, num):
