@@ -11,7 +11,6 @@ from PianoManager.main_NewUser import NewUser
 
 
 class MainWindow(QMainWindow):
-
     def __init__(self):
         QMainWindow.__init__(self)
         self.setWindowTitle("Piano Manager")
