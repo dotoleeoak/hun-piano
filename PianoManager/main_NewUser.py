@@ -35,12 +35,15 @@ class NewUser(QStackedWidget):
         # # Connect pages to switch each others
         # New User 1
         new_user_1_page.ui.buttonRight.clicked.connect(partial(self.switch_page, 1))
+        new_user_1_page.ui.editName.returnPressed.connect(partial(self.switch_page, 1))
         # New User 2
         new_user_2_page.ui.buttonLeft.clicked.connect(partial(self.switch_page, 0))
         new_user_2_page.ui.buttonRight.clicked.connect(partial(self.switch_page, 2))
+        new_user_2_page.ui.editContact3.returnPressed.connect(partial(self.switch_page, 2))
         # New User 3
         new_user_3_page.ui.buttonLeft.clicked.connect(partial(self.switch_page, 1))
         new_user_3_page.ui.buttonRight.clicked.connect(partial(self.switch_page, 3))
+        new_user_3_page.ui.editID.returnPressed.connect(partial(self.switch_page, 3))
         # New User Check
         new_user_check_page.ui.buttonLeft.clicked.connect(partial(self.switch_page, 2))
         new_user_check_page.ui.buttonReturn.clicked.connect(partial(self.switch_page, 0))

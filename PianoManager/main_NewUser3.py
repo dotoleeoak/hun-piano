@@ -9,6 +9,8 @@ from PianoManager.reader_for_test import TestDatabaseReader
 
 
 class NewUser3(QWidget):
+    free_pass = "201912041"
+
     def __init__(self, parent=None):
         QWidget.__init__(self, parent)
 
@@ -37,10 +39,12 @@ class NewUser3(QWidget):
         self.ui.buttonLeft.setEnabled(True)
         self.ui.buttonRight.setEnabled(True)
         self.ui.editID.setText(self.dbReader.get_current_data("ID"))
+        self.ui.labelWarning.show()
         self.ui.labelError.hide()
 
     def clear_page(self):
-        if self.ui.editID.text() == "":
+        user_id = self.ui.editID.text()
+        if len(user_id) != 10 and user_id != self.free_pass:
             self.ui.labelWarning.hide()
             self.ui.labelError.show()
             self.error_animation()
