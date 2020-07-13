@@ -4,7 +4,14 @@ from PySide2.QtGui import *
 from PySide2.QtWidgets import *
 from .path import PATH_IMG
 
+# FIXME: Importing "path" module can be done only in specific directory
 # TODO: Better way to get absolute path of directory...?
+
+"""
+여러 디렉토리에서 파일 실행이 불가능함
+release만 생각하면 상관없지만, 개발 시 매 실행마다 경로를 옮기는 것은 번거로움
+따라서 어떤 경로에서든 실행이 가능하도록 수정 필요
+"""
 
 
 class UiSignUp:
@@ -115,6 +122,9 @@ class UiSignUpName(UiSignUp):
     def setupUi(self, widget):
         super().setupUi(widget)
 
+        self.button_left.hide()
+        self.line_left.hide()
+
         self.label_name = QLabel(self.frame_main)
         self.label_name.setGeometry(QRect(220, 70, 70, 40))
         self.label_name.setText("이름")
@@ -152,3 +162,70 @@ class UiSignUpID(UiSignUp):
 
         self.edit_id = QLineEdit(self.frame_main)
         self.edit_id.setGeometry(QRect(310, 60, 255, 60))
+
+
+class UiSignUpCheck(UiSignUp):
+    def setupUi(self, widget):
+        super().setupUi(widget)
+
+        self.button_right.hide()
+        self.line_right.hide()
+
+        self.frame_main.setStyleSheet("font: 16pt 배달의민족 주아;")
+
+        self.label_guide = QLabel(self.frame_main)
+        self.label_guide.setGeometry(QRect(150, 52, 500, 30))
+        self.label_guide.setText("아래 사용자로 등록하시겠습니까?")
+        self.label_guide.setAlignment(Qt.AlignCenter)
+        self.label_guide.setStyleSheet("color: red;")
+
+        self.label_name = QLabel(self.frame_main)
+        self.label_name.setGeometry(200, 100, 150, 40)
+        self.label_name.setText("이름: ")
+        self.label_name.setAlignment(Qt.AlignRight | Qt.AlignVCenter)
+
+        self.label_name_user = QLabel(self.frame_main)
+        self.label_name_user.setGeometry(QRect(360, 100, 200, 40))
+        self.label_name_user.setText("홍길동")
+        self.label_name_user.setAlignment(Qt.AlignVCenter)
+
+        self.label_contact = QLabel(self.frame_main)
+        self.label_contact.setGeometry(200, 150, 150, 40)
+        self.label_contact.setText("전화번호: ")
+        self.label_contact.setAlignment(Qt.AlignRight | Qt.AlignVCenter)
+
+        self.label_contact_user = QLabel(self.frame_main)
+        self.label_contact_user.setGeometry(QRect(360, 150, 200, 40))
+        self.label_contact_user.setText("010-1234-5678")
+        self.label_contact_user.setAlignment(Qt.AlignVCenter)
+
+        self.label_id = QLabel(self.frame_main)
+        self.label_id.setGeometry(200, 200, 150, 40)
+        self.label_id.setText("학번: ")
+        self.label_id.setAlignment(Qt.AlignRight | Qt.AlignVCenter)
+
+        self.label_id_user = QLabel(self.frame_main)
+        self.label_id_user.setGeometry(QRect(360, 200, 200, 40))
+        self.label_id_user.setText("2020123456")
+        self.label_id_user.setAlignment(Qt.AlignVCenter)
+
+        self.label_temp = QLabel(self.frame_main)
+        self.label_temp.setGeometry(QRect(320, 255, 280, 40))
+        self.label_temp.setText("이 정보를 이번만 사용합니다.")
+        self.label_temp.setStyleSheet("font-size: 12pt;")
+
+        self.button_register = QPushButton(self.frame_main)
+        self.button_register.setGeometry(QRect(340, 320, 120, 60))
+        self.button_register.setText("등록")
+        self.button_register.setStyleSheet(
+            "QPushButton {"
+            "   font-size: 20pt;"
+            "   color: white;"
+            "   background-color: rgb(70, 108, 234);"
+            "   border-radius: 16px;"
+            "}"
+            "QPushButton:hover {"
+            "   color: rgb(150, 150, 150);"
+            "   background-color: rgb(38, 61, 129);"
+            "}"
+        )
