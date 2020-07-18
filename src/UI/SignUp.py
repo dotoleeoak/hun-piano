@@ -85,12 +85,12 @@ class UiSignUp:
         )
 
         path_left = os.path.join(PATH_IMG, "arrow_left.png")
-        path_right = os.path.join(PATH_IMG, "arrow_right.png")
-        path_left_hover = os.path.join(PATH_IMG, "arrow_left_hover.png")
-        path_right_hover = os.path.join(PATH_IMG, "arrow_right_hover.png")
         path_left = path_left.replace("\\", "/")
+        path_right = os.path.join(PATH_IMG, "arrow_right.png")
         path_right = path_right.replace("\\", "/")
+        path_left_hover = os.path.join(PATH_IMG, "arrow_left_hover.png")
         path_left_hover = path_left_hover.replace("\\", "/")
+        path_right_hover = os.path.join(PATH_IMG, "arrow_right_hover.png")
         path_right_hover = path_right_hover.replace("\\", "/")
 
         self.button_left = QPushButton(self.frame_main)
@@ -144,12 +144,15 @@ class UiSignUpContact(UiSignUp):
 
         self.edit_contact1 = QLineEdit(self.frame_main)
         self.edit_contact1.setGeometry(QRect(230, 90, 80, 50))
+        self.edit_contact1.setMaxLength(3)
 
         self.edit_contact2 = QLineEdit(self.frame_main)
         self.edit_contact2.setGeometry(QRect(350, 90, 100, 50))
+        self.edit_contact2.setMaxLength(4)
 
         self.edit_contact3 = QLineEdit(self.frame_main)
         self.edit_contact3.setGeometry(QRect(490, 90, 100, 50))
+        self.edit_contact3.setMaxLength(4)
 
 
 class UiSignUpID(UiSignUp):
@@ -208,6 +211,13 @@ class UiSignUpCheck(UiSignUp):
         self.label_id_user.setGeometry(QRect(360, 200, 200, 40))
         self.label_id_user.setText("2020123456")
         self.label_id_user.setAlignment(Qt.AlignVCenter)
+
+        # TODO: Button with hover image looks better
+        img_temp = QPixmap(os.path.join(PATH_IMG, "unchecked.png"))
+        self.button_temp = QPushButton(self.frame_main)
+        self.button_temp.setGeometry(QRect(270, 255, 40, 40))
+        self.button_temp.setIcon(QIcon(img_temp))
+        self.button_temp.setStyleSheet("border: none;")
 
         self.label_temp = QLabel(self.frame_main)
         self.label_temp.setGeometry(QRect(320, 255, 280, 40))

@@ -31,7 +31,7 @@ class UiInUse:
         self.used_time = QLabel(self.background_frame)
         self.used_time.setGeometry(QRect(0, 180, 800, 40))
         self.used_time.setStyleSheet("font-size: 16pt;")
-        self.used_time.setText("01:30:10")
+        self.used_time.setText("00:00:00")
         self.used_time.setAlignment(Qt.AlignCenter)
 
         self.username = QLabel(self.background_frame)
@@ -50,14 +50,14 @@ class UiInUse:
         self.button_quit.setGeometry(QRect(340, 360, 120, 60))
         self.button_quit.setText("종료")
         self.button_quit.setStyleSheet(
-            "QPushButton { "
-            "   font: 20pt 배달의민족 주아; "
-            "   color: white; "
-            "   background-color: rgb(255, 0, 0); "
-            "   border-radius: 10px; "
-            "} "
-            "QPushButton:hover { "
-            "   color: rgb(120, 120, 120); "
-            "   background-color: rgb(120, 0, 0); "
-            "} "
+            "QPushButton {"
+            "   font: 20pt 배달의민족 주아;"
+            "   color: white;"
+            "   background-color: rgb(255, 0, 0);"
+            "   border-radius: 10px;"
+            "}"
+            "QPushButton:hover {"
+            "   color: rgb(120, 120, 120);"
+            "   background-color: rgb(120, 0, 0);"
+            "}"
         )

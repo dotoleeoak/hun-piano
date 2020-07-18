@@ -78,8 +78,11 @@ class UiLogIn:
         for i in range(8):
             display = QLabel(self.menu_bar)
             display.setGeometry(QRect(80 * i + (60 if i < 4 else 110), 120, 70, 70))
+            display.setAlignment(Qt.AlignCenter)
             display.setStyleSheet(
-                "background-color: rgb(199, 107, 5);" "border-radius: 16px;"
+                "font-size: 32pt;"
+                "background-color: rgb(199, 107, 5);"
+                "border-radius: 16px;"
             )
             self.display_number.append(display)
 
