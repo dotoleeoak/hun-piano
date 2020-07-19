@@ -8,11 +8,30 @@
 ## WARNING! All changes made in this file will be lost when recompiling UI file!
 ################################################################################
 
-from PySide2.QtCore import (QCoreApplication, QMetaObject, QObject, QPoint,
-    QRect, QSize, QUrl, Qt)
-from PySide2.QtGui import (QBrush, QColor, QConicalGradient, QCursor, QFont,
-    QFontDatabase, QIcon, QLinearGradient, QPalette, QPainter, QPixmap,
-    QRadialGradient)
+from PySide2.QtCore import (
+    QCoreApplication,
+    QMetaObject,
+    QObject,
+    QPoint,
+    QRect,
+    QSize,
+    QUrl,
+    Qt,
+)
+from PySide2.QtGui import (
+    QBrush,
+    QColor,
+    QConicalGradient,
+    QCursor,
+    QFont,
+    QFontDatabase,
+    QIcon,
+    QLinearGradient,
+    QPalette,
+    QPainter,
+    QPixmap,
+    QRadialGradient,
+)
 from PySide2.QtWidgets import *
 
 
@@ -34,20 +53,26 @@ class Ui_InUse(object):
         self.UsedTime = QLabel(self.BackgroundFrame)
         self.UsedTime.setObjectName(u"UsedTime")
         self.UsedTime.setGeometry(QRect(0, 180, 800, 40))
-        self.UsedTime.setStyleSheet(u"font: 16pt \"\ubc30\ub2ec\uc758\ubbfc\uc871 \ub3c4\ud604\";\n"
-"color: rgb(255, 255, 255);")
+        self.UsedTime.setStyleSheet(
+            u'font: 16pt "\ubc30\ub2ec\uc758\ubbfc\uc871 \ub3c4\ud604";\n'
+            "color: rgb(255, 255, 255);"
+        )
         self.UsedTime.setAlignment(Qt.AlignCenter)
         self.UserName = QLabel(self.BackgroundFrame)
         self.UserName.setObjectName(u"UserName")
         self.UserName.setGeometry(QRect(0, 230, 800, 41))
-        self.UserName.setStyleSheet(u"font: 20pt \"\ubc30\ub2ec\uc758\ubbfc\uc871 \ub3c4\ud604\";\n"
-"color: rgb(255, 255, 255);")
+        self.UserName.setStyleSheet(
+            u'font: 20pt "\ubc30\ub2ec\uc758\ubbfc\uc871 \ub3c4\ud604";\n'
+            "color: rgb(255, 255, 255);"
+        )
         self.UserName.setAlignment(Qt.AlignCenter)
         self.InUseLabel = QLabel(self.BackgroundFrame)
         self.InUseLabel.setObjectName(u"InUseLabel")
         self.InUseLabel.setGeometry(QRect(0, 270, 800, 71))
-        self.InUseLabel.setStyleSheet(u"font: 32pt \"\ubc30\ub2ec\uc758\ubbfc\uc871 \ub3c4\ud604\";\n"
-"color: rgb(255, 255, 255);")
+        self.InUseLabel.setStyleSheet(
+            u'font: 32pt "\ubc30\ub2ec\uc758\ubbfc\uc871 \ub3c4\ud604";\n'
+            "color: rgb(255, 255, 255);"
+        )
         self.InUseLabel.setAlignment(Qt.AlignCenter)
         self.ButtonQuit = QPushButton(self.BackgroundFrame)
         self.ButtonQuit.setObjectName(u"ButtonQuit")
@@ -56,18 +81,20 @@ class Ui_InUse(object):
         font.setFamily(u"\ubc30\ub2ec\uc758\ubbfc\uc871 \ub3c4\ud604")
         font.setPointSize(16)
         self.ButtonQuit.setFont(font)
-        self.ButtonQuit.setStyleSheet(u"QPushButton\n"
-"{\n"
-"	color: rgb(255, 255, 255);\n"
-"	background-color: rgb(255, 0, 0);\n"
-"	border-radius: 10px;\n"
-"}\n"
-"\n"
-"QPushButton:hover\n"
-"{\n"
-"	color: rgb(120, 120, 120);\n"
-"	background-color: rgb(120, 0, 0);\n"
-"};")
+        self.ButtonQuit.setStyleSheet(
+            u"QPushButton\n"
+            "{\n"
+            "	color: rgb(255, 255, 255);\n"
+            "	background-color: rgb(255, 0, 0);\n"
+            "	border-radius: 10px;\n"
+            "}\n"
+            "\n"
+            "QPushButton:hover\n"
+            "{\n"
+            "	color: rgb(120, 120, 120);\n"
+            "	background-color: rgb(120, 0, 0);\n"
+            "};"
+        )
         self.UsedTime.raise_()
         self.UserName.raise_()
         self.InUseLabel.raise_()
@@ -77,14 +104,24 @@ class Ui_InUse(object):
         self.retranslateUi(InUse)
 
         QMetaObject.connectSlotsByName(InUse)
+
     # setupUi
 
     def retranslateUi(self, InUse):
         InUse.setWindowTitle(QCoreApplication.translate("InUse", u"Form", None))
         self.PianoPic.setText("")
         self.UsedTime.setText(QCoreApplication.translate("InUse", u"01:30:10", None))
-        self.UserName.setText(QCoreApplication.translate("InUse", u"\uc774\uc9c4\uc601 \ub2d8", None))
-        self.InUseLabel.setText(QCoreApplication.translate("InUse", u"\ud604\uc7ac \uc0ac\uc6a9 \uc911\uc785\ub2c8\ub2e4", None))
-        self.ButtonQuit.setText(QCoreApplication.translate("InUse", u"\uc885\ub8cc", None))
+        self.UserName.setText(
+            QCoreApplication.translate("InUse", u"\uc774\uc9c4\uc601 \ub2d8", None)
+        )
+        self.InUseLabel.setText(
+            QCoreApplication.translate(
+                "InUse", u"\ud604\uc7ac \uc0ac\uc6a9 \uc911\uc785\ub2c8\ub2e4", None
+            )
+        )
+        self.ButtonQuit.setText(
+            QCoreApplication.translate("InUse", u"\uc885\ub8cc", None)
+        )
+
     # retranslateUi
 

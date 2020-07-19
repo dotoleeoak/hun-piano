@@ -2,10 +2,10 @@ import sys
 from functools import partial
 from PySide2.QtCore import QPropertyAnimation, QParallelAnimationGroup
 from PySide2.QtWidgets import *
-from PianoManager.Animation import Animation
-from PianoManager.UI.ui_NewUser2 import Ui_NewUser2
-from PianoManager.writer_for_test import TestDatabaseWriter
-from PianoManager.reader_for_test import TestDatabaseReader
+from Animation import Animation
+from UI.ui_NewUser2 import Ui_NewUser2
+from writer_for_test import TestDatabaseWriter
+from reader_for_test import TestDatabaseReader
 
 
 class NewUser2(QWidget):
@@ -37,26 +37,38 @@ class NewUser2(QWidget):
         error_animation_group.addAnimation(self.animation.current_anim)
         self.animation.current_anim = error_animation_group
         self.animation.current_anim.start(QPropertyAnimation.DeleteWhenStopped)
-        self.animation.current_anim.finished.connect(partial(self.ui.buttonLeft.setEnabled, True))
-        self.animation.current_anim.finished.connect(partial(self.ui.buttonRight.setEnabled, True))
+        self.animation.current_anim.finished.connect(
+            partial(self.ui.buttonLeft.setEnabled, True)
+        )
+        self.animation.current_anim.finished.connect(
+            partial(self.ui.buttonRight.setEnabled, True)
+        )
 
     def set_page(self):
         self.ui.buttonLeft.setEnabled(True)
         self.ui.buttonRight.setEnabled(True)
-        contact = self.dbReader.get_current_data("contact").split('-')
+        contact = self.dbReader.get_current_data("contact").split("-")
         self.ui.editContact1.setText(contact[0])
         self.ui.editContact2.setText(contact[1])
         self.ui.editContact3.setText(contact[2])
         self.ui.labelError.hide()
 
     def clear_page(self):
-        if self.ui.editContact1.text() == "" \
-                or self.ui.editContact2.text() == "" \
-                or self.ui.editContact3.text() == "":
+        if (
+            self.ui.editContact1.text() == ""
+            or self.ui.editContact2.text() == ""
+            or self.ui.editContact3.text() == ""
+        ):
             self.ui.labelError.show()
             self.error_animation()
             return "ERR"
-        contact = self.ui.editContact1.text() + "-" + self.ui.editContact2.text() + "-" + self.ui.editContact3.text()
+        contact = (
+            self.ui.editContact1.text()
+            + "-"
+            + self.ui.editContact2.text()
+            + "-"
+            + self.ui.editContact3.text()
+        )
         self.dbWriter.write_temporary_data(contact, "contact")
         self.ui.editContact1.clear()
         self.ui.editContact2.clear()
@@ -64,7 +76,7 @@ class NewUser2(QWidget):
         return None
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     app = QApplication(sys.argv)
 
     new_user = NewUser2()

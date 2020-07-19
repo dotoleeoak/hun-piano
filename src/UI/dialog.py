@@ -17,10 +17,6 @@ class Dialog(QFrame):
         self.dialog.setGeometry(QRect(200, 120, 400, 240))
         self.dialog.setStyleSheet("background-color: white;" "border-radius: 25px;")
 
-        # self.label_notice = QLabel(self.dialog)
-        # self.label_notice.setGeometry(QRect(0, 50, 400, 40))
-        # self.label_notice.setStyleSheet("color: rgb(71, 71, 71);")
-
 
 class DialogSelect(Dialog):
     def __init__(self, widget):
@@ -77,38 +73,3 @@ class DialogNotify(Dialog):
             "   background-color: rgb(0, 64, 195);"
             "}"
         )
-
-
-class UiExample:
-    def setupUi(self, widget):
-        widget.resize(800, 480)
-
-        self.frame_test = QFrame(widget)
-        self.frame_test.setGeometry(QRect(0, 0, 800, 480))
-
-        self.button_test = QPushButton(self.frame_test)
-        self.button_test.setGeometry(QRect(350, 220, 100, 40))
-        self.button_test.setText("Click!")
-
-        self.frame_dialog = DialogSelect(widget)
-        self.frame_dialog.hide()
-
-
-class WidgetExample(QWidget):
-    def __init__(self, parent=None):
-        QWidget.__init__(self, parent)
-
-        self.ui = UiExample()
-        self.ui.setupUi(self)
-
-        self.ui.button_test.clicked.connect(self.func)
-
-    def func(self):
-        self.ui.frame_dialog.show()
-
-
-if __name__ == "__main__":
-    app = QApplication(sys.argv)
-    widget = WidgetExample()
-    widget.show()
-    sys.exit(app.exec_())

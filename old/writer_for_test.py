@@ -3,16 +3,16 @@
 # 등록 페이지와 다른 여러 테스트를 위해 임의로 만들어보았다.
 # 와! 객체지향!
 import copy
-from PianoManager import db_for_test as db
+import db_for_test as db
 
 
 class TestDatabaseWriter:
     # for Singleton
     def __new__(cls):
-        if not hasattr(cls, 'instance'):
+        if not hasattr(cls, "instance"):
             cls.instance = super(TestDatabaseWriter, cls).__new__(cls)
         return cls.instance
-    
+
     def __init__(self):
         pass
 

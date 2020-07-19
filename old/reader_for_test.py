@@ -2,22 +2,24 @@
 # 어떤 식으로 인터페이스가 구현 될지는 모르나
 # 로그인 페이지 테스트를 위해 임의로 만들어보았다.
 # 와! 객체지향!
-from PianoManager import db_for_test as db
+import db_for_test as db
 
 
 class TestDatabaseReader:
     # for Singleton
     def __new__(cls):
-        if not hasattr(cls, 'instance'):
+        if not hasattr(cls, "instance"):
             cls.instance = super(TestDatabaseReader, cls).__new__(cls)
         return cls.instance
-    
+
     def __init__(self):
         pass
 
     def is_pass_in_database(self, password):
         contact = "010-" + password[:4] + "-" + password[4:]
-        data_found = next((item for item in db.data if item["contact"] == contact), False)
+        data_found = next(
+            (item for item in db.data if item["contact"] == contact), False
+        )
         print(data_found)
         if not data_found:
             return False, None

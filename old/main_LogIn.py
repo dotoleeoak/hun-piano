@@ -2,10 +2,10 @@ import sys
 from functools import partial
 from PySide2.QtCore import Slot, QPropertyAnimation, QParallelAnimationGroup
 from PySide2.QtWidgets import *
-from PianoManager.UI.ui_LogIn import Ui_LogIn
-from PianoManager.reader_for_test import TestDatabaseReader
-from PianoManager.NFC.NFCReaderForTest import NFCReader
-from PianoManager.Animation import Animation
+from UI.ui_LogIn import Ui_LogIn
+from reader_for_test import TestDatabaseReader
+from Animation import Animation
+from NFC.NFCReaderForTest import NFCReader
 
 
 class LogIn(QWidget):
@@ -126,7 +126,9 @@ class LogIn(QWidget):
     def show_error_animation(self):
         error_group = QParallelAnimationGroup()
         for i in range(1, 9):
-            self.animation.set_to_vibrate(self.keyDisplays.button(i), amp=10, direction=90 + 180 * (i % 2))
+            self.animation.set_to_vibrate(
+                self.keyDisplays.button(i), amp=10, direction=90 + 180 * (i % 2)
+            )
             error_group.addAnimation(self.animation.current_anim)
         self.animation.current_anim = error_group
         self.animation.current_anim.start(QPropertyAnimation.DeleteWhenStopped)
@@ -154,7 +156,7 @@ class LogIn(QWidget):
         self.nfcReader.wait()
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     app = QApplication(sys.argv)
 
     login = LogIn()

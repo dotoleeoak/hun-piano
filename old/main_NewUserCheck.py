@@ -2,10 +2,10 @@ import sys
 from PySide2.QtCore import Slot
 from PySide2.QtWidgets import *
 from PySide2.QtGui import QPixmap
-from PianoManager.UI.ui_NewUserCheck import Ui_NewUserCheck
-from PianoManager.writer_for_test import TestDatabaseWriter
-from PianoManager.reader_for_test import TestDatabaseReader
-from PianoManager.NFC.NFCReaderForTest import NFCReader
+from UI.ui_NewUserCheck import Ui_NewUserCheck
+from writer_for_test import TestDatabaseWriter
+from reader_for_test import TestDatabaseReader
+from NFC.NFCReaderForTest import NFCReader
 
 
 class NewUserCheck(QWidget):
@@ -24,8 +24,8 @@ class NewUserCheck(QWidget):
         self.nfcReader = NFCReader()
 
         # pixmap
-        self.checked_pix = QPixmap('./Images/checked.png')
-        self.unchecked_pix = QPixmap('./Images/unchecked.png')
+        self.checked_pix = QPixmap("../Images/checked.png")
+        self.unchecked_pix = QPixmap("../Images/unchecked.png")
 
         self.ui.buttonRegister.clicked.connect(self.register_nfc)
 
@@ -70,7 +70,7 @@ class NewUserCheck(QWidget):
             self.nfcReader.quit()
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     app = QApplication(sys.argv)
 
     new_user = NewUserCheck()

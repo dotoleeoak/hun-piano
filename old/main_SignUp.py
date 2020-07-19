@@ -1,6 +1,6 @@
 import sys
 from PySide2.QtWidgets import *
-from PianoManager.UI.ui_SignUp import Ui_SignUp
+from UI.ui_SignUp import Ui_SignUp
 
 
 class SignUp(QMainWindow):
@@ -21,7 +21,7 @@ class SignUp(QMainWindow):
         self.ui.editContact3.clear()
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     app = QApplication(sys.argv)
     view = SignUp()
     view.show()
