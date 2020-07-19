@@ -2,6 +2,7 @@ import os
 from PySide2.QtCore import *
 from PySide2.QtGui import *
 from PySide2.QtWidgets import *
+from UI.dialog import DialogSelect, DialogNotify
 from .path import PATH_IMG
 
 
@@ -89,3 +90,47 @@ class UiLogIn:
         self.label_dash = QLabel(self.menu_bar)
         self.label_dash.setGeometry(QRect(390, 145, 20, 20))
         self.label_dash.setPixmap(QPixmap(os.path.join(PATH_IMG, "Stick2.png")))
+
+        self.dialog_true = DialogSelect(widget)
+        self.dialog_true.setFrameStyle(QFrame.Raised)
+        self.dialog_true.hide()
+
+        self.dialog_true_name = QLabel(self.dialog_true.dialog)
+        self.dialog_true_name.setGeometry(QRect(50, 60, 300, 40))
+        self.dialog_true_name.setAlignment(Qt.AlignCenter)
+        self.dialog_true_name.setText("홍길동 님")
+        self.dialog_true_name.setStyleSheet(
+            "font-size: 24pt;" "color: rgb(71, 71, 71);" "background-color: white;"
+        )
+
+        self.dialog_true_guide = QLabel(self.dialog_true.dialog)
+        self.dialog_true_guide.setGeometry(QRect(50, 100, 300, 40))
+        self.dialog_true_guide.setAlignment(Qt.AlignCenter)
+        self.dialog_true_guide.setText("사용하시겠습니까?")
+        self.dialog_true_guide.setStyleSheet(
+            "font-size: 16pt;" "color: rgb(71, 71, 71);" "background-color: white;"
+        )
+
+        self.dialog_false = DialogNotify(widget)
+        self.dialog_false.setFrameStyle(QFrame.Raised)
+        self.dialog_false.hide()
+
+        self.dialog_false_guide = QLabel(self.dialog_false.dialog)
+        self.dialog_false_guide.setGeometry(QRect(20, 45, 360, 100))
+        self.dialog_false_guide.setAlignment(Qt.AlignCenter)
+        self.dialog_false_guide.setText("존재하지 않는 번호입니다.\n다시 입력해주세요!")
+        self.dialog_false_guide.setStyleSheet(
+            "font-size: 18pt;" "color: rgb(71, 71, 71);"
+        )
+
+        self.dialog_nfc = DialogNotify(widget)
+        self.dialog_nfc.setFrameStyle(QFrame.Raised)
+        self.dialog_nfc.hide()
+
+        self.dialog_nfc_guide = QLabel(self.dialog_nfc.dialog)
+        self.dialog_nfc_guide.setGeometry(QRect(20, 45, 360, 100))
+        self.dialog_nfc_guide.setAlignment(Qt.AlignCenter)
+        self.dialog_nfc_guide.setText("NFC 서비스는\n아직 준비 중입니다...ㅠ")
+        self.dialog_nfc_guide.setStyleSheet(
+            "font-size: 18pt;" "color: rgb(71, 71, 71);"
+        )
