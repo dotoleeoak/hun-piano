@@ -2,10 +2,6 @@ import sys
 from enum import Enum
 from functools import partial
 from PySide2.QtWidgets import QApplication, QMainWindow, QStackedWidget
-
-# from modelLogIn import LogIn
-# from modelInUse import InUse
-# from modelSignUp import SignUp
 from model.log_in import LogIn
 from model.in_use import InUse
 from model.sign_up import SignUp
@@ -34,7 +30,6 @@ class MainWindow(QMainWindow):
 
         page_log_in.ui.button_register.clicked.connect(f(self.idx["sign_up"]))
         page_log_in.ui.dialog_true.button_yes.clicked.connect(f(self.idx["in_use"]))
-        # page_log_in.ui.DButtonYes.clicked.connect(f(self.idx["in_use"]))
 
         for i in range(4):
             page_sign_up.widget(i).ui.button_home.clicked.connect(f(self.idx["log_in"]))
