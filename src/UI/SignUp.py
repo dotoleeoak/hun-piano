@@ -2,6 +2,7 @@ import os
 from PySide2.QtCore import *
 from PySide2.QtGui import *
 from PySide2.QtWidgets import *
+from UI.dialog import DialogNotify
 from .path import PATH_IMG
 
 # FIXME: Importing "path" module can be done only in specific directory
@@ -174,7 +175,7 @@ class UiSignUpCheck(UiSignUp):
         self.button_right.hide()
         self.line_right.hide()
 
-        self.frame_main.setStyleSheet("font: 16pt 배달의민족 주아;")
+        self.frame_main.setStyleSheet("background-color: white;" "font: 16pt 배달의민족 주아;")
 
         self.label_guide = QLabel(self.frame_main)
         self.label_guide.setGeometry(QRect(150, 52, 500, 30))
@@ -231,11 +232,43 @@ class UiSignUpCheck(UiSignUp):
             "QPushButton {"
             "   font-size: 20pt;"
             "   color: white;"
-            "   background-color: rgb(70, 108, 234);"
+            "   background-color: rgb(0, 124, 255);"
             "   border-radius: 16px;"
             "}"
             "QPushButton:hover {"
             "   color: rgb(150, 150, 150);"
-            "   background-color: rgb(38, 61, 129);"
+            "   background-color: rgb(0, 64, 195);"
             "}"
+        )
+
+        self.dialog_true = DialogNotify(widget)
+        self.dialog_true.setFrameStyle(QFrame.Raised)
+        self.dialog_true.hide()
+
+        self.dialog_true_name = QLabel(self.dialog_true.dialog)
+        self.dialog_true_name.setGeometry(QRect(50, 60, 300, 40))
+        self.dialog_true_name.setAlignment(Qt.AlignCenter)
+        self.dialog_true_name.setText("홍길동 님")
+        self.dialog_true_name.setStyleSheet(
+            "font-size: 24pt;" "color: rgb(71, 71, 71);"
+        )
+
+        self.dialog_true_guide = QLabel(self.dialog_true.dialog)
+        self.dialog_true_guide.setGeometry(QRect(50, 100, 300, 40))
+        self.dialog_true_guide.setAlignment(Qt.AlignCenter)
+        self.dialog_true_guide.setText("등록되었습니다!")
+        self.dialog_true_guide.setStyleSheet(
+            "font-size: 16pt;" "color: rgb(71, 71, 71);"
+        )
+
+        self.dialog_false = DialogNotify(widget)
+        self.dialog_false.setFrameStyle(QFrame.Raised)
+        self.dialog_false.hide()
+
+        self.dialog_false_guide = QLabel(self.dialog_false.dialog)
+        self.dialog_false_guide.setGeometry(QRect(20, 45, 360, 100))
+        self.dialog_false_guide.setAlignment(Qt.AlignCenter)
+        self.dialog_false_guide.setText("이미 가입된 정보입니다.")
+        self.dialog_false_guide.setStyleSheet(
+            "font-size: 18pt;" "color: rgb(71, 71, 71);"
         )
