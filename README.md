@@ -1,4 +1,4 @@
-음취헌 Piano Manager
+음취헌 Piano Manager 🎹
 =======
 
 음취헌은 성균관대 자연과학캠퍼스 복지회관 3층에 있는 고전음악 감상실입니다. 주요 활동으로는 그랜드피아노 자유 이용, 주 2시간 내외의 운영, 매년 연주회 및 홈커밍데이 등 여러 행사가 있습니다. 교내 구성원이라면 누구든 가입할 수 있으며, 실원은 상시 모집 중입니다. 관련 문의 사항은 운영진에게 연락 바랍니다.  
@@ -12,7 +12,7 @@
 ---
 
 ## ✔ Guideline
-### Setting
+### Setting ⚙
 해당 repository를 다운로드 받으세요. git을 이용해 받는 것을 권장합니다.  
 git을 이용해서 받으려면, 우선 [git을 설치](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)하고 원하는 경로에서 다음 명령어를 입력하세요.  
 ```shell
@@ -25,7 +25,7 @@ git clone https://github.com/dotoleeoak/skku-hun-2020
 
 이후 python으로 main.py를 실행하면 됩니다.  
 
-### NFC 관련 주의 사항
+### NFC 관련 주의 사항 ⚠
 - 라즈베리파이에서 NFC를 사용할 경우:  
     ```python
     from NFC.NFCReader import NFCReader
