@@ -1,3 +1,11 @@
+# Bytecode
 __pycache__/
+
+# IntelliJ IDEA
 .idea/
+
+# Visual Studio Code
+.vscode/
+
+# For security
 db.py
