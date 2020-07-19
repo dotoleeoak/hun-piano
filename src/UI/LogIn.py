@@ -100,7 +100,7 @@ class UiLogIn:
         self.dialog_true_name.setAlignment(Qt.AlignCenter)
         self.dialog_true_name.setText("홍길동 님")
         self.dialog_true_name.setStyleSheet(
-            "font-size: 24pt;" "color: rgb(71, 71, 71);" "background-color: white;"
+            "font-size: 24pt;" "color: rgb(71, 71, 71);"
         )
 
         self.dialog_true_guide = QLabel(self.dialog_true.dialog)
@@ -108,7 +108,7 @@ class UiLogIn:
         self.dialog_true_guide.setAlignment(Qt.AlignCenter)
         self.dialog_true_guide.setText("사용하시겠습니까?")
         self.dialog_true_guide.setStyleSheet(
-            "font-size: 16pt;" "color: rgb(71, 71, 71);" "background-color: white;"
+            "font-size: 16pt;" "color: rgb(71, 71, 71);"
         )
 
         self.dialog_false = DialogNotify(widget)
