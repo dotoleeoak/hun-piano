@@ -2,9 +2,8 @@ import sys
 from functools import partial
 from PySide2.QtCore import *
 from PySide2.QtWidgets import *
-from UI.LogIn import UiLogIn
-from db import DataBase
-from Animation import Animation
+from view.log_in import UiLogIn
+from model.db import DataBase
 
 
 class LogIn(QWidget):

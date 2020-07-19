@@ -2,7 +2,7 @@ import os
 from PySide2.QtCore import *
 from PySide2.QtGui import *
 from PySide2.QtWidgets import *
-from UI.dialog import DialogSelect, DialogNotify
+from view.dialog import DialogSelect, DialogNotify
 from .path import PATH_IMG
 
 

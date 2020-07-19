@@ -2,7 +2,7 @@ import os
 from PySide2.QtCore import *
 from PySide2.QtGui import *
 from PySide2.QtWidgets import *
-from UI.dialog import DialogNotify
+from view.dialog import DialogNotify
 from .path import PATH_IMG
 
 # FIXME: Importing "path" module can be done only in specific directory

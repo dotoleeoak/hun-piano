@@ -2,8 +2,8 @@ import sys
 from functools import partial
 from PySide2.QtCore import *
 from PySide2.QtWidgets import *
-from UI.SignUp import *
-from db import DataBase
+from view.sign_up import *
+from model.db import DataBase
 
 
 class SignUpName(QWidget):
