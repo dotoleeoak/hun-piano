@@ -17,7 +17,7 @@ class LogIn(QWidget):
         self.db = DataBase()
         self.idx_display = 0
         self.contact = 0
-        self.name = ""
+        self.info = {}
 
         for val, button in enumerate(self.ui.button_keypad):
             button.clicked.connect(partial(self.display_number, val))
@@ -38,13 +38,16 @@ class LogIn(QWidget):
         if self.idx_display == 8:
             print(f"contact = {self.contact:08d}")
             if self.db.check_user(self.contact):
-                self.name = self.db.get_name(self.contact)
-                self.ui.dialog_true_name.setText(self.name + " 님")
+                self.info = self.db.get_info(self.contact)
+                self.ui.dialog_true_name.setText(self.info["name"] + " 님")
                 self.ui.dialog_true.show()
                 # TODO: swich to in_use page
             else:
                 self.ui.dialog_false.show()
                 # TODO: error animation
+
+    def get_contact(self):
+        return self.contact
 
     def set_page(self):
         pass
