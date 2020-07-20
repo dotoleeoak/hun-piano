@@ -2,7 +2,7 @@ import sys
 from functools import partial
 from PySide2.QtCore import *
 from PySide2.QtWidgets import *
-from view.sign_up import *
+from view import UiSignUpName, UiSignUpContact, UiSignUpID, UiSignUpCheck
 from model.db import DataBase
 
 

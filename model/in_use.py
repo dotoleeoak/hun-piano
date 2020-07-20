@@ -1,7 +1,7 @@
 import sys
 from PySide2.QtCore import QElapsedTimer, QTime, QTimer
 from PySide2.QtWidgets import QApplication, QWidget
-from view.in_use import UiInUse
+from view import UiInUse
 from model.db import DataBase
 
 
