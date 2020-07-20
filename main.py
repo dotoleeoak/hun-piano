@@ -2,9 +2,7 @@ import sys
 from enum import Enum
 from functools import partial
 from PySide2.QtWidgets import QApplication, QMainWindow, QStackedWidget
-from model.log_in import LogIn
-from model.in_use import InUse
-from model.sign_up import SignUp
+from model import *
 
 
 class MainWindow(QMainWindow):
