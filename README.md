@@ -23,7 +23,31 @@ git clone https://github.com/dotoleeoak/skku-hun-2020
 
 > ~~requirements.txt 설명 추가 필요~~  
 
-이후 python으로 main.py를 실행하면 됩니다.  
+이후 python으로 main.py를 실행하면 됩니다.
+
+### Raspberry Pi & Pins 🔌
+
+핀 번호에 대한 정보는 [여기](https://www.raspberrypi.org/documentation/usage/gpio/)에서 확인하세요.
+
+- For Raspberry Pi Touch Screen
+
+| Name   | Pin #   | Pin name     |
+|:------:|:-------:|:------------:|
+| 5V     | 2       | 5V           |
+| GND    | 6       | Ground       |
+
+- For NFC Module(RFID-RC522)
+
+| Name   | Pin #   | Pin name     |
+|:------:|:-------:|:------------:|
+| SDA    | 24      | GPIO8        |
+| SCK    | 23      | GPIO11       |
+| MOSI   | 19      | GPIO10       |
+| MISO   | 21      | GPIO9        |
+| IRQ    | None    | None         |
+| GND    | Any     | Any Ground   |
+| RST    | None    | None         |
+| 3.3V   | 1       | 3V3          |
 
 ### NFC 관련 주의 사항 ⚠
 - 라즈베리파이에서 NFC를 사용할 경우:  
