@@ -50,6 +50,7 @@ class MainWindow(QMainWindow):
 
 if __name__ == "__main__":
     # # 가상 키보드를 표시하기 위해 아래 코드 필요
+    # import os
     # os.environ["QT_IM_MODULE"] = "qtvirtualkeyboard"
 
     app = QApplication()
