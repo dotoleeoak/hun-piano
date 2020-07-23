@@ -34,6 +34,13 @@ git clone https://github.com/dotoleeoak/skku-hun-2020
 | Name   | Pin #   | Pin name     |
 |:------:|:-------:|:------------:|
 | 5V     | 2       | 5V           |
+| GND    | 9       | Ground       |
+
+- For Rasberry Pi Case with Cooler
+
+| Name   | Pin #   | Pin name     |
+|:------:|:-------:|:------------:|
+| 5V     | 4       | 5V           |
 | GND    | 6       | Ground       |
 
 - For NFC Module(RFID-RC522)
@@ -45,9 +52,9 @@ git clone https://github.com/dotoleeoak/skku-hun-2020
 | MOSI   | 19      | GPIO10       |
 | MISO   | 21      | GPIO9        |
 | IRQ    | None    | None         |
-| GND    | Any     | Any Ground   |
-| RST    | None    | None         |
-| 3.3V   | 1       | 3V3          |
+| GND    | 20      | Ground       |
+| RST    | 22      | GPIO25       |
+| 3.3V   | 17      | 3V3          |
 
 ### NFC 관련 주의 사항 ⚠
 - 라즈베리파이에서 NFC를 사용할 경우:  
@@ -63,7 +70,7 @@ git clone https://github.com/dotoleeoak/skku-hun-2020
 ---
 
 ## 😎 Contributors
-- 김정원 [@threedalpeng](https://github.com/threedalpeng) - UI 구현 (고생 많았다 ㅎㅎ)  
+- 김정원 [@threedalpeng](https://github.com/threedalpeng) - UI 구현, NFC 연결
 - 김주현 [@juhy0987](https://github.com/juhy0987) - DB 구성  
 - 이진영 [@HopangLee](https://github.com/HopangLee) - UI 디자인  
 - 최재민 [@dotoleeoak](https://github.com/dotoleeoak) - UI, DB 연결  
