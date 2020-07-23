@@ -11,6 +11,9 @@ class MainWindow(QMainWindow):
         self.setWindowTitle("음취헌 Piano Manager")
         self.setFixedSize(800, 480)
 
+        # # 라즈베리 파이에서 풀스크린으로 표시하기 위해 아래 코드 필요
+        # self.showFullScreen()
+
         page_in_use = InUse()
         page_log_in = LogIn()
         page_sign_up = SignUp()
@@ -46,6 +49,9 @@ class MainWindow(QMainWindow):
 
 
 if __name__ == "__main__":
+    # # 가상 키보드를 표시하기 위해 아래 코드 필요
+    # os.environ["QT_IM_MODULE"] = "qtvirtualkeyboard"
+
     app = QApplication()
     window = MainWindow()
     window.show()
