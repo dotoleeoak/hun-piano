@@ -23,7 +23,38 @@ git clone https://github.com/dotoleeoak/skku-hun-2020
 
 > ~~requirements.txt 설명 추가 필요~~  
 
-이후 python으로 main.py를 실행하면 됩니다.  
+이후 python으로 main.py를 실행하면 됩니다.
+
+### Raspberry Pi & Pins 🔌
+
+핀 번호에 대한 정보는 [여기](https://www.raspberrypi.org/documentation/usage/gpio/)에서 확인하세요.
+
+- For Raspberry Pi Touch Screen
+
+| Name   | Pin #   | Pin name     |
+|:------:|:-------:|:------------:|
+| 5V     | 2       | 5V           |
+| GND    | 9       | Ground       |
+
+- For Rasberry Pi Case with Cooler
+
+| Name   | Pin #   | Pin name     |
+|:------:|:-------:|:------------:|
+| 5V     | 4       | 5V           |
+| GND    | 6       | Ground       |
+
+- For NFC Module(RFID-RC522)
+
+| Name   | Pin #   | Pin name     |
+|:------:|:-------:|:------------:|
+| SDA    | 24      | GPIO8        |
+| SCK    | 23      | GPIO11       |
+| MOSI   | 19      | GPIO10       |
+| MISO   | 21      | GPIO9        |
+| IRQ    | None    | None         |
+| GND    | 20      | Ground       |
+| RST    | 22      | GPIO25       |
+| 3.3V   | 17      | 3V3          |
 
 ### NFC 관련 주의 사항 ⚠
 - 라즈베리파이에서 NFC를 사용할 경우:  
@@ -39,7 +70,7 @@ git clone https://github.com/dotoleeoak/skku-hun-2020
 ---
 
 ## 😎 Contributors
-- 김정원 [@threedalpeng](https://github.com/threedalpeng) - UI 구현 (고생 많았다 ㅎㅎ)  
+- 김정원 [@threedalpeng](https://github.com/threedalpeng) - UI 구현, NFC 연결
 - 김주현 [@juhy0987](https://github.com/juhy0987) - DB 구성  
 - 이진영 [@HopangLee](https://github.com/HopangLee) - UI 디자인  
 - 최재민 [@dotoleeoak](https://github.com/dotoleeoak) - UI, DB 연결  
