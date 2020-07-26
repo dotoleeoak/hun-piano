@@ -32,7 +32,7 @@ font 폴더에 있는 <ins>배달의민족 주아</ins> 글꼴을 설치해주�
 $ python -m venv hun
 
 (macOS / Linux)
-$ python3 -m vemv hun
+$ python3 -m venv hun
 ```
   
 그 다음 가상환경을 활성화하고 필요한 패키지를 받아주세요.
