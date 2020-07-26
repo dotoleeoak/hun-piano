@@ -16,15 +16,50 @@
 해당 repository를 다운로드 받으세요. git을 이용해 받는 것을 권장합니다.  
 git을 이용해서 받으려면, 우선 [git을 설치](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)하고 원하는 경로에서 다음 명령어를 입력하세요.  
 ```shell
-git clone https://github.com/dotoleeoak/skku-hun-2020
+$ git clone https://github.com/dotoleeoak/skku-hun-2020
 ```
 파일을 모두 받았으면, 제작진([@dotoleeoak](https://github.com/dotoleeoak))에게 db.py를 받아 model 폴더에 넣어주세요.  
 (해당 파일은 보안의 문제로 GitHub에 업로드하지 않았습니다.)  
 
-> ~~requirements.txt 설명 추가 필요~~  
+이 프로그램은 Python3으로 동작합니다. [Python3을 설치](https://www.python.org/downloads/)해주세요.  
+설치 후, 이 폴더를 열고 가상환경을 만들어주세요. (skku-hun-2020 하위 폴더로 생성하세요)
+```shell
+(Windows)
+$ python -m venv hun
 
-이후 python으로 main.py를 실행하면 됩니다.
+(macOS / Linux)
+$ python3 -m vemv hun
+```
+  
+그 다음 가상환경을 활성화하고 필요한 패키지를 받아주세요.
+```shell
+(Windows cmd)
+$ hun\Scripts\activate.bat
 
+(Windows Powershell)
+$ hun\Scripts\Activate.ps1
+
+(macOS / Linux)
+$ source hun/bin/activate
+```
+
+```shell
+(Windows)
+$ pip install -r requirements.txt
+
+(macOS / Linux)
+$ pip3 install -r requirements.txt
+```
+  
+이후 Python으로 main.py를 실행하면 됩니다.
+```shell
+(Windows)
+$ python main.py
+
+(macOS / Linux)
+$ python3 main.py
+```
+  
 ### Raspberry Pi & Pins 🔌
 
 핀 번호에 대한 정보는 [여기](https://www.raspberrypi.org/documentation/usage/gpio/)에서 확인하세요.
