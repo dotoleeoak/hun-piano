@@ -21,7 +21,10 @@ $ git clone https://github.com/dotoleeoak/skku-hun-2020
 파일을 모두 받았으면, 제작진([@dotoleeoak](https://github.com/dotoleeoak))에게 db.py를 받아 model 폴더에 넣어주세요.  
 (해당 파일은 보안의 문제로 GitHub에 업로드하지 않았습니다.)  
 
+#### Font
 font 폴더에 있는 <ins>배달의민족 주아</ins> 글꼴을 설치해주세요.
+
+#### Python
 이 프로그램은 Python3으로 동작합니다. [Python3을 설치](https://www.python.org/downloads/)해주세요.  
 설치 후, 이 폴더를 열고 가상환경을 만들어주세요. (skku-hun-2020 하위 폴더로 생성하세요)
 ```shell
@@ -36,23 +39,19 @@ $ python3 -m vemv hun
 ```shell
 (Windows cmd)
 $ hun\Scripts\activate.bat
+$ pip install -r requirements.txt
 
 (Windows Powershell)
 $ hun\Scripts\Activate.ps1
-
-(macOS / Linux)
-$ source hun/bin/activate
-```
-
-```shell
-(Windows)
 $ pip install -r requirements.txt
 
 (macOS / Linux)
+$ source hun/bin/activate
 $ pip3 install -r requirements.txt
 ```
-  
-이후 Python으로 main.py를 실행하면 됩니다.
+
+#### Run
+가상환경이 활성화된 상태에서 Python으로 main.py를 실행하면 됩니다.
 ```shell
 (Windows)
 $ python main.py
