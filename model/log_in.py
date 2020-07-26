@@ -1,7 +1,6 @@
 import sys
 from functools import partial
-from PySide2.QtCore import *
-from PySide2.QtWidgets import *
+from PySide2.QtWidgets import QApplication, QWidget
 from view import UiLogIn
 from model.db import DataBase
 

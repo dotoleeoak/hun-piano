@@ -9,3 +9,6 @@ __pycache__/
 
 # For security
 db.py
+
+# Virtual Environment
+venv/
