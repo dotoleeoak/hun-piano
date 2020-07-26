@@ -14,7 +14,7 @@
 ## ✔ Guideline
 ### Setting ⚙
 해당 repository를 다운로드 받으세요. git을 이용해 받는 것을 권장합니다.  
-git을 이용해서 받으려면, 우선 [git을 설치](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)하고 원하는 경로에서 다음 명령어를 입력하세요.  
+git을 이용해서 받으려면, 우선 [git을 설치](https://git-scm.com/book/ko/v2/%EC%8B%9C%EC%9E%91%ED%95%98%EA%B8%B0-Git-%EC%84%A4%EC%B9%98)하고 원하는 경로에서 다음 명령어를 입력하세요.  
 ```shell
 $ git clone https://github.com/dotoleeoak/skku-hun-2020
 ```
