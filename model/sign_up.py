@@ -1,7 +1,6 @@
 import sys
 from functools import partial
-from PySide2.QtCore import *
-from PySide2.QtWidgets import *
+from PySide2.QtWidgets import QApplication, QStackedWidget, QWidget
 from view import UiSignUpName, UiSignUpContact, UiSignUpID, UiSignUpCheck
 from model.db import DataBase
 
@@ -92,37 +91,41 @@ class SignUp(QStackedWidget):
         self.id = "2020123456"
         self.db = DataBase()
 
-        f = lambda x: partial(self.switch_page, x)
+        page0.ui.button_right.clicked.connect(self.save_name)
+        page0.ui.button_right.clicked.connect(partial(self.switch_page, 1))
+        page0.ui.edit_name.returnPressed.connect(self.save_name)
+        page0.ui.edit_name.returnPressed.connect(partial(self.switch_page, 1))
 
-        page0.ui.button_right.clicked.connect(f(1))
-        page0.ui.edit_name.returnPressed.connect(f(1))
+        page1.ui.button_left.clicked.connect(partial(self.switch_page, 0))
+        page1.ui.button_right.clicked.connect(self.save_contact)
+        page1.ui.button_right.clicked.connect(partial(self.switch_page, 2))
+        page1.ui.edit_contact3.returnPressed.connect(self.save_contact)
+        page1.ui.edit_contact3.returnPressed.connect(partial(self.switch_page, 2))
 
-        page1.ui.button_left.clicked.connect(f(0))
-        page1.ui.button_right.clicked.connect(f(2))
-        page1.ui.edit_contact3.returnPressed.connect(f(2))
+        page2.ui.button_left.clicked.connect(partial(self.switch_page, 1))
+        page2.ui.button_right.clicked.connect(self.save_id)
+        page2.ui.button_right.clicked.connect(partial(self.switch_page, 3))
+        page2.ui.edit_id.returnPressed.connect(self.save_id)
+        page2.ui.edit_id.returnPressed.connect(partial(self.switch_page, 3))
 
-        page2.ui.button_left.clicked.connect(f(1))
-        page2.ui.button_right.clicked.connect(f(3))
-        page2.ui.edit_id.returnPressed.connect(f(3))
-
-        page3.ui.button_left.clicked.connect(f(2))
+        page3.ui.button_left.clicked.connect(partial(self.switch_page, 2))
         page3.ui.button_register.clicked.connect(self.sign_up_user)
         page3.ui.dialog_false.button_ok.clicked.connect(page3.ui.dialog_false.hide)
 
         self.set_page()
 
+    def save_name(self):
+        self.name = self.widget(0).ui.edit_name.text()
+
+    def save_contact(self):
+        self.contact1 = self.widget(1).ui.edit_contact2.text()
+        self.contact2 = self.widget(1).ui.edit_contact3.text()
+
+    def save_id(self):
+        self.id = self.widget(2).ui.edit_id.text()
+
     def switch_page(self, idx):
         self.currentWidget().clear_page()
-
-        curr_idx = self.currentIndex()
-        if curr_idx == 0:
-            self.name = self.currentWidget().ui.edit_name.text()
-        elif curr_idx == 1:
-            self.contact1 = self.currentWidget().ui.edit_contact2.text()
-            self.contact2 = self.currentWidget().ui.edit_contact3.text()
-        elif curr_idx == 2:
-            self.id = self.currentWidget().ui.edit_id.text()
-
         self.setCurrentIndex(idx)
         if idx == 3:
             self.currentWidget().set_page(
