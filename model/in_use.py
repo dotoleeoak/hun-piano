@@ -1,8 +1,10 @@
 import sys
+
 from PySide2.QtCore import QElapsedTimer, QTime, QTimer
 from PySide2.QtWidgets import QApplication, QWidget
-from view import UiInUse
+
 from model.db import DataBase
+from view import UiInUse
 
 
 class InUse(QWidget):
@@ -19,7 +21,8 @@ class InUse(QWidget):
         self.info = {}
 
     def update_time(self):
-        self.ui.used_time.setText(
+        # TODO: Is there more clean way to show timer...?
+        self.ui.label_time.setText(
             (self.time.addMSecs(self.elapsed_timer.elapsed())).toString("hh:mm:ss")
         )
 
@@ -29,13 +32,13 @@ class InUse(QWidget):
         self.elapsed_timer.start()
         self.timer.timeout.connect(self.update_time)
         self.timer.start(500)
-        self.ui.used_time.setText(self.time.toString("hh:mm:ss"))
-        self.ui.username.setText(self.info["name"] + " 님")
+        self.ui.label_time.setText(self.time.toString("hh:mm:ss"))
+        self.ui.label_name.setText(self.info["name"] + " 님")
 
     def clear_page(self):
         self.timer.stop()
-        self.ui.used_time.setText("00:00:00")
-        self.ui.username.setText("???")
+        self.ui.label_time.setText("00:00:00")
+        self.ui.label_name.setText("???")
 
 
 if __name__ == "__main__":
