@@ -1,9 +1,12 @@
-import os
-from PySide2.QtCore import QRect, Qt, QSize
+from pathlib import Path
+
+from PySide2.QtCore import QRect, QSize, Qt
 from PySide2.QtGui import QIcon, QPixmap
 from PySide2.QtWidgets import QFrame, QLabel, QPushButton
-from view.dialog import DialogSelect, DialogNotify
-from .path import PATH_IMG
+
+from view.dialog import DialogNotify, DialogSelect
+
+PATH_IMG = Path(__file__).absolute().parents[1] / "image"
 
 
 class UiLogIn:
@@ -56,17 +59,15 @@ class UiLogIn:
             "}"
         )
 
-        img_NFC = QPixmap(os.path.join(PATH_IMG, "icon_2_2.png"))
         self.button_NFC = QPushButton(self.menu_bar)
         self.button_NFC.setGeometry(QRect(680, 5, 110, 50))
-        self.button_NFC.setIcon(QIcon(img_NFC))
+        self.button_NFC.setIcon(QIcon(QPixmap(PATH_IMG / "icon_2_2.png")))
         self.button_NFC.setIconSize(QSize(32, 32))
         self.button_NFC.setText(" NFC")
 
-        img_register = QPixmap(os.path.join(PATH_IMG, "Document.png"))
         self.button_register = QPushButton(self.menu_bar)
         self.button_register.setGeometry(QRect(10, 5, 110, 50))
-        self.button_register.setIcon(QIcon(img_register))
+        self.button_register.setIcon(QIcon(QPixmap(PATH_IMG / "Document.png")))
         self.button_register.setIconSize(QSize(32, 32))
         self.button_register.setText(" 등록")
 
@@ -89,7 +90,7 @@ class UiLogIn:
 
         self.label_dash = QLabel(self.menu_bar)
         self.label_dash.setGeometry(QRect(390, 145, 20, 20))
-        self.label_dash.setPixmap(QPixmap(os.path.join(PATH_IMG, "Stick2.png")))
+        self.label_dash.setPixmap(QPixmap(PATH_IMG / "Stick2.png"))
 
         self.dialog_true = DialogSelect(widget)
         self.dialog_true.setFrameStyle(QFrame.Raised)

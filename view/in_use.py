@@ -1,8 +1,10 @@
-import os
+from pathlib import Path
+
 from PySide2.QtCore import QRect, Qt
 from PySide2.QtGui import QPixmap
 from PySide2.QtWidgets import QFrame, QLabel, QPushButton
-from .path import PATH_IMG
+
+PATH_IMG = Path(__file__).absolute().parents[1] / "image"
 
 
 class UiInUse:

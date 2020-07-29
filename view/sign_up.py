@@ -1,18 +1,12 @@
-import os
-from PySide2.QtCore import QRect, Qt, QSize
+from pathlib import Path
+
+from PySide2.QtCore import QRect, QSize, Qt
 from PySide2.QtGui import QIcon, QPixmap
 from PySide2.QtWidgets import QFrame, QLabel, QLineEdit, QPushButton
+
 from view.dialog import DialogNotify
-from .path import PATH_IMG
 
-# FIXME: Importing "path" module can be done only in specific directory
-# TODO: Better way to get absolute path of directory...?
-
-"""
-여러 디렉토리에서 파일 실행이 불가능함
-release만 생각하면 상관없지만, 개발 시 매 실행마다 경로를 옮기는 것은 번거로움
-따라서 어떤 경로에서든 실행이 가능하도록 수정 필요
-"""
+PATH_IMG = Path(__file__).absolute().parents[1] / "image"
 
 
 class UiSignUp:
@@ -44,7 +38,7 @@ class UiSignUp:
         self.label_menu.setText("사용자 등록")
         self.label_menu.setAlignment(Qt.AlignCenter)
 
-        img_home = QPixmap(os.path.join(PATH_IMG, "home.png"))
+        img_home = QPixmap(PATH_IMG / "home.png")
         self.button_home = QPushButton(self.frame_menu)
         self.button_home.setGeometry(QRect(10, 5, 90, 50))
         self.button_home.setIcon(QIcon(img_home))
@@ -85,14 +79,10 @@ class UiSignUp:
             "background-color: rgb(176, 176, 176); border: none;"
         )
 
-        path_left = os.path.join(PATH_IMG, "arrow_left.png")
-        path_left = path_left.replace("\\", "/")
-        path_right = os.path.join(PATH_IMG, "arrow_right.png")
-        path_right = path_right.replace("\\", "/")
-        path_left_hover = os.path.join(PATH_IMG, "arrow_left_hover.png")
-        path_left_hover = path_left_hover.replace("\\", "/")
-        path_right_hover = os.path.join(PATH_IMG, "arrow_right_hover.png")
-        path_right_hover = path_right_hover.replace("\\", "/")
+        path_left = PATH_IMG / "arrow_left.png"
+        path_right = PATH_IMG / "arrow_right.png"
+        path_left_hover = PATH_IMG / "arrow_left_hover.png"
+        path_right_hover = PATH_IMG / "arrow_right_hover.png"
 
         self.button_left = QPushButton(self.frame_main)
         self.button_left.setGeometry(QRect(30, 50, 80, 80))
@@ -214,7 +204,7 @@ class UiSignUpCheck(UiSignUp):
         self.label_id_user.setAlignment(Qt.AlignVCenter)
 
         # TODO: Button with hover image looks better
-        img_temp = QPixmap(os.path.join(PATH_IMG, "unchecked.png"))
+        img_temp = QPixmap(PATH_IMG / "unchecked.png")
         self.button_temp = QPushButton(self.frame_main)
         self.button_temp.setGeometry(QRect(270, 255, 40, 40))
         self.button_temp.setIcon(QIcon(img_temp))
