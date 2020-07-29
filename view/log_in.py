@@ -61,13 +61,13 @@ class UiLogIn:
 
         self.button_NFC = QPushButton(self.menu_bar)
         self.button_NFC.setGeometry(QRect(680, 5, 110, 50))
-        self.button_NFC.setIcon(QIcon(QPixmap(PATH_IMG / "icon_2_2.png")))
+        self.button_NFC.setIcon(QIcon(QPixmap(str(PATH_IMG / "icon_2_2.png"))))
         self.button_NFC.setIconSize(QSize(32, 32))
         self.button_NFC.setText(" NFC")
 
         self.button_register = QPushButton(self.menu_bar)
         self.button_register.setGeometry(QRect(10, 5, 110, 50))
-        self.button_register.setIcon(QIcon(QPixmap(PATH_IMG / "Document.png")))
+        self.button_register.setIcon(QIcon(QPixmap(str(PATH_IMG / "Document.png"))))
         self.button_register.setIconSize(QSize(32, 32))
         self.button_register.setText(" 등록")
 
@@ -90,7 +90,7 @@ class UiLogIn:
 
         self.label_dash = QLabel(self.menu_bar)
         self.label_dash.setGeometry(QRect(390, 145, 20, 20))
-        self.label_dash.setPixmap(QPixmap(PATH_IMG / "Stick2.png"))
+        self.label_dash.setPixmap(QPixmap(str(PATH_IMG / "Stick2.png")))
 
         self.dialog_true = DialogSelect(widget)
         self.dialog_true.setFrameStyle(QFrame.Raised)

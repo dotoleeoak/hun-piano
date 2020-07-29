@@ -38,7 +38,7 @@ class UiSignUp:
         self.label_menu.setText("사용자 등록")
         self.label_menu.setAlignment(Qt.AlignCenter)
 
-        img_home = QPixmap(PATH_IMG / "home.png")
+        img_home = QPixmap(str(PATH_IMG / "home.png"))
         self.button_home = QPushButton(self.frame_menu)
         self.button_home.setGeometry(QRect(10, 5, 90, 50))
         self.button_home.setIcon(QIcon(img_home))
@@ -204,7 +204,7 @@ class UiSignUpCheck(UiSignUp):
         self.label_id_user.setAlignment(Qt.AlignVCenter)
 
         # TODO: Button with hover image looks better
-        img_temp = QPixmap(PATH_IMG / "unchecked.png")
+        img_temp = QPixmap(str(PATH_IMG / "unchecked.png"))
         self.button_temp = QPushButton(self.frame_main)
         self.button_temp.setGeometry(QRect(270, 255, 40, 40))
         self.button_temp.setIcon(QIcon(img_temp))

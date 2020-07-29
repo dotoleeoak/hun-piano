@@ -25,7 +25,7 @@ class UiInUse:
 
         self.picture_piano = QLabel(self.frame_main)
         self.picture_piano.setGeometry(QRect(320, 30, 160, 150))
-        self.picture_piano.setPixmap(QPixmap(PATH_IMG / "Piano.png"))
+        self.picture_piano.setPixmap(QPixmap(str(PATH_IMG / "Piano.png")))
 
         self.label_time = QLabel(self.frame_main)
         self.label_time.setGeometry(QRect(0, 180, 800, 40))
