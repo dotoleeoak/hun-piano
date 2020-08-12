@@ -62,9 +62,9 @@ $ python3 main.py
   
 ### Raspberry Pi & Pins 🔌
 
-#### Raspberry setting
+#### Raspberry Pi Setting
 
-디스플레이의 번아웃과 전력 소모를 방지하기 위해 화면이 자동으로 꺼지는 시간을 1분으로 설정합니다.
+디스플레이의 번인과 전력 소모를 방지하기 위해 화면이 자동으로 꺼지는 시간을 1분으로 설정합니다.
 
 ``` shell
 $ sudo vi /etc/lightdm/lightdm.conf
