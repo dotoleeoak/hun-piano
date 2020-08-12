@@ -4,7 +4,7 @@ from PySide2.QtCore import Slot
 from PySide2.QtWidgets import QApplication, QWidget
 from view import UiLogIn
 from model.db import DataBase
-from nfc.nfc_reader_for_test import NFCReader  # from nfc.nfc_reader import NFCReader
+from nfc.nfc_reader import NFCReader
 
 
 class LogIn(QWidget):
