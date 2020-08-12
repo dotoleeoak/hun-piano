@@ -1,8 +1,10 @@
 import sys
 from functools import partial
+from PySide2.QtCore import Slot
 from PySide2.QtWidgets import QApplication, QWidget
 from view import UiLogIn
 from model.db import DataBase
+from nfc.nfc_reader import NFCReader
 
 
 class LogIn(QWidget):
@@ -11,6 +13,10 @@ class LogIn(QWidget):
 
         self.ui = UiLogIn()
         self.ui.setupUi(self)
+
+        self.nfc_reader = NFCReader()
+        self.nfc_reader.start()
+        self.nfc_reader.nfc_connect.connect(self.check_valid_uid)
 
         self.db = DataBase()
         self.idx_display = 0
@@ -44,11 +50,19 @@ class LogIn(QWidget):
                 self.ui.dialog_false.show()
                 # TODO: error animation
 
+    @Slot(str)
+    def check_valid_uid(self, uid):
+        print(uid)
+        # TODO: check uid from database
+
     def get_contact(self):
         return self.contact
 
     def set_page(self):
-        pass
+        if not self.nfc_reader.isRunning():
+            print("Thread start")
+            self.nfc_reader.start()
+        self.nfc_reader.nfc_connect.connect(self.check_valid_uid)
 
     def clear_page(self):
         self.contact = 0
@@ -57,6 +71,14 @@ class LogIn(QWidget):
         self.ui.dialog_false.hide()
         for label in self.ui.display_number:
             label.setText("")
+
+        if not self.nfc_reader.isFinished():
+            self.nfc_reader.quit()
+
+    def __del__(self):
+        self.nfc_reader.quit()
+        self.nfc_reader.terminate()
+        self.nfc_reader.wait()
 
 
 if __name__ == "__main__":
