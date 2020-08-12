@@ -62,6 +62,17 @@ $ python3 main.py
   
 ### Raspberry Pi & Pins 🔌
 
+#### Raspberry setting
+
+디스플레이의 번아웃과 전력 소모를 방지하기 위해 화면이 자동으로 꺼지는 시간을 1분으로 설정합니다.
+
+``` shell
+$ sudo vi /etc/lightdm/lightdm.conf
+```
+를 (또는 원하시는 다른 에디터로) 실행한 후, `#xserver-command=`를 `xserver-command=X -s 1 dpms` 변경해줍니다.
+
+#### Pins
+
 핀 번호에 대한 정보는 [여기](https://www.raspberrypi.org/documentation/usage/gpio/)에서 확인하세요.
 
 - For Raspberry Pi Touch Screen
@@ -94,12 +105,12 @@ $ python3 main.py
 ### NFC 관련 주의 사항 ⚠
 - 라즈베리파이에서 NFC를 사용할 경우:  
     ```python
-    from NFC.NFCReader import NFCReader
+    from nfc.nfc_reader import NFCReader
     ```
     
 - 이외의 경우(windows에서 실행 테스트, 디버깅 등):  
     ```python
-    from NFC.NFCReaderForTest import NFCReader
+    from nfc.nfc_reader_for_test import NFCReader
     ```
 
 ---
