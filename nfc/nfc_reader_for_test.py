@@ -9,11 +9,9 @@ class NFCReader(QThread):
         super().__init__()
 
     def run(self):
-
         print("Thread running")
         while self.reading:
             self.msleep(1000)
-            pass
 
     def start(self):
         self.reading = True
