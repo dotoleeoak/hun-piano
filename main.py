@@ -11,7 +11,7 @@ class MainWindow(QMainWindow):
         self.setFixedSize(800, 480)
 
         # # 라즈베리 파이에서 풀스크린으로 표시하기 위해 아래 코드 필요
-        # self.showFullScreen()
+        self.showFullScreen()
 
         page_in_use = InUse()
         page_log_in = LogIn()
@@ -30,10 +30,10 @@ class MainWindow(QMainWindow):
             partial(self.switch_page, 1)
         )
 
-        page_sign_up.widget(3).ui.dialog_true.button_ok.clicked.connect(
+        page_sign_up.widget(4).ui.dialog_true.button_ok.clicked.connect(
             partial(self.switch_page, 0)
         )
-        for i in range(4):
+        for i in range(5):
             page_sign_up.widget(i).ui.button_home.clicked.connect(
                 partial(self.switch_page, 0)
             )
@@ -51,8 +51,8 @@ class MainWindow(QMainWindow):
 
 if __name__ == "__main__":
     # # 가상 키보드를 표시하기 위해 아래 코드 필요
-    # import os
-    # os.environ["QT_IM_MODULE"] = "qtvirtualkeyboard"
+    import os
+    os.environ["QT_IM_MODULE"] = "qtvirtualkeyboard"
 
     app = QApplication()
     window = MainWindow()
