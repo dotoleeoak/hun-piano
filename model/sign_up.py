@@ -4,7 +4,7 @@ from PySide2.QtCore import Slot
 from PySide2.QtWidgets import QApplication, QStackedWidget, QWidget
 from view import UiSignUpName, UiSignUpContact, UiSignUpID, UiSignUpNFC, UiSignUpCheck
 from model.db import DataBase
-from nfc.nfc_reader import NFCReader
+from nfc import NFCReader
 
 
 class SignUpName(QWidget):
