@@ -6,30 +6,35 @@ class NFCReader(QThread):
     nfc_connect = Signal(str)
     reading = True
 
-    def __init__(self):
+    def __init__(self, debug=False):
         super().__init__()
-        print("nfc init")
-        self.nfc = MFRC522()
+        self.debug = debug
+        if not self.debug:
+            print("nfc init")
+            self.nfc = MFRC522()
 
     def run(self):
 
         print("Thread running")
         while self.reading:
-            (status, tag_type) = self.nfc.MFRC522_Request(self.nfc.PICC_REQIDL)
+            if self.debug:
+                self.msleep(1000)
+            else:
+                (status, tag_type) = self.nfc.MFRC522_Request(self.nfc.PICC_REQIDL)
 
-            if status == self.nfc.MI_OK:
-                print("Card detected")
-
-                # Get the UID of the card
                 if status == self.nfc.MI_OK:
-                    (status, uid) = self.nfc.MFRC522_SelectTagSN()
-                    uid_str = self.uid_to_string(uid)
-                    print(uid_str)
-                    self.nfc_connect.emit(uid_str)
-                else:
-                    self.nfc_connect.emit(None)
+                    print("Card detected")
 
-            self.msleep(100)
+                    # Get the UID of the card
+                    if status == self.nfc.MI_OK:
+                        (status, uid) = self.nfc.MFRC522_SelectTagSN()
+                        uid_str = self.uid_to_string(uid)
+                        print(uid_str)
+                        self.nfc_connect.emit(uid_str)
+                    else:
+                        self.nfc_connect.emit(None)
+
+                self.msleep(100)
 
     def start(self):
         self.reading = True

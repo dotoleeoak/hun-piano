@@ -53,7 +53,7 @@ class LogIn(QWidget):
     @Slot(str)
     def check_valid_uid(self, uid):
         print(uid)
-        # TODO: check uid from database
+        # TODO: check uid from database and switch to in_use page
 
     def get_contact(self):
         return self.contact
