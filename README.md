@@ -103,15 +103,14 @@ $ sudo vi /etc/lightdm/lightdm.conf
 | 3.3V   | 17      | 3V3          |
 
 ### NFC 관련 주의 사항 ⚠
-- 라즈베리파이에서 NFC를 사용할 경우:  
-    ```python
-    from nfc.nfc_reader import NFCReader
-    ```
-    
-- 이외의 경우(windows에서 실행 테스트, 디버깅 등):  
-    ```python
-    from nfc.nfc_reader_for_test import NFCReader
-    ```
+
+#### Raspberry Pi가 아닌 환경에서 개발 및 디버깅 시
+
+`NFCReader()` 클래스 생성 코드를 다음과 같이 바꿔주세요.
+
+```python
+self.nfc_reader = NFCReader(debug=True)
+```
 
 ---
 
