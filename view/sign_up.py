@@ -163,12 +163,15 @@ class UiSignUpNFC(UiSignUp):
         super().setupUi(widget)
 
         self.label_nfc = QLabel(self.frame_main)
-        self.label_nfc.setGeometry(QRect(120, 70, 560, 40))
-        self.label_nfc.setText("등록할 NFC가 있다면 지금 태그헤주세요")
+        self.label_nfc.setGeometry(QRect(150, 40, 500, 50))
+        self.label_nfc.setAlignment(Qt.AlignCenter)
+        self.label_nfc.setText("등록할 NFC가 있다면 태그해주세요")
 
         self.label_nfc_status = QLabel(self.frame_main)
-        self.label_nfc_status.setGeometry(QRect(200, 250, 400, 40))
+        self.label_nfc_status.setGeometry(QRect(200, 100, 400, 40))
+        self.label_nfc_status.setAlignment(Qt.AlignCenter)
         self.label_nfc_status.setText("Not Tagged Yet")
+        self.label_nfc_status.setStyleSheet("color: gray;")
 
 
 class UiSignUpCheck(UiSignUp):
