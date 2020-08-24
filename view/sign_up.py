@@ -88,11 +88,11 @@ class UiSignUp:
         self.button_left.setGeometry(QRect(30, 50, 80, 80))
         self.button_left.setStyleSheet(
             "QPushButton {"
-            f"   image: url({path_left});"
+            f"   image: url({path_left.as_posix()});"
             "   border: none;"
             "}"
             "QPushButton:hover {"
-            f"   image: url({path_left_hover});"
+            f"   image: url({path_left_hover.as_posix()});"
             "}"
         )
 
@@ -100,11 +100,11 @@ class UiSignUp:
         self.button_right.setGeometry(QRect(690, 50, 80, 80))
         self.button_right.setStyleSheet(
             "QPushButton {"
-            f"  image: url({path_right});"
+            f"  image: url({path_right.as_posix()});"
             "   border: none;"
             "}"
             "QPushButton:hover {"
-            f"   image: url({path_right_hover});"
+            f"   image: url({path_right_hover.as_posix()});"
             "}"
         )
 
