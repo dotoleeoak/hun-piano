@@ -1,10 +1,12 @@
 import sys
 from functools import partial
+
 from PySide2.QtCore import Slot
 from PySide2.QtWidgets import QApplication, QStackedWidget, QWidget
-from view import UiSignUpName, UiSignUpContact, UiSignUpID, UiSignUpNFC, UiSignUpCheck
+
 from model.db import DataBase
 from nfc import NFCReader
+from view import UiSignUpCheck, UiSignUpContact, UiSignUpID, UiSignUpName, UiSignUpNFC
 
 
 class SignUpName(QWidget):
@@ -52,6 +54,7 @@ class SignUpID(QWidget):
     def clear_page(self):
         print("id =", self.ui.edit_id.text())
 
+
 class SignUpNFC(QWidget):
     def __init__(self, parent=None):
         QWidget.__init__(self, parent)
@@ -79,11 +82,11 @@ class SignUpNFC(QWidget):
         else:
             self.ui.label_nfc_status.setText("Tagged!")
 
-
     def clear_page(self):
         print("nfc_uid =", self.nfc_uid)
         if not self.nfc_reader.isFinished():
             self.nfc_reader.quit()
+
 
 class SignUpCheck(QWidget):
     def __init__(self, parent=None):
@@ -144,7 +147,7 @@ class SignUp(QStackedWidget):
         page2.ui.button_right.clicked.connect(partial(self.switch_page, 3))
         page2.ui.edit_id.returnPressed.connect(self.save_id)
         page2.ui.edit_id.returnPressed.connect(partial(self.switch_page, 3))
-        
+
         page3.ui.button_left.clicked.connect(partial(self.switch_page, 2))
         page3.ui.button_right.clicked.connect(self.save_nfc_uid)
         page3.ui.button_right.clicked.connect(partial(self.switch_page, 4))

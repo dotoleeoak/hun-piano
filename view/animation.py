@@ -1,12 +1,19 @@
 from math import *
-from PySide2.QtCore import QPoint, QPropertyAnimation, QEasingCurve, QSequentialAnimationGroup, QParallelAnimationGroup
+
+from PySide2.QtCore import (
+    QEasingCurve,
+    QParallelAnimationGroup,
+    QPoint,
+    QPropertyAnimation,
+    QSequentialAnimationGroup,
+)
 from PySide2.QtWidgets import QGraphicsOpacityEffect
 
 
 class Animation:
     # for Singleton
     def __new__(cls):
-        if not hasattr(cls, 'instance'):
+        if not hasattr(cls, "instance"):
             cls.instance = super(Animation, cls).__new__(cls)
         return cls.instance
 
@@ -43,8 +50,12 @@ class Animation:
         vibrate_group = QSequentialAnimationGroup()
         origin = widget.pos()
         direction = radians(direction)
-        first_pos = QPoint(origin.x() + amp * cos(direction), origin.y() - amp * sin(direction))
-        second_pos = QPoint(origin.x() - amp * cos(direction), origin.y() + amp * sin(direction))
+        first_pos = QPoint(
+            origin.x() + amp * cos(direction), origin.y() - amp * sin(direction)
+        )
+        second_pos = QPoint(
+            origin.x() - amp * cos(direction), origin.y() + amp * sin(direction)
+        )
         vibrate_anim = QPropertyAnimation(widget, b"pos")
         vibrate_anim.setDuration(period)
         vibrate_anim.setStartValue(origin)
@@ -52,12 +63,12 @@ class Animation:
         vibrate_group.addAnimation(vibrate_anim)
         for i in range(0, 3):
             vibrate_anim = QPropertyAnimation(widget, b"pos")
-            vibrate_anim.setDuration(2*period)
+            vibrate_anim.setDuration(2 * period)
             vibrate_anim.setStartValue(first_pos)
             vibrate_anim.setEndValue(second_pos)
             vibrate_group.addAnimation(vibrate_anim)
             vibrate_anim = QPropertyAnimation(widget, b"pos")
-            vibrate_anim.setDuration(2*period)
+            vibrate_anim.setDuration(2 * period)
             vibrate_anim.setStartValue(second_pos)
             vibrate_anim.setEndValue(first_pos)
             vibrate_group.addAnimation(vibrate_anim)

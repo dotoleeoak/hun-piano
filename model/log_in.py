@@ -1,10 +1,12 @@
 import sys
 from functools import partial
+
 from PySide2.QtCore import Slot
 from PySide2.QtWidgets import QApplication, QWidget
-from view import UiLogIn
+
 from model.db import DataBase
 from nfc import NFCReader
+from view import UiLogIn
 
 
 class LogIn(QWidget):
