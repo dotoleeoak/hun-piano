@@ -20,6 +20,9 @@ class UiLogIn:
         self.frame_keypad = QFrame(widget)
         self.frame_keypad.setGeometry(QRect(0, 240, 800, 240))
         self.frame_keypad.setStyleSheet(
+            "QFrame {"
+            "   background-color: white;"
+            "}"
             "QPushButton {"
             "   font: 36pt 배달의민족 주아;"
             "   color: rgb(255, 188, 50);"
