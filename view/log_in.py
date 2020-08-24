@@ -10,11 +10,15 @@ PATH_IMG = Path(__file__).absolute().parents[1] / "image"
 
 
 class UiLogIn:
+    KEYPAD_X = [160, 260, 360, 460, 560, 160, 260, 360, 460, 560]
+    KEYPAD_Y = [30, 30, 30, 30, 30, 130, 130, 130, 130, 130]
+    DISPLAY_X = [60, 140, 220, 300, 430, 510, 590, 670]
+
     def setupUi(self, widget):
         widget.resize(800, 480)
 
         self.frame_keypad = QFrame(widget)
-        self.frame_keypad.setGeometry(QRect(116, 275, 568, 180))
+        self.frame_keypad.setGeometry(QRect(0, 240, 800, 240))
         self.frame_keypad.setStyleSheet(
             "QPushButton {"
             "   font: 36pt 배달의민족 주아;"
@@ -31,13 +35,14 @@ class UiLogIn:
 
         self.button_keypad = []
         for i in range(10):
-            button = QPushButton(self.frame_keypad)
-            button.setGeometry(QRect(28 + 108 * (i % 5), 100 * (i // 5), 80, 80))
-            button.setText(str(i))
-            self.button_keypad.append(button)
+            self.button_keypad.append(QPushButton(self.frame_keypad))
+            self.button_keypad[i].setText(str(i))
+            self.button_keypad[i].setGeometry(
+                QRect(self.KEYPAD_X[i], self.KEYPAD_Y[i], 80, 80)
+            )
 
         self.menu_bar = QFrame(widget)
-        self.menu_bar.setGeometry(QRect(0, 0, 800, 250))
+        self.menu_bar.setGeometry(QRect(0, 0, 800, 240))
         self.menu_bar.setStyleSheet(
             "QFrame {"
             "   background-color: rgb(249, 138, 15);"
@@ -79,7 +84,7 @@ class UiLogIn:
         self.display_number = []
         for i in range(8):
             display = QLabel(self.menu_bar)
-            display.setGeometry(QRect(80 * i + (60 if i < 4 else 110), 120, 70, 70))
+            display.setGeometry(QRect(self.DISPLAY_X[i], 120, 70, 70))
             display.setAlignment(Qt.AlignCenter)
             display.setStyleSheet(
                 "font-size: 32pt;"
