@@ -71,7 +71,7 @@ class SignUpNFC(QWidget):
     def set_page(self):
         self.check_nfc_tagged()
         self.nfc_reader.start()
-        self.nfc_reader.nfc_connect.connect(self.get_uid_from_tag)
+        self.nfc_reader.tagged.connect(self.get_uid_from_tag)
 
     def check_nfc_tagged(self):
         if self.nfc_uid == "":

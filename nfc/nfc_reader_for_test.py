@@ -2,7 +2,7 @@ from PySide2.QtCore import QThread, Signal
 
 
 class NFCReader(QThread):
-    nfc_connect = Signal(str)
+    tagged = Signal(str)
     reading = True
 
     def __init__(self):
