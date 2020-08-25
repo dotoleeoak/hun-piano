@@ -3,9 +3,10 @@ from nfc.MFRC522 import MFRC522
 
 
 class NFCReader(QThread):
+    tagged = Signal(str) # Emit when nfc is 'tagged' to the module.
+
     def __init__(self, debug=False):
         super().__init__()
-        self.nfc_connect = Signal(str)
         self.reading = True
         self.debug = debug
         if not self.debug:
@@ -28,9 +29,9 @@ class NFCReader(QThread):
                         (status, uid) = self.nfc.MFRC522_SelectTagSN()
                         uid_str = self.uid_to_string(uid)
                         print(uid_str)
-                        self.nfc_connect.emit(uid_str)
+                        self.tagged.emit(uid_str)
                     else:
-                        self.nfc_connect.emit(None)
+                        self.tagged.emit(None)
 
                 self.msleep(100)
 

@@ -16,7 +16,7 @@ class LogIn(QWidget):
 
         self.nfc_reader = NFCReader()
         self.nfc_reader.start()
-        self.nfc_reader.nfc_connect.connect(self.check_valid_uid)
+        self.nfc_reader.tagged.connect(self.check_valid_uid)
 
         self.db = DataBase()
         self.idx_display = 0
@@ -62,7 +62,7 @@ class LogIn(QWidget):
         if not self.nfc_reader.isRunning():
             print("Thread start")
             self.nfc_reader.start()
-        self.nfc_reader.nfc_connect.connect(self.check_valid_uid)
+        self.nfc_reader.tagged.connect(self.check_valid_uid)
 
     def clear_page(self):
         self.contact = 0
