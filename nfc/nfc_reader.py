@@ -3,9 +3,10 @@ from nfc.MFRC522 import MFRC522
 
 
 class NFCReader(QThread):
+    nfc_connect = Signal(str)
+    
     def __init__(self, debug=False):
         super().__init__()
-        self.nfc_connect = Signal(str)
         self.reading = True
         self.debug = debug
         if not self.debug:
